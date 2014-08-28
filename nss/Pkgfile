@@ -1,0 +1,67 @@
+# Description: Mozilla Network Security Services (NSS)
+# URL:         http://www.mozilla.org/projects/security/pki/nss/
+# Maintainer:  Fredrik Rinnestam, fredrik at rinnestam dot se
+# Depends on:  nspr sqlite3
+
+name=nss
+version=3.17
+release=1
+source=(ftp://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_17_RTM/src/$name-$version.tar.gz \
+        nss-config.in nss.pc.in)
+
+build() {
+    cd $name-$version/
+
+    local file
+
+    sed -i nss/coreconf/Linux.mk \
+        -e 's|^CC.*=.*gcc$|#&|' \
+        -e 's|^CCC.*=.*g++$|#&|'
+
+    export NSPR_INCLUDE_DIR=/usr/include/nspr
+    export NSPR_LIB_DIR=/usr/lib
+    export NSS_USE_SYSTEM_SQLITE=1
+    export NSS_ENABLE_ECC=1
+    export BUILD_OPT=1
+    export XCFLAGS="${CFLAGS}"
+
+    make -j1 -C nss all
+
+    install -d $PKG/usr/{bin,lib/pkgconfig,include/nss}
+
+    for file in \
+        libnss3.so libssl3.so libsmime3.so libsoftokn3.so \
+        libsoftokn3.chk libnssckbi.so libfreebl3.so libfreebl3.chk \
+        libcrmf.a libnssb.a libnssckfw.a libnssutil3.so libnssdbm3.so
+    do
+        cp -L dist/*.OBJ/lib/$file $PKG/usr/lib
+    done
+
+    chmod +x $PKG/usr/lib/*.so
+
+    for file in \
+        certutil cmsutil crlutil modutil pk12util signtool signver ssltap
+    do
+        cp -L dist/*.OBJ/bin/$file $PKG/usr/bin
+    done
+
+    cp -L dist/public/nss/*.h $PKG/usr/include/nss
+
+    install -m 0755 $SRC/nss-config.in $PKG/usr/bin/nss-config
+
+    _version=$(printf "%i.%i.%i" ${version//./ })
+    sed -i "s/@VERSION@/$_version/" $PKG/usr/bin/nss-config
+
+    NSS_LIBS=`$PKG/usr/bin/nss-config --libs`
+    NSS_CFLAGS=`$PKG/usr/bin/nss-config --cflags`
+    sed $SRC/nss.pc.in \
+        -e "s,%libdir%,/usr/lib," \
+        -e "s,%prefix%,/usr," \
+        -e "s,%exec_prefix%,/usr/bin," \
+        -e "s,%includedir%,/usr/include/nss," \
+        -e "s,%NSS_VERSION%,$version," \
+        -e "s,%FULL_NSS_LIBS%,$NSS_LIBS," \
+        -e "s,%FULL_NSS_CFLAGS%,$NSS_CFLAGS," > \
+            $PKG/usr/lib/pkgconfig/nss.pc
+
+}

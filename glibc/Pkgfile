@@ -1,0 +1,47 @@
+# Description: The C library used in the GNU system
+# URL:         http://www.gnu.org/software/libc/
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
+
+name=glibc
+version=2.19
+release=3
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
+	http://crux.nu/files/distfiles/kernel-headers-3.12.tar.bz2 \
+	$name-$version-multilib-dirs.patch \
+	CVE-2014-0475.patch \
+	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
+
+build() {
+	# install kernel headers
+	mkdir $PKG/usr/
+	cp -r $SRC/kernel-headers-3.12/include $PKG/usr
+	chown root:root $PKG/usr
+
+	#patch -p1 -d $SRC/$name-$version -i $SRC/$name-$version-multilib-dirs.patch
+	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2014-0475.patch
+
+	mkdir $SRC/build
+	cd $SRC/build
+	../$name-$version/configure --prefix=/usr \
+		--libexecdir=/usr/lib \
+		--with-headers=$PKG/usr/include \
+		--enable-kernel=3.10 \
+		--enable-add-ons \
+		--disable-profile \
+		--without-gd \
+		--enable-obsolete-rpc \
+		--enable-static-nss
+	make 
+	#make check
+	make install_root=$PKG install
+
+	install -m 0644 $SRC/$name-$version/nscd/nscd.conf $PKG/etc 
+	install -d $PKG/var/{db,run}/nscd
+
+	install -m 0644 $SRC/{hosts,resolv.conf,nsswitch.conf,host.conf,ld.so.conf} $PKG/etc
+	ln -sf ../usr/share/zoneinfo/UTC $PKG/etc/localtime
+	mkdir -p $PKG/etc/ld.so.conf.d $PKG/usr/lib/locale
+	touch $PKG/etc/ld.so.cache
+
+	rm -rf $PKG/usr/{share/{info,locale},bin/tzselect,sbin/z{dump,ic}}
+}
