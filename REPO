@@ -7,6 +7,7 @@ d:gcc
 d:prt-get
 d:python
 d:pkgutils
+d:llvm
 d:nss
 f:a568134a222776d8fc23059dfb25d835:glibc/glibc-2.19-multilib-dirs.patch
 f:75931315bf9bc9be15a5e25e4ddd5f0d:glibc/nsswitch.conf
@@ -47,7 +48,6 @@ f:f65ae50cc3dab99711af1462e3d479db:gcc/.md5sum
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
 f:b9b70b2962c1dc9ad6f67a2ac1bd5add:gcc/Pkgfile
 f:61a057afa31006764b957a483ba90b9d:gcc/gcc-4.7.3-multilib-dirs.patch
-f:ecba7e933f9ccd8649b29d08ec06a3df:gcc/build.log
 f:8967fe80601732b0ece5b4dd64fb5814:gcc/.footprint
 f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
@@ -63,6 +63,11 @@ f:098ed01b5cd33def6da4088ac0c4ae18:pkgutils/.md5sum
 f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
 f:817f4846742b88f1dd53a3d14bb5074a:pkgutils/Pkgfile
 f:db9fd54e3b90d74d49795b222485a2cb:pkgutils/.footprint
+f:9a3aa22beac6683d20a59e7805abc4be:llvm/.md5sum
+f:36a89de82dfe6ca99829743591cf8112:llvm/config.h
+f:6ff95017f859bcd988312f58a4d5b603:llvm/Pkgfile
+f:fcd6954a7fbd05687990e59e87131c3e:llvm/llvm-config.h
+f:4a5173eb6bc544d7d8785a6a615ebaf7:llvm/.footprint
 f:95a03172ee3fbe69157cef24f65c17e6:nss/.md5sum
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
 f:4bb2893f773bb168271521e654861e29:nss/nss.pc.in
