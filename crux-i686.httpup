@@ -1,0 +1,8 @@
+#
+# /etc/ports/crux-i686.httpup: i686 ports overlay for CRUX
+#
+
+ROOT_DIR=/usr/ports/crux-i686
+URL=https://raw.githubusercontent.com/mhoush/crux-i686/master/
+
+# End of file

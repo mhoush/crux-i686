@@ -55,7 +55,6 @@ f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum
 f:8548879b8f233085abe848f507fd5860:prt-get/README
 f:5abf25260785b615a2af110d3c887f62:prt-get/Pkgfile
 f:dba60fcc49188c5804c49d52fda6fcc4:prt-get/.footprint
-f:5ce0d2b81af8b833cf2add2831d3203b:README.md
 f:44f717e85d3e193f923ec105d78da6eb:python/.md5sum
 f:387d5f6d00d2be01ecb87216cac0f88c:python/pyconfig.h
 f:165ea1836e2dc33f62046104c5881742:python/Pkgfile
