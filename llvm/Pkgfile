@@ -1,0 +1,41 @@
+# Description: LLVM compiler backend
+# URL:         http://llvm.org/
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Packager:    Tilman Sauerbeck, tilman at crux dot nu
+# Depends on:  python
+
+name=llvm
+version=3.4.2
+release=1
+source=(http://llvm.org/releases/$version/{$name,cfe}-$version.src.tar.gz \
+        config.h llvm-config.h)
+
+build() {
+  mv cfe-$version.src $name-$version.src/tools/clang
+
+  cd $name-$version.src
+
+  rm -rf tools/clang
+
+  ./configure --prefix=/usr \
+    --without-oprofile \
+    --enable-cxx11 \
+    --enable-targets=x86,r600 \
+    --enable-shared \
+    --mandir=/usr/man
+
+  make $MAKEFLAGS
+  make DESTDIR=$PKG install
+
+  find $PKG -name .dir -delete
+  rm -rf $PKG/usr/docs
+
+  # multilib stubs
+  #mv $PKG/usr/include/llvm/Config/config{,-64}.h
+  #mv $PKG/usr/include/llvm/Config/llvm-config{,-64}.h
+  #install -m 0644 $SRC/config.h $PKG/usr/include/llvm/Config/
+  #install -m 0644 $SRC/llvm-config.h $PKG/usr/include/llvm/Config/
+
+  # remove example hello transform
+  rm $PKG/usr/lib/LLVMHello.so
+}
