@@ -4,11 +4,10 @@
 
 name=glibc
 version=2.19
-release=3
+release=4
 source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
 	http://crux.nu/files/distfiles/kernel-headers-3.12.tar.bz2 \
-	$name-$version-multilib-dirs.patch \
-	CVE-2014-0475.patch \
+	CVE-2014-0475.patch iconv-gconv_trans.c.patch \
 	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
 
 build() {
@@ -17,8 +16,8 @@ build() {
 	cp -r $SRC/kernel-headers-3.12/include $PKG/usr
 	chown root:root $PKG/usr
 
-	#patch -p1 -d $SRC/$name-$version -i $SRC/$name-$version-multilib-dirs.patch
 	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2014-0475.patch
+	patch -p1 -d $SRC/$name-$version -i $SRC/iconv-gconv_trans.c.patch
 
 	mkdir $SRC/build
 	cd $SRC/build
