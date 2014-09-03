@@ -1,10 +1,10 @@
 # Description: Miscellaneous system utilities
 # URL:         http://userweb.kernel.org/~kzak/util-linux-ng/
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
-# Depends on:  ncurses zlib
+# Depends on:  eudev ncurses zlib
 
 name=util-linux
-version=2.25
+version=2.25.1
 release=1
 source=(https://www.kernel.org/pub/linux/utils/$name/v2.25/$name-$version.tar.xz)
 
