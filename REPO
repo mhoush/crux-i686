@@ -68,8 +68,8 @@ f:36a89de82dfe6ca99829743591cf8112:llvm/config.h
 f:6ff95017f859bcd988312f58a4d5b603:llvm/Pkgfile
 f:fcd6954a7fbd05687990e59e87131c3e:llvm/llvm-config.h
 f:4a5173eb6bc544d7d8785a6a615ebaf7:llvm/.footprint
-f:5fff41c6c9f1ec3713cb48eb70298121:nss/.md5sum
+f:7bb1fd62c24e90306c439acbe55577ef:nss/.md5sum
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
 f:4bb2893f773bb168271521e654861e29:nss/nss.pc.in
-f:b821cc11c2bfbb8ee086ff698c62a72f:nss/Pkgfile
+f:b2107d25c30e443eb5cf8b9dd4186f87:nss/Pkgfile
 f:b13f40fc65b6a82db7bd5750f9740ecc:nss/.footprint
