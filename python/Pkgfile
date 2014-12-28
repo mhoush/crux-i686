@@ -6,8 +6,7 @@
 name=python
 version=2.7.9
 release=1
-source=(http://www.python.org/ftp/$name/$version/Python-$version.tar.xz \
-        pyconfig.h)
+source=(http://www.python.org/ftp/$name/$version/Python-$version.tar.xz)
 
 build () {
     cd Python-$version
@@ -37,7 +36,4 @@ build () {
     rm $PKG/usr/lib/python/{distutils,site-packages,test/data}/README
     rm $PKG/usr/lib/python/idlelib/{ChangeLog,{NEWS,README,TODO}.txt}
     rm $PKG/usr/lib/python/ctypes/macholib/README.ctypes
-
-    #mv $PKG/usr/include/python2.7/pyconfig{,-64}.h
-    #install -m 0644 $SRC/pyconfig.h $PKG/usr/include/python2.7/
 }

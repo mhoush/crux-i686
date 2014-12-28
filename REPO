@@ -56,8 +56,7 @@ f:8548879b8f233085abe848f507fd5860:prt-get/README
 f:5abf25260785b615a2af110d3c887f62:prt-get/Pkgfile
 f:dba60fcc49188c5804c49d52fda6fcc4:prt-get/.footprint
 f:883f64ecc7309c0ca4d8f2940dba06ee:python/.md5sum
-f:387d5f6d00d2be01ecb87216cac0f88c:python/pyconfig.h
-f:a4de604551b3ba01d35d4b32f9939b77:python/Pkgfile
+f:cce6f55f08bb06cb635622aabb25426b:python/Pkgfile
 f:397ecddda5b54626b1c9924b16b2acb7:python/.footprint
 f:098ed01b5cd33def6da4088ac0c4ae18:pkgutils/.md5sum
 f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
