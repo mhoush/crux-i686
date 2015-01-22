@@ -1,4 +1,5 @@
 d:glibc
+d:openssl
 d:util-linux
 d:libgmp
 d:filesystem
@@ -22,6 +23,10 @@ f:983c43bce485ac759e4cf681e5c1aa36:glibc/make.patch
 f:acf9daad1ee85de5efd3543965596a63:glibc/resolv.conf
 f:f7fefce570a3c776e26e778c5e401490:glibc/ld.so.conf
 f:d8199ef8ccc30b4d93e1723a9c743ddb:glibc/.footprint
+f:8b9a6a45fa813bd69caaa7a556aa22ea:openssl/.md5sum
+f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
+f:52c572a63580ea72ad2263ae25faa003:openssl/Pkgfile
+f:f54578d54a927d4ac786fe2f3a87815c:openssl/.footprint
 f:a58e77661aa86644d0f99ab562e0e9ba:util-linux/.md5sum
 f:446927a08d5fd238add878a3da877e6b:util-linux/Pkgfile
 f:e302a60a6fb48f7241a7f9b9338e611f:util-linux/.footprint
