@@ -23,12 +23,12 @@ f:983c43bce485ac759e4cf681e5c1aa36:glibc/make.patch
 f:acf9daad1ee85de5efd3543965596a63:glibc/resolv.conf
 f:f7fefce570a3c776e26e778c5e401490:glibc/ld.so.conf
 f:d8199ef8ccc30b4d93e1723a9c743ddb:glibc/.footprint
-f:ebaaf7fa0da10459cea3af403d2f9d9b:openssl/.md5sum
+f:13fee5873ac4daf524895323113da9bd:openssl/.md5sum
 f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
-f:d0c41e3a3fd05f6a8d04eb133bc78e22:openssl/Pkgfile
-f:20cdbe4d421aa16fab8fbc1adecafa75:openssl/.footprint
+f:bb97df697347d6c65eda2950786d04e2:openssl/Pkgfile
+f:3111d447fe8d015293cb4c388bcefb9c:openssl/.footprint
 f:efaf5b1354608e46631b3c148ba88fe6:util-linux/.md5sum
-f:244f5914aeca414c97d24c819e6610a4:util-linux/Pkgfile
+f:4f947ba3bd4b1f85c57fccef936ccc06:util-linux/Pkgfile
 f:e2d41930f554e74ecb244f242346844c:util-linux/.footprint
 f:661cb04c1fa05173c26ec35aea02d2ee:libgmp/.md5sum
 f:7696fc1d7a46f2b4362e6bd3d6fc42e9:libgmp/Pkgfile
