@@ -27,8 +27,8 @@ f:13fee5873ac4daf524895323113da9bd:openssl/.md5sum
 f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
 f:bb97df697347d6c65eda2950786d04e2:openssl/Pkgfile
 f:3111d447fe8d015293cb4c388bcefb9c:openssl/.footprint
-f:efaf5b1354608e46631b3c148ba88fe6:util-linux/.md5sum
-f:4f947ba3bd4b1f85c57fccef936ccc06:util-linux/Pkgfile
+f:c10144ece7b9e0d32bcf2602e8449740:util-linux/.md5sum
+f:7bc7e2ab1df13361fd6f44cfb7b3f773:util-linux/Pkgfile
 f:e2d41930f554e74ecb244f242346844c:util-linux/.footprint
 f:661cb04c1fa05173c26ec35aea02d2ee:libgmp/.md5sum
 f:7696fc1d7a46f2b4362e6bd3d6fc42e9:libgmp/Pkgfile
