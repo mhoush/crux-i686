@@ -1035,8 +1035,8 @@ drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-7.0-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-6.1.1-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-15.2-py2.py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyo
@@ -1336,6 +1336,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/idlelib/idle_test/
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_idlehistory.py
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_idlehistory.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_idlehistory.pyo
+-rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_io.py
+-rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_io.pyc
+-rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_io.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_parenmatch.py
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_parenmatch.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/idle_test/test_parenmatch.pyo
@@ -1381,9 +1384,6 @@ drwxr-xr-x	root/root	usr/lib/python2.7/idlelib/idle_test/
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/tabbedpages.py
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/tabbedpages.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/tabbedpages.pyo
--rw-r--r--	root/root	usr/lib/python2.7/idlelib/testcode.py
--rw-r--r--	root/root	usr/lib/python2.7/idlelib/testcode.pyc
--rw-r--r--	root/root	usr/lib/python2.7/idlelib/testcode.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/textView.py
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/textView.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/idlelib/textView.pyo
@@ -1429,7 +1429,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/json/
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/
--rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.9-py2.7.egg-info
+-rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.10-py2.7.egg-info
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bisect.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bsddb.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_codecs_cn.so
@@ -1605,9 +1605,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/lib-tk/test/test_ttk/
 -rw-r--r--	root/root	usr/lib/python2.7/lib-tk/turtle.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.9.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.10.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.9.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.10.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyo
@@ -2404,7 +2404,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/decimaltestdata/
 -rw-r--r--	root/root	usr/lib/python2.7/test/decimaltestdata/tointegral.decTest
 -rw-r--r--	root/root	usr/lib/python2.7/test/decimaltestdata/tointegralx.decTest
 -rw-r--r--	root/root	usr/lib/python2.7/test/decimaltestdata/xor.decTest
--rw-r--r--	root/root	usr/lib/python2.7/test/dh512.pem
+-rw-r--r--	root/root	usr/lib/python2.7/test/dh1024.pem
 -rw-r--r--	root/root	usr/lib/python2.7/test/doctest_aliases.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/doctest_aliases.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/doctest_aliases.pyo
@@ -3590,6 +3590,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/subprocessdata/
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_time.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_time.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_time.pyo
+-rw-r--r--	root/root	usr/lib/python2.7/test/test_timeit.py
+-rw-r--r--	root/root	usr/lib/python2.7/test/test_timeit.pyc
+-rw-r--r--	root/root	usr/lib/python2.7/test/test_timeit.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_timeout.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_timeout.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/test_timeout.pyo

@@ -60,9 +60,9 @@ f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum
 f:8548879b8f233085abe848f507fd5860:prt-get/README
 f:5abf25260785b615a2af110d3c887f62:prt-get/Pkgfile
 f:dba60fcc49188c5804c49d52fda6fcc4:prt-get/.footprint
-f:d9f8876c5f246e75a0e9cbf3e5df386e:python/.md5sum
-f:cce6f55f08bb06cb635622aabb25426b:python/Pkgfile
-f:397ecddda5b54626b1c9924b16b2acb7:python/.footprint
+f:a41d1187c5e7e3d77d829acd7426bb4c:python/.md5sum
+f:125ce1ad8cfbb721723f29b7e435b9b2:python/Pkgfile
+f:2e38ce6f4cd100c59e228554aeaafed1:python/.footprint
 f:098ed01b5cd33def6da4088ac0c4ae18:pkgutils/.md5sum
 f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
 f:817f4846742b88f1dd53a3d14bb5074a:pkgutils/Pkgfile
