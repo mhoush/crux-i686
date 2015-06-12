@@ -1151,6 +1151,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_CIPHER_get_bits.3ssl.gz -> SSL_CIPHER_get_
 -rw-r--r--	root/root	usr/man/man3/SSL_CIPHER_get_name.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CIPHER_get_version.3ssl.gz -> SSL_CIPHER_get_name.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_COMP_add_compression_method.3ssl.gz
+lrwxrwxrwx	root/root	usr/man/man3/SSL_COMP_free_compression_methods.3ssl.gz -> SSL_COMP_add_compression_method.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CONF_CTX_clear_flags.3ssl.gz -> SSL_CONF_CTX_set_flags.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CONF_CTX_free.3ssl.gz -> SSL_CONF_CTX_new.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CONF_CTX_new.3ssl.gz
