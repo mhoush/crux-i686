@@ -4,9 +4,9 @@
 # Depends on:  nspr sqlite3
 
 name=nss
-version=3.19.1
+version=3.19.2
 release=1
-source=(ftp://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_19_1_RTM/src/$name-$version.tar.gz \
+source=(ftp://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_19_2_RTM/src/$name-$version.tar.gz \
         nss-config.in nss.pc.in)
 
 build() {
@@ -54,12 +54,14 @@ build() {
 
     NSS_LIBS=`$PKG/usr/bin/nss-config --libs`
     NSS_CFLAGS=`$PKG/usr/bin/nss-config --cflags`
+    NSPR_VERSION=`pkg-config --modversion nspr`
     sed $SRC/nss.pc.in \
         -e "s,%libdir%,/usr/lib," \
         -e "s,%prefix%,/usr," \
         -e "s,%exec_prefix%,/usr/bin," \
         -e "s,%includedir%,/usr/include/nss," \
         -e "s,%NSS_VERSION%,$version," \
+        -e "s,%NSPR_VERSION%,$NSPR_VERSION," \
         -e "s,%FULL_NSS_LIBS%,$NSS_LIBS," \
         -e "s,%FULL_NSS_CFLAGS%,$NSS_CFLAGS," > \
             $PKG/usr/lib/pkgconfig/nss.pc
