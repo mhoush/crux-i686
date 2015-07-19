@@ -49,11 +49,10 @@ f:4a99fb746ae2f3c91724105c50f08142:filesystem/.footprint
 f:6298573e2640af868e000b9de9dbf1cc:binutils/.md5sum
 f:dd3e9b7f85dde93de8316442595e1b93:binutils/Pkgfile
 f:59d2eefeb52a51bf6e092fbaf0fb293c:binutils/.footprint
-f:a4f0bcaaaad70bb727cacf4e29c9e405:gcc/.md5sum
+f:58f295b1f285efb9853cfe6911d4044b:gcc/.md5sum
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
-f:8ab4de9f2ff34b9ac98addab601a23ba:gcc/Pkgfile
-f:61a057afa31006764b957a483ba90b9d:gcc/gcc-4.7.3-multilib-dirs.patch
-f:f15e1ad9b03c55c91307042fe6dba472:gcc/.footprint
+f:c58e561fa36c4ee32f458b0c95392786:gcc/Pkgfile
+f:3cee0e01b0acd6418c7541f98d0834ba:gcc/.footprint
 f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
 f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum

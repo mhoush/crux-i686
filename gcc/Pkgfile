@@ -4,15 +4,14 @@
 # Depends on:  zlib libmpc
 
 name=gcc
-version=4.8.4
+version=4.8.5
 release=1
 source=(ftp://gcc.gnu.org/pub/gcc/releases/$name-$version/$name-$version.tar.bz2 \
-	$name-nocheck-fixincludes.patch $name-4.7.3-multilib-dirs.patch)
+	$name-nocheck-fixincludes.patch)
 
 
 build() {
     patch -d $name-$version -p1 -i $SRC/$name-nocheck-fixincludes.patch
-    #patch -d $name-$version -p1 -i $SRC/$name-4.7.3-multilib-dirs.patch
 
     mkdir build
     cd build
