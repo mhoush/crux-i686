@@ -177,7 +177,6 @@ lrwxrwxrwx	root/root	usr/man/man1/sha512.1ssl.gz -> dgst.1ssl.gz
 -rw-r--r--	root/root	usr/man/man1/version.1ssl.gz
 -rw-r--r--	root/root	usr/man/man1/x509.1ssl.gz
 drwxr-xr-x	root/root	usr/man/man3/
-lrwxrwxrwx	root/root	usr/man/man3/.3ssl.gz -> SSL_CTX_use_serverinfo.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/ASN1_OBJECT_free.3ssl.gz -> ASN1_OBJECT_new.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/ASN1_OBJECT_new.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/ASN1_STRING_cmp.3ssl.gz -> ASN1_STRING_length.3ssl.gz
@@ -1177,6 +1176,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_clear_options.3ssl.gz -> SSL_CTX_set_o
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_flush_sessions.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_free.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_get0_chain_certs.3ssl.gz -> SSL_CTX_add1_chain_cert.3ssl.gz
+-rw-r--r--	root/root	usr/man/man3/SSL_CTX_get0_param.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_get_cert_store.3ssl.gz -> SSL_CTX_set_cert_store.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_get_client_CA_list.3ssl.gz -> SSL_get_client_CA_list.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_get_client_cert_cb.3ssl.gz -> SSL_CTX_set_client_cert_cb.3ssl.gz
@@ -1227,6 +1227,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_set1_chain.3ssl.gz -> SSL_CTX_add1_cha
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_set1_chain_cert_store.3ssl.gz -> SSL_CTX_set1_verify_cert_store.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_set1_curves.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_set1_curves_list.3ssl.gz -> SSL_CTX_set1_curves.3ssl.gz
+lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_set1_param.3ssl.gz -> SSL_CTX_get0_param.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_set1_verify_cert_store.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_set_cert_cb.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_set_cert_store.3ssl.gz
@@ -1275,6 +1276,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_use_certificate_chain_file.3ssl.gz -> 
 lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_use_certificate_file.3ssl.gz -> SSL_CTX_use_certificate.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_use_psk_identity_hint.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_CTX_use_serverinfo.3ssl.gz
+lrwxrwxrwx	root/root	usr/man/man3/SSL_CTX_use_serverinfo_file.3ssl.gz -> SSL_CTX_use_serverinfo.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_SESSION_free.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_SESSION_get_ex_data.3ssl.gz -> SSL_SESSION_get_ex_new_index.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_SESSION_get_ex_new_index.3ssl.gz
@@ -1304,6 +1306,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_ctrl.3ssl.gz -> SSL_CTX_ctrl.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_flush_sessions.3ssl.gz -> SSL_CTX_flush_sessions.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_free.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_get0_chain_certs.3ssl.gz -> SSL_CTX_add1_chain_cert.3ssl.gz
+lrwxrwxrwx	root/root	usr/man/man3/SSL_get0_param.3ssl.gz -> SSL_CTX_get0_param.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_get1_curves.3ssl.gz -> SSL_CTX_set1_curves.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_get_SSL_CTX.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_get_accept_state.3ssl.gz -> SSL_set_connect_state.3ssl.gz
@@ -1363,6 +1366,7 @@ lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_chain.3ssl.gz -> SSL_CTX_add1_chain_c
 lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_chain_cert_store.3ssl.gz -> SSL_CTX_set1_verify_cert_store.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_curves.3ssl.gz -> SSL_CTX_set1_curves.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_curves_list.3ssl.gz -> SSL_CTX_set1_curves.3ssl.gz
+lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_param.3ssl.gz -> SSL_CTX_get0_param.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_set1_verify_cert_store.3ssl.gz -> SSL_CTX_set1_verify_cert_store.3ssl.gz
 -rw-r--r--	root/root	usr/man/man3/SSL_set_bio.3ssl.gz
 lrwxrwxrwx	root/root	usr/man/man3/SSL_set_cert_cb.3ssl.gz -> SSL_CTX_set_cert_cb.3ssl.gz
