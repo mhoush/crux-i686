@@ -703,7 +703,7 @@ drwxr-xr-x	root/root	usr/include/llvm/Transforms/Utils/
 -rw-r--r--	root/root	usr/include/llvm/Transforms/Vectorize.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/BugpointPasses.so
-lrwxrwxrwx	root/root	usr/lib/libLLVM-3.6.0.so -> libLLVM-3.6.so
+lrwxrwxrwx	root/root	usr/lib/libLLVM-3.6.2.so -> libLLVM-3.6.so
 -rwxr-xr-x	root/root	usr/lib/libLLVM-3.6.so
 -rwxr-xr-x	root/root	usr/lib/libLLVMAnalysis.a
 -rwxr-xr-x	root/root	usr/lib/libLLVMAsmParser.a

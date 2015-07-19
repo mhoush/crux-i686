@@ -66,9 +66,9 @@ f:098ed01b5cd33def6da4088ac0c4ae18:pkgutils/.md5sum
 f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
 f:817f4846742b88f1dd53a3d14bb5074a:pkgutils/Pkgfile
 f:db9fd54e3b90d74d49795b222485a2cb:pkgutils/.footprint
-f:afe5374c85eb07c3086976c67f62211d:llvm/.md5sum
-f:1b8c2758df9ee2f6295a0ad6f34dc1b9:llvm/Pkgfile
-f:276b49e44dd19a8f895a143a228f649b:llvm/.footprint
+f:e20f69236e5ac5979f086388b6e1d44f:llvm/.md5sum
+f:2f5333f8eac1cbddc0ef510744083de8:llvm/Pkgfile
+f:44d48c6caa8d2d5f675b95f4c450c4e8:llvm/.footprint
 f:1543a4e3c0175a5ca84a3689db8d3dc6:nss/.md5sum
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
 f:4bb2893f773bb168271521e654861e29:nss/nss.pc.in
