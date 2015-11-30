@@ -1,12 +1,12 @@
 # Description: Mozilla Network Security Services (NSS)
-# URL:         http://www.mozilla.org/projects/security/pki/nss/
+# URL:         https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 # Maintainer:  Fredrik Rinnestam, fredrik at rinnestam dot se
 # Depends on:  nspr sqlite3
 
 name=nss
-version=3.20
+version=3.20.1
 release=1
-source=(http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_20_RTM/src/$name-$version.tar.gz \
+source=(http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_20_1_RTM/src/$name-$version.tar.gz \
         nss-config.in nss.pc.in)
 
 build() {

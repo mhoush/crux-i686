@@ -4,17 +4,17 @@
 # Depends on:  eudev ncurses zlib
 
 name=util-linux
-version=2.27
+version=2.27.1
 release=1
-source=(https://www.kernel.org/pub/linux/utils/$name/v${version}/$name-$version.tar.xz)
+source=(https://www.kernel.org/pub/linux/utils/$name/v2.27/$name-$version.tar.xz)
 
 build() {
     cd $name-$version
 
     ./configure --prefix=/usr \
-                --mandir=/usr/man \
                 --disable-nls \
-                --disable-{login,su,sulogin,nologin} \
+                --disable-{login,su,sulogin,nologin,runuser} \
+                --disable-chfn-chsh \
                 --enable-{write,raw,kill} \
                 --without-python
 
@@ -24,7 +24,7 @@ build() {
     install -d $PKG/{etc,var/{lib/libuuid,run/uuidd}}
     touch $PKG/etc/adjtime
 
-    rm -r $PKG/usr/share
+    rm -r $PKG/usr/share/{doc,bash-completion}
     rm $PKG/sbin/{mkfs.bfs,mkfs.minix,fsck.minix}
-    rm $PKG/usr/man/man8/{fsck.minix,mkfs.bfs,mkfs.minix}.8
+    rm $PKG/usr/share/man/man8/{fsck.minix,mkfs.bfs,mkfs.minix}.8
 }

@@ -33,17 +33,17 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/crux
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
-drwxr-xr-x	root/root	usr/man/
-drwxr-xr-x	root/root	usr/man/man1/
-drwxr-xr-x	root/root	usr/man/man2/
-drwxr-xr-x	root/root	usr/man/man3/
-drwxr-xr-x	root/root	usr/man/man4/
-drwxr-xr-x	root/root	usr/man/man5/
-drwxr-xr-x	root/root	usr/man/man6/
-drwxr-xr-x	root/root	usr/man/man7/
-drwxr-xr-x	root/root	usr/man/man8/
 drwxr-xr-x	root/root	usr/sbin/
 drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+drwxr-xr-x	root/root	usr/share/man/man2/
+drwxr-xr-x	root/root	usr/share/man/man3/
+drwxr-xr-x	root/root	usr/share/man/man4/
+drwxr-xr-x	root/root	usr/share/man/man5/
+drwxr-xr-x	root/root	usr/share/man/man6/
+drwxr-xr-x	root/root	usr/share/man/man7/
+drwxr-xr-x	root/root	usr/share/man/man8/
 drwxr-xr-x	root/root	usr/src/
 lrwxrwxrwx	root/root	usr/var -> ../var
 drwxr-xr-x	root/root	var/

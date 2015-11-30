@@ -4,13 +4,13 @@
 # Depends on:  libarchive
 
 name=pkgutils
-version=5.35.6
-release=1
-source=(http://crux.nu/files/$name-$version.tar.gz \
+version=5.36
+release=2
+source=(http://crux.nu/files/$name-$version.tar.xz \
 	$name-x86.patch)
 
 build () {
 	cd $name-$version
 	patch -p1 -i $SRC/$name-x86.patch
-	make DESTDIR=$PKG install
+	make DESTDIR=$PKG MANDIR=/usr/share/man install
 }

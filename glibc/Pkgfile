@@ -3,33 +3,30 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=glibc
-version=2.19
-release=4
+version=2.22
+release=1
 source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
-	http://crux.nu/files/distfiles/kernel-headers-3.12.tar.bz2 \
-	CVE-2014-0475.patch iconv-gconv_trans.c.patch \
+	http://crux.nu/files/distfiles/kernel-headers-4.1.tar.xz \
 	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
 
 build() {
 	# install kernel headers
 	mkdir $PKG/usr/
-	cp -r $SRC/kernel-headers-3.12/include $PKG/usr
+	cp -r $SRC/kernel-headers-4.1/include $PKG/usr
 	chown root:root $PKG/usr
-
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2014-0475.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/iconv-gconv_trans.c.patch
 
 	mkdir $SRC/build
 	cd $SRC/build
 	../$name-$version/configure --prefix=/usr \
 		--libexecdir=/usr/lib \
 		--with-headers=$PKG/usr/include \
-		--enable-kernel=3.10 \
+		--enable-kernel=3.12 \
 		--enable-add-ons \
+		--enable-static-nss \
 		--disable-profile \
+		--disable-werror \
 		--without-gd \
-		--enable-obsolete-rpc \
-		--enable-static-nss
+		--enable-obsolete-rpc
 	make 
 	#make check
 	make install_root=$PKG install
@@ -38,9 +35,12 @@ build() {
 	install -d $PKG/var/{db,run}/nscd
 
 	install -m 0644 $SRC/{hosts,resolv.conf,nsswitch.conf,host.conf,ld.so.conf} $PKG/etc
+
 	ln -sf ../usr/share/zoneinfo/UTC $PKG/etc/localtime
 	mkdir -p $PKG/etc/ld.so.conf.d $PKG/usr/lib/locale
 	touch $PKG/etc/ld.so.cache
 
-	rm -rf $PKG/usr/{share/{info,locale},bin/tzselect,sbin/z{dump,ic}}
+	rm -rf $PKG/usr/share/{info,locale} \
+		$PKG/usr/bin/tzselect \
+		$PKG/usr/sbin/z{dump,ic}
 }

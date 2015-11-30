@@ -10,51 +10,51 @@ lrwxrwxrwx	root/root	etc/localtime -> ../usr/share/zoneinfo/UTC
 -rw-r--r--	root/root	etc/resolv.conf
 -rw-r--r--	root/root	etc/rpc
 drwxr-xr-x	root/root	lib/
--rwxr-xr-x	root/root	lib/ld-2.19.so
-lrwxrwxrwx	root/root	lib/ld-linux.so.2 -> ld-2.19.so
--rwxr-xr-x	root/root	lib/libBrokenLocale-2.19.so
-lrwxrwxrwx	root/root	lib/libBrokenLocale.so.1 -> libBrokenLocale-2.19.so
+-rwxr-xr-x	root/root	lib/ld-2.22.so
+lrwxrwxrwx	root/root	lib/ld-linux.so.2 -> ld-2.22.so
+-rwxr-xr-x	root/root	lib/libBrokenLocale-2.22.so
+lrwxrwxrwx	root/root	lib/libBrokenLocale.so.1 -> libBrokenLocale-2.22.so
 -rwxr-xr-x	root/root	lib/libSegFault.so
--rwxr-xr-x	root/root	lib/libanl-2.19.so
-lrwxrwxrwx	root/root	lib/libanl.so.1 -> libanl-2.19.so
--rwxr-xr-x	root/root	lib/libc-2.19.so
-lrwxrwxrwx	root/root	lib/libc.so.6 -> libc-2.19.so
--rwxr-xr-x	root/root	lib/libcidn-2.19.so
-lrwxrwxrwx	root/root	lib/libcidn.so.1 -> libcidn-2.19.so
--rwxr-xr-x	root/root	lib/libcrypt-2.19.so
-lrwxrwxrwx	root/root	lib/libcrypt.so.1 -> libcrypt-2.19.so
--rwxr-xr-x	root/root	lib/libdl-2.19.so
-lrwxrwxrwx	root/root	lib/libdl.so.2 -> libdl-2.19.so
--rwxr-xr-x	root/root	lib/libm-2.19.so
-lrwxrwxrwx	root/root	lib/libm.so.6 -> libm-2.19.so
+-rwxr-xr-x	root/root	lib/libanl-2.22.so
+lrwxrwxrwx	root/root	lib/libanl.so.1 -> libanl-2.22.so
+-rwxr-xr-x	root/root	lib/libc-2.22.so
+lrwxrwxrwx	root/root	lib/libc.so.6 -> libc-2.22.so
+-rwxr-xr-x	root/root	lib/libcidn-2.22.so
+lrwxrwxrwx	root/root	lib/libcidn.so.1 -> libcidn-2.22.so
+-rwxr-xr-x	root/root	lib/libcrypt-2.22.so
+lrwxrwxrwx	root/root	lib/libcrypt.so.1 -> libcrypt-2.22.so
+-rwxr-xr-x	root/root	lib/libdl-2.22.so
+lrwxrwxrwx	root/root	lib/libdl.so.2 -> libdl-2.22.so
+-rwxr-xr-x	root/root	lib/libm-2.22.so
+lrwxrwxrwx	root/root	lib/libm.so.6 -> libm-2.22.so
 -rwxr-xr-x	root/root	lib/libmemusage.so
--rwxr-xr-x	root/root	lib/libnsl-2.19.so
-lrwxrwxrwx	root/root	lib/libnsl.so.1 -> libnsl-2.19.so
--rwxr-xr-x	root/root	lib/libnss_compat-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_compat.so.2 -> libnss_compat-2.19.so
--rwxr-xr-x	root/root	lib/libnss_db-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_db.so.2 -> libnss_db-2.19.so
--rwxr-xr-x	root/root	lib/libnss_dns-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_dns.so.2 -> libnss_dns-2.19.so
--rwxr-xr-x	root/root	lib/libnss_files-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_files.so.2 -> libnss_files-2.19.so
--rwxr-xr-x	root/root	lib/libnss_hesiod-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_hesiod.so.2 -> libnss_hesiod-2.19.so
--rwxr-xr-x	root/root	lib/libnss_nis-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_nis.so.2 -> libnss_nis-2.19.so
--rwxr-xr-x	root/root	lib/libnss_nisplus-2.19.so
-lrwxrwxrwx	root/root	lib/libnss_nisplus.so.2 -> libnss_nisplus-2.19.so
+-rwxr-xr-x	root/root	lib/libnsl-2.22.so
+lrwxrwxrwx	root/root	lib/libnsl.so.1 -> libnsl-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_compat-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_compat.so.2 -> libnss_compat-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_db-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_db.so.2 -> libnss_db-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_dns-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_dns.so.2 -> libnss_dns-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_files-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_files.so.2 -> libnss_files-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_hesiod-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_hesiod.so.2 -> libnss_hesiod-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_nis-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_nis.so.2 -> libnss_nis-2.22.so
+-rwxr-xr-x	root/root	lib/libnss_nisplus-2.22.so
+lrwxrwxrwx	root/root	lib/libnss_nisplus.so.2 -> libnss_nisplus-2.22.so
 -rwxr-xr-x	root/root	lib/libpcprofile.so
--rwxr-xr-x	root/root	lib/libpthread-2.19.so
-lrwxrwxrwx	root/root	lib/libpthread.so.0 -> libpthread-2.19.so
--rwxr-xr-x	root/root	lib/libresolv-2.19.so
-lrwxrwxrwx	root/root	lib/libresolv.so.2 -> libresolv-2.19.so
--rwxr-xr-x	root/root	lib/librt-2.19.so
-lrwxrwxrwx	root/root	lib/librt.so.1 -> librt-2.19.so
+-rwxr-xr-x	root/root	lib/libpthread-2.22.so
+lrwxrwxrwx	root/root	lib/libpthread.so.0 -> libpthread-2.22.so
+-rwxr-xr-x	root/root	lib/libresolv-2.22.so
+lrwxrwxrwx	root/root	lib/libresolv.so.2 -> libresolv-2.22.so
+-rwxr-xr-x	root/root	lib/librt-2.22.so
+lrwxrwxrwx	root/root	lib/librt.so.1 -> librt-2.22.so
 -rwxr-xr-x	root/root	lib/libthread_db-1.0.so
 lrwxrwxrwx	root/root	lib/libthread_db.so.1 -> libthread_db-1.0.so
--rwxr-xr-x	root/root	lib/libutil-2.19.so
-lrwxrwxrwx	root/root	lib/libutil.so.1 -> libutil-2.19.so
+-rwxr-xr-x	root/root	lib/libutil-2.22.so
+lrwxrwxrwx	root/root	lib/libutil.so.1 -> libutil-2.22.so
 drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/ldconfig
 -rwxr-xr-x	root/root	sbin/sln
@@ -148,6 +148,7 @@ drwxr-xr-x	root/root	usr/include/asm/
 -rw-r--r--	root/root	usr/include/asm/ist.h
 -rw-r--r--	root/root	usr/include/asm/kvm.h
 -rw-r--r--	root/root	usr/include/asm/kvm_para.h
+-rw-r--r--	root/root	usr/include/asm/kvm_perf.h
 -rw-r--r--	root/root	usr/include/asm/ldt.h
 -rw-r--r--	root/root	usr/include/asm/mce.h
 -rw-r--r--	root/root	usr/include/asm/mman.h
@@ -226,10 +227,12 @@ drwxr-xr-x	root/root	usr/include/bits/
 -rw-r--r--	root/root	usr/include/bits/ipctypes.h
 -rw-r--r--	root/root	usr/include/bits/libc-lock.h
 -rw-r--r--	root/root	usr/include/bits/libio-ldbl.h
+-rw-r--r--	root/root	usr/include/bits/libm-simd-decl-stubs.h
 -rw-r--r--	root/root	usr/include/bits/link.h
 -rw-r--r--	root/root	usr/include/bits/local_lim.h
 -rw-r--r--	root/root	usr/include/bits/locale.h
 -rw-r--r--	root/root	usr/include/bits/math-finite.h
+-rw-r--r--	root/root	usr/include/bits/math-vector.h
 -rw-r--r--	root/root	usr/include/bits/mathcalls.h
 -rw-r--r--	root/root	usr/include/bits/mathdef.h
 -rw-r--r--	root/root	usr/include/bits/mathinline.h
@@ -360,6 +363,7 @@ drwxr-xr-x	root/root	usr/include/drm/
 -rw-r--r--	root/root	usr/include/glob.h
 -rw-r--r--	root/root	usr/include/gnu-versions.h
 drwxr-xr-x	root/root	usr/include/gnu/
+-rw-r--r--	root/root	usr/include/gnu/lib-names-32.h
 -rw-r--r--	root/root	usr/include/gnu/lib-names.h
 -rw-r--r--	root/root	usr/include/gnu/libc-version.h
 -rw-r--r--	root/root	usr/include/gnu/stubs-32.h
@@ -385,6 +389,9 @@ drwxr-xr-x	root/root	usr/include/linux/
 -rw-r--r--	root/root	usr/include/linux/affs_hardblocks.h
 -rw-r--r--	root/root	usr/include/linux/agpgart.h
 -rw-r--r--	root/root	usr/include/linux/aio_abi.h
+-rw-r--r--	root/root	usr/include/linux/am437x-vpfe.h
+drwxr-xr-x	root/root	usr/include/linux/android/
+-rw-r--r--	root/root	usr/include/linux/android/binder.h
 -rw-r--r--	root/root	usr/include/linux/apm_bios.h
 -rw-r--r--	root/root	usr/include/linux/arcfb.h
 -rw-r--r--	root/root	usr/include/linux/atalk.h
@@ -418,6 +425,8 @@ drwxr-xr-x	root/root	usr/include/linux/
 -rw-r--r--	root/root	usr/include/linux/binfmts.h
 -rw-r--r--	root/root	usr/include/linux/blkpg.h
 -rw-r--r--	root/root	usr/include/linux/blktrace_api.h
+-rw-r--r--	root/root	usr/include/linux/bpf.h
+-rw-r--r--	root/root	usr/include/linux/bpf_common.h
 -rw-r--r--	root/root	usr/include/linux/bpqether.h
 -rw-r--r--	root/root	usr/include/linux/bsg.h
 -rw-r--r--	root/root	usr/include/linux/btrfs.h
@@ -495,6 +504,7 @@ drwxr-xr-x	root/root	usr/include/linux/dvb/
 -rw-r--r--	root/root	usr/include/linux/firewire-cdev.h
 -rw-r--r--	root/root	usr/include/linux/firewire-constants.h
 -rw-r--r--	root/root	usr/include/linux/flat.h
+-rw-r--r--	root/root	usr/include/linux/fou.h
 -rw-r--r--	root/root	usr/include/linux/fs.h
 -rw-r--r--	root/root	usr/include/linux/fsl_hypervisor.h
 -rw-r--r--	root/root	usr/include/linux/fuse.h
@@ -514,8 +524,11 @@ drwxr-xr-x	root/root	usr/include/linux/hdlc/
 -rw-r--r--	root/root	usr/include/linux/hidraw.h
 -rw-r--r--	root/root	usr/include/linux/hpet.h
 drwxr-xr-x	root/root	usr/include/linux/hsi/
+-rw-r--r--	root/root	usr/include/linux/hsi/cs-protocol.h
 -rw-r--r--	root/root	usr/include/linux/hsi/hsi_char.h
+-rw-r--r--	root/root	usr/include/linux/hsr_netlink.h
 -rw-r--r--	root/root	usr/include/linux/hw_breakpoint.h
+-rw-r--r--	root/root	usr/include/linux/hyperv.h
 -rw-r--r--	root/root	usr/include/linux/hysdn_if.h
 -rw-r--r--	root/root	usr/include/linux/i2c-dev.h
 -rw-r--r--	root/root	usr/include/linux/i2c.h
@@ -554,6 +567,9 @@ drwxr-xr-x	root/root	usr/include/linux/hsi/
 -rw-r--r--	root/root	usr/include/linux/if_vlan.h
 -rw-r--r--	root/root	usr/include/linux/if_x25.h
 -rw-r--r--	root/root	usr/include/linux/igmp.h
+drwxr-xr-x	root/root	usr/include/linux/iio/
+-rw-r--r--	root/root	usr/include/linux/iio/events.h
+-rw-r--r--	root/root	usr/include/linux/iio/types.h
 -rw-r--r--	root/root	usr/include/linux/in.h
 -rw-r--r--	root/root	usr/include/linux/in6.h
 -rw-r--r--	root/root	usr/include/linux/in_route.h
@@ -585,6 +601,7 @@ drwxr-xr-x	root/root	usr/include/linux/isdn/
 -rw-r--r--	root/root	usr/include/linux/ixjuser.h
 -rw-r--r--	root/root	usr/include/linux/jffs2.h
 -rw-r--r--	root/root	usr/include/linux/joystick.h
+-rw-r--r--	root/root	usr/include/linux/kcmp.h
 -rw-r--r--	root/root	usr/include/linux/kd.h
 -rw-r--r--	root/root	usr/include/linux/kdev_t.h
 -rw-r--r--	root/root	usr/include/linux/kernel-page-flags.h
@@ -606,16 +623,21 @@ drwxr-xr-x	root/root	usr/include/linux/isdn/
 -rw-r--r--	root/root	usr/include/linux/map_to_7segment.h
 -rw-r--r--	root/root	usr/include/linux/matroxfb.h
 -rw-r--r--	root/root	usr/include/linux/mdio.h
+-rw-r--r--	root/root	usr/include/linux/media-bus-format.h
 -rw-r--r--	root/root	usr/include/linux/media.h
 -rw-r--r--	root/root	usr/include/linux/mei.h
+-rw-r--r--	root/root	usr/include/linux/memfd.h
 -rw-r--r--	root/root	usr/include/linux/mempolicy.h
 -rw-r--r--	root/root	usr/include/linux/meye.h
+-rw-r--r--	root/root	usr/include/linux/mic_common.h
+-rw-r--r--	root/root	usr/include/linux/mic_ioctl.h
 -rw-r--r--	root/root	usr/include/linux/mii.h
 -rw-r--r--	root/root	usr/include/linux/minix_fs.h
 -rw-r--r--	root/root	usr/include/linux/mman.h
 drwxr-xr-x	root/root	usr/include/linux/mmc/
 -rw-r--r--	root/root	usr/include/linux/mmc/ioctl.h
 -rw-r--r--	root/root	usr/include/linux/mmtimer.h
+-rw-r--r--	root/root	usr/include/linux/mpls.h
 -rw-r--r--	root/root	usr/include/linux/mqueue.h
 -rw-r--r--	root/root	usr/include/linux/mroute.h
 -rw-r--r--	root/root	usr/include/linux/mroute6.h
@@ -631,6 +653,7 @@ drwxr-xr-x	root/root	usr/include/linux/mmc/
 -rw-r--r--	root/root	usr/include/linux/neighbour.h
 -rw-r--r--	root/root	usr/include/linux/net.h
 -rw-r--r--	root/root	usr/include/linux/net_dropmon.h
+-rw-r--r--	root/root	usr/include/linux/net_namespace.h
 -rw-r--r--	root/root	usr/include/linux/net_tstamp.h
 -rw-r--r--	root/root	usr/include/linux/netconf.h
 -rw-r--r--	root/root	usr/include/linux/netdevice.h
@@ -647,6 +670,8 @@ drwxr-xr-x	root/root	usr/include/linux/netfilter/ipset/
 -rw-r--r--	root/root	usr/include/linux/netfilter/nf_conntrack_tcp.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/nf_conntrack_tuple_common.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/nf_nat.h
+-rw-r--r--	root/root	usr/include/linux/netfilter/nf_tables.h
+-rw-r--r--	root/root	usr/include/linux/netfilter/nf_tables_compat.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/nfnetlink.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/nfnetlink_acct.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/nfnetlink_compat.h
@@ -678,6 +703,7 @@ drwxr-xr-x	root/root	usr/include/linux/netfilter/ipset/
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_TPROXY.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_addrtype.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_bpf.h
+-rw-r--r--	root/root	usr/include/linux/netfilter/xt_cgroup.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_cluster.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_comment.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_connbytes.h
@@ -693,8 +719,10 @@ drwxr-xr-x	root/root	usr/include/linux/netfilter/ipset/
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_esp.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_hashlimit.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_helper.h
+-rw-r--r--	root/root	usr/include/linux/netfilter/xt_ipcomp.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_iprange.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_ipvs.h
+-rw-r--r--	root/root	usr/include/linux/netfilter/xt_l2tp.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_length.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_limit.h
 -rw-r--r--	root/root	usr/include/linux/netfilter/xt_mac.h
@@ -742,7 +770,6 @@ drwxr-xr-x	root/root	usr/include/linux/netfilter_bridge/
 -rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebt_pkttype.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebt_redirect.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebt_stp.h
--rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebt_ulog.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebt_vlan.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_bridge/ebtables.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_decnet.h
@@ -754,7 +781,6 @@ drwxr-xr-x	root/root	usr/include/linux/netfilter_ipv4/
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_LOG.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_REJECT.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_TTL.h
--rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_ULOG.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_ah.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_ecn.h
 -rw-r--r--	root/root	usr/include/linux/netfilter_ipv4/ipt_ttl.h
@@ -823,6 +849,7 @@ drwxr-xr-x	root/root	usr/include/linux/nfsd/
 -rw-r--r--	root/root	usr/include/linux/ppp_defs.h
 -rw-r--r--	root/root	usr/include/linux/pps.h
 -rw-r--r--	root/root	usr/include/linux/prctl.h
+-rw-r--r--	root/root	usr/include/linux/psci.h
 -rw-r--r--	root/root	usr/include/linux/ptp_clock.h
 -rw-r--r--	root/root	usr/include/linux/ptrace.h
 -rw-r--r--	root/root	usr/include/linux/qnx4_fs.h
@@ -861,11 +888,11 @@ drwxr-xr-x	root/root	usr/include/linux/raid/
 -rw-r--r--	root/root	usr/include/linux/shm.h
 -rw-r--r--	root/root	usr/include/linux/signal.h
 -rw-r--r--	root/root	usr/include/linux/signalfd.h
+-rw-r--r--	root/root	usr/include/linux/smiapp.h
 -rw-r--r--	root/root	usr/include/linux/snmp.h
 -rw-r--r--	root/root	usr/include/linux/sock_diag.h
 -rw-r--r--	root/root	usr/include/linux/socket.h
 -rw-r--r--	root/root	usr/include/linux/sockios.h
--rw-r--r--	root/root	usr/include/linux/som.h
 -rw-r--r--	root/root	usr/include/linux/sonet.h
 -rw-r--r--	root/root	usr/include/linux/sonypi.h
 -rw-r--r--	root/root	usr/include/linux/sound.h
@@ -882,8 +909,11 @@ drwxr-xr-x	root/root	usr/include/linux/sunrpc/
 -rw-r--r--	root/root	usr/include/linux/synclink.h
 -rw-r--r--	root/root	usr/include/linux/sysctl.h
 -rw-r--r--	root/root	usr/include/linux/sysinfo.h
+-rw-r--r--	root/root	usr/include/linux/target_core_user.h
 -rw-r--r--	root/root	usr/include/linux/taskstats.h
 drwxr-xr-x	root/root	usr/include/linux/tc_act/
+-rw-r--r--	root/root	usr/include/linux/tc_act/tc_bpf.h
+-rw-r--r--	root/root	usr/include/linux/tc_act/tc_connmark.h
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_csum.h
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_defact.h
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_gact.h
@@ -892,6 +922,7 @@ drwxr-xr-x	root/root	usr/include/linux/tc_act/
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_nat.h
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_pedit.h
 -rw-r--r--	root/root	usr/include/linux/tc_act/tc_skbedit.h
+-rw-r--r--	root/root	usr/include/linux/tc_act/tc_vlan.h
 drwxr-xr-x	root/root	usr/include/linux/tc_ematch/
 -rw-r--r--	root/root	usr/include/linux/tc_ematch/tc_em_cmp.h
 -rw-r--r--	root/root	usr/include/linux/tc_ematch/tc_em_meta.h
@@ -901,12 +932,14 @@ drwxr-xr-x	root/root	usr/include/linux/tc_ematch/
 -rw-r--r--	root/root	usr/include/linux/tcp_metrics.h
 -rw-r--r--	root/root	usr/include/linux/telephony.h
 -rw-r--r--	root/root	usr/include/linux/termios.h
+-rw-r--r--	root/root	usr/include/linux/thermal.h
 -rw-r--r--	root/root	usr/include/linux/time.h
 -rw-r--r--	root/root	usr/include/linux/times.h
 -rw-r--r--	root/root	usr/include/linux/timex.h
 -rw-r--r--	root/root	usr/include/linux/tiocl.h
 -rw-r--r--	root/root	usr/include/linux/tipc.h
 -rw-r--r--	root/root	usr/include/linux/tipc_config.h
+-rw-r--r--	root/root	usr/include/linux/tipc_netlink.h
 -rw-r--r--	root/root	usr/include/linux/toshiba.h
 -rw-r--r--	root/root	usr/include/linux/tty.h
 -rw-r--r--	root/root	usr/include/linux/tty_flags.h
@@ -922,6 +955,7 @@ drwxr-xr-x	root/root	usr/include/linux/tc_ematch/
 -rw-r--r--	root/root	usr/include/linux/unix_diag.h
 drwxr-xr-x	root/root	usr/include/linux/usb/
 -rw-r--r--	root/root	usr/include/linux/usb/audio.h
+-rw-r--r--	root/root	usr/include/linux/usb/cdc-wdm.h
 -rw-r--r--	root/root	usr/include/linux/usb/cdc.h
 -rw-r--r--	root/root	usr/include/linux/usb/ch11.h
 -rw-r--r--	root/root	usr/include/linux/usb/ch9.h
@@ -932,6 +966,7 @@ drwxr-xr-x	root/root	usr/include/linux/usb/
 -rw-r--r--	root/root	usr/include/linux/usb/tmc.h
 -rw-r--r--	root/root	usr/include/linux/usb/video.h
 -rw-r--r--	root/root	usr/include/linux/usbdevice_fs.h
+-rw-r--r--	root/root	usr/include/linux/usbip.h
 -rw-r--r--	root/root	usr/include/linux/utime.h
 -rw-r--r--	root/root	usr/include/linux/utsname.h
 -rw-r--r--	root/root	usr/include/linux/uuid.h
@@ -952,10 +987,14 @@ drwxr-xr-x	root/root	usr/include/linux/usb/
 -rw-r--r--	root/root	usr/include/linux/virtio_config.h
 -rw-r--r--	root/root	usr/include/linux/virtio_console.h
 -rw-r--r--	root/root	usr/include/linux/virtio_ids.h
+-rw-r--r--	root/root	usr/include/linux/virtio_input.h
 -rw-r--r--	root/root	usr/include/linux/virtio_net.h
 -rw-r--r--	root/root	usr/include/linux/virtio_pci.h
 -rw-r--r--	root/root	usr/include/linux/virtio_ring.h
 -rw-r--r--	root/root	usr/include/linux/virtio_rng.h
+-rw-r--r--	root/root	usr/include/linux/virtio_scsi.h
+-rw-r--r--	root/root	usr/include/linux/virtio_types.h
+-rw-r--r--	root/root	usr/include/linux/vm_sockets.h
 -rw-r--r--	root/root	usr/include/linux/vt.h
 -rw-r--r--	root/root	usr/include/linux/wait.h
 -rw-r--r--	root/root	usr/include/linux/wanrouter.h
@@ -967,11 +1006,16 @@ drwxr-xr-x	root/root	usr/include/linux/wimax/
 -rw-r--r--	root/root	usr/include/linux/x25.h
 -rw-r--r--	root/root	usr/include/linux/xattr.h
 -rw-r--r--	root/root	usr/include/linux/xfrm.h
+-rw-r--r--	root/root	usr/include/linux/xilinx-v4l2-controls.h
+-rw-r--r--	root/root	usr/include/linux/zorro.h
+-rw-r--r--	root/root	usr/include/linux/zorro_ids.h
 -rw-r--r--	root/root	usr/include/locale.h
 -rw-r--r--	root/root	usr/include/malloc.h
 -rw-r--r--	root/root	usr/include/math.h
 -rw-r--r--	root/root	usr/include/mcheck.h
 -rw-r--r--	root/root	usr/include/memory.h
+drwxr-xr-x	root/root	usr/include/misc/
+-rw-r--r--	root/root	usr/include/misc/cxl.h
 -rw-r--r--	root/root	usr/include/mntent.h
 -rw-r--r--	root/root	usr/include/monetary.h
 -rw-r--r--	root/root	usr/include/mqueue.h
@@ -1136,6 +1180,7 @@ drwxr-xr-x	root/root	usr/include/sound/
 -rw-r--r--	root/root	usr/include/sound/compress_offload.h
 -rw-r--r--	root/root	usr/include/sound/compress_params.h
 -rw-r--r--	root/root	usr/include/sound/emu10k1.h
+-rw-r--r--	root/root	usr/include/sound/firewire.h
 -rw-r--r--	root/root	usr/include/sound/hdsp.h
 -rw-r--r--	root/root	usr/include/sound/hdspm.h
 -rw-r--r--	root/root	usr/include/sound/sb16_csp.h
@@ -1266,6 +1311,8 @@ drwxr-xr-x	root/root	usr/include/video/
 -rw-r--r--	root/root	usr/include/wordexp.h
 drwxr-xr-x	root/root	usr/include/xen/
 -rw-r--r--	root/root	usr/include/xen/evtchn.h
+-rw-r--r--	root/root	usr/include/xen/gntalloc.h
+-rw-r--r--	root/root	usr/include/xen/gntdev.h
 -rw-r--r--	root/root	usr/include/xen/privcmd.h
 -rw-r--r--	root/root	usr/include/xlocale.h
 drwxr-xr-x	root/root	usr/lib/
@@ -1854,6 +1901,7 @@ drwxr-xr-x	root/root	usr/share/i18n/locales/
 -rw-r--r--	root/root	usr/share/i18n/locales/ber_DZ
 -rw-r--r--	root/root	usr/share/i18n/locales/ber_MA
 -rw-r--r--	root/root	usr/share/i18n/locales/bg_BG
+-rw-r--r--	root/root	usr/share/i18n/locales/bhb_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/bho_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/bn_BD
 -rw-r--r--	root/root	usr/share/i18n/locales/bn_IN
@@ -1869,6 +1917,7 @@ drwxr-xr-x	root/root	usr/share/i18n/locales/
 -rw-r--r--	root/root	usr/share/i18n/locales/ca_ES@euro
 -rw-r--r--	root/root	usr/share/i18n/locales/ca_FR
 -rw-r--r--	root/root	usr/share/i18n/locales/ca_IT
+-rw-r--r--	root/root	usr/share/i18n/locales/ce_RU
 -rw-r--r--	root/root	usr/share/i18n/locales/cmn_TW
 -rw-r--r--	root/root	usr/share/i18n/locales/crh_UA
 -rw-r--r--	root/root	usr/share/i18n/locales/cs_CZ
@@ -2054,6 +2103,7 @@ drwxr-xr-x	root/root	usr/share/i18n/locales/
 -rw-r--r--	root/root	usr/share/i18n/locales/pt_PT
 -rw-r--r--	root/root	usr/share/i18n/locales/pt_PT@euro
 -rw-r--r--	root/root	usr/share/i18n/locales/quz_PE
+-rw-r--r--	root/root	usr/share/i18n/locales/raj_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/ro_RO
 -rw-r--r--	root/root	usr/share/i18n/locales/ru_RU
 -rw-r--r--	root/root	usr/share/i18n/locales/ru_UA
@@ -2088,6 +2138,7 @@ drwxr-xr-x	root/root	usr/share/i18n/locales/
 -rw-r--r--	root/root	usr/share/i18n/locales/szl_PL
 -rw-r--r--	root/root	usr/share/i18n/locales/ta_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/ta_LK
+-rw-r--r--	root/root	usr/share/i18n/locales/tcy_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/te_IN
 -rw-r--r--	root/root	usr/share/i18n/locales/tg_TJ
 -rw-r--r--	root/root	usr/share/i18n/locales/th_TH

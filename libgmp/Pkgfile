@@ -3,9 +3,9 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=libgmp
-version=6.0.0a
+version=6.1.0
 release=1
-source=(ftp://ftp.gmplib.org/pub/gmp-${version%a}/gmp-$version.tar.xz \
+source=(http://gmplib.org/download/gmp/gmp-$version.tar.xz \
         gmp.h)
 
 build() {
@@ -15,7 +15,5 @@ build() {
                 --build=i686-unknown-linux-gnu
     make
     make DESTDIR=$PKG install
-    #mv $PKG/usr/include/gmp{,-64}.h
-    #install -m 0644 $SRC/gmp.h $PKG/usr/include/
     rm -r $PKG/usr/share
 }
