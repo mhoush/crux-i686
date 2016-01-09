@@ -11,7 +11,7 @@ source=(http://jw.smts.ch/files/crux/prt-get-$version.tar.gz
 build() {
     cd ${name}-${version}
 
-    ./configure --prefix=/usr --mandir=/usr/man
+    ./configure --prefix=/usr
     make
     make DESTDIR=$PKG install
 

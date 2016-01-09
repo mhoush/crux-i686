@@ -57,8 +57,8 @@ f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
 f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum
 f:8548879b8f233085abe848f507fd5860:prt-get/README
-f:5abf25260785b615a2af110d3c887f62:prt-get/Pkgfile
-f:dba60fcc49188c5804c49d52fda6fcc4:prt-get/.footprint
+f:e05f2199cac4a70e9f7e27781c7dec9c:prt-get/Pkgfile
+f:7459342d9dc9f032d9aeb5d7d19bbe32:prt-get/.footprint
 f:d2b7cd69eed54422a1b39fafbe3974ac:python/.md5sum
 f:0b3e839d63b989eae7086de12c819859:python/Pkgfile
 f:cd014cee3cc091bfbf4a2731807ccfe5:python/.footprint
