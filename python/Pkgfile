@@ -4,7 +4,7 @@
 # Depends on:  db gdbm openssl bzip2 zlib sqlite3
 
 name=python
-version=2.7.10
+version=2.7.11
 release=1
 source=(http://www.python.org/ftp/$name/$version/Python-$version.tar.xz)
 
@@ -15,7 +15,6 @@ build () {
     # our CFLAGS are used as well
     OPT="-Wall -Wstrict-prototypes -fwrapv" \
     ./configure --prefix=/usr \
-                --mandir=/usr/man \
                 --enable-shared \
                 --with-threads \
                 --enable-ipv6 
@@ -24,7 +23,7 @@ build () {
     make -j1 DESTDIR=$PKG install
 
     # fix issue with man-page symlink
-    ln -sf python2.7.1 $PKG/usr/man/man1/python.1
+    ln -sf python2.7.1 $PKG/usr/share/man/man1/python.1
 
     ln -sf python2.7 $PKG/usr/bin/python
     ln -s python2.7 $PKG/usr/lib/python
