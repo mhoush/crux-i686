@@ -3,7 +3,7 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=openssl
-version=1.0.2d
+version=1.0.2e
 release=1
 source=(http://www.openssl.org/source/$name-$version.tar.gz \
         mksslcert.sh)
@@ -19,8 +19,11 @@ build() {
 
     sed -i "s|-O3|$CFLAGS|" Makefile
 
+    # https://mta.openssl.org/pipermail/openssl-dev/2015-December/003615.html
+    sed -i "/@pod2man=/s/=.*;/=pod2man;/" Makefile
+
     make depend
-    make INSTALL_PREFIX=$PKG LIBDIR=lib MANDIR=/usr/man MANSUFFIX=ssl install
+    make INSTALL_PREFIX=$PKG LIBDIR=lib MANDIR=/usr/share/man MANSUFFIX=ssl install
 
     find $PKG -name "*fips*" -delete
     chmod -R +w $PKG
