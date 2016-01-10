@@ -26,7 +26,7 @@ f:218e656d8c30b766dc4a6ec09665bfa3:glibc/.footprint
 f:fc33b7d694bf135043067ba2d66e3859:openssl/.md5sum
 f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
 f:74ee3aa90756233d1b737d77d7305238:openssl/Pkgfile
-f:5d9a396d453387be0128397a17737f62:openssl/.footprint
+f:c7c4c4d166355374004223baa5ab1877:openssl/.footprint
 f:81f7f88b23fea875d3f1cf0a13aa80d6:util-linux/.md5sum
 f:01b4d97e92faf38af911a862048cc149:util-linux/Pkgfile
 f:9128219a907ef030f2d1fd4e8bb8d790:util-linux/.footprint
