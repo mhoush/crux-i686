@@ -1,0 +1,408 @@
+Revert this upstream commit:
+
+commit 2212c1420c92a33b0e0bd9a34938c9814a56c0f7
+Author: Andreas Schwab <schwab@suse.de>
+Date:   Thu Feb 19 15:52:08 2015 +0100
+
+    Simplify handling of nameserver configuration in resolver
+    
+    Remove use of ext.nsmap member of struct __res_state and always use
+    an identity mapping betwen the nsaddr_list array and the ext.nsaddrs
+    array.  The fact that a nameserver has an IPv6 address is signalled by
+    setting nsaddr_list[].sin_family to zero.
+
+reverted:
+Index: b/resolv/res_init.c
+===================================================================
+--- a/resolv/res_init.c
++++ b/resolv/res_init.c
+@@ -153,8 +153,10 @@ __res_vinit(res_state statp, int preinit
+ 	char *cp, **pp;
+ 	int n;
+ 	char buf[BUFSIZ];
+-	int nserv = 0;    /* number of nameservers read from file */
+-	int have_serv6 = 0;
++	int nserv = 0;    /* number of IPv4 nameservers read from file */
++#ifdef _LIBC
++	int nservall = 0; /* number of (IPv4 + IPV6) nameservers read from file */
++#endif
+ 	int haveenv = 0;
+ 	int havesearch = 0;
+ #ifdef RESOLVSORT
+@@ -183,9 +185,15 @@ __res_vinit(res_state statp, int preinit
+ 	statp->_flags = 0;
+ 	statp->qhook = NULL;
+ 	statp->rhook = NULL;
++	statp->_u._ext.nsinit = 0;
+ 	statp->_u._ext.nscount = 0;
+-	for (n = 0; n < MAXNS; n++)
+-	    statp->_u._ext.nsaddrs[n] = NULL;
++#ifdef _LIBC
++	statp->_u._ext.nscount6 = 0;
++	for (n = 0; n < MAXNS; n++) {
++		statp->_u._ext.nsaddrs[n] = NULL;
++		statp->_u._ext.nsmap[n] = MAXNS;
++	}
++#endif
+ 
+ 	/* Allow user to override the local domain definition */
+ 	if ((cp = getenv("LOCALDOMAIN")) != NULL) {
+@@ -289,7 +297,11 @@ __res_vinit(res_state statp, int preinit
+ 		    continue;
+ 		}
+ 		/* read nameservers to query */
++#ifdef _LIBC
++		if (MATCH(buf, "nameserver") && nservall < MAXNS) {
++#else
+ 		if (MATCH(buf, "nameserver") && nserv < MAXNS) {
++#endif
+ 		    struct in_addr a;
+ 
+ 		    cp = buf + sizeof("nameserver") - 1;
+@@ -297,12 +309,13 @@ __res_vinit(res_state statp, int preinit
+ 			cp++;
+ 		    if ((*cp != '\0') && (*cp != '\n')
+ 			&& __inet_aton(cp, &a)) {
+-			statp->nsaddr_list[nserv].sin_addr = a;
+-			statp->nsaddr_list[nserv].sin_family = AF_INET;
+-			statp->nsaddr_list[nserv].sin_port =
++			statp->nsaddr_list[nservall].sin_addr = a;
++			statp->nsaddr_list[nservall].sin_family = AF_INET;
++			statp->nsaddr_list[nservall].sin_port =
+ 				htons(NAMESERVER_PORT);
+ 			nserv++;
+ #ifdef _LIBC
++			nservall++;
+ 		    } else {
+ 			struct in6_addr a6;
+ 			char *el;
+@@ -344,11 +357,10 @@ __res_vinit(res_state statp, int preinit
+ 				    }
+ 				}
+ 
+-				statp->nsaddr_list[nserv].sin_family = 0;
+-				statp->_u._ext.nsaddrs[nserv] = sa6;
+-				statp->_u._ext.nssocks[nserv] = -1;
+-				have_serv6 = 1;
+-				nserv++;
++				statp->_u._ext.nsaddrs[nservall] = sa6;
++				statp->_u._ext.nssocks[nservall] = -1;
++				statp->_u._ext.nsmap[nservall] = MAXNS + 1;
++				nservall++;
+ 			    }
+ 			}
+ #endif
+@@ -403,9 +415,10 @@ __res_vinit(res_state statp, int preinit
+ 		    continue;
+ 		}
+ 	    }
+-	    statp->nscount = nserv;
++	    statp->nscount = nservall;
+ #ifdef _LIBC
+-	    if (have_serv6) {
++	    if (nservall - nserv > 0) {
++		statp->_u._ext.nscount6 = nservall - nserv;
+ 		/* We try IPv6 servers again.  */
+ 		statp->ipv6_unavail = false;
+ 	    }
+@@ -594,7 +607,11 @@ __res_iclose(res_state statp, bool free_
+ 		statp->_vcsock = -1;
+ 		statp->_flags &= ~(RES_F_VC | RES_F_CONN);
+ 	}
++#ifdef _LIBC
++	for (ns = 0; ns < MAXNS; ns++)
++#else
+ 	for (ns = 0; ns < statp->_u._ext.nscount; ns++)
++#endif
+ 		if (statp->_u._ext.nsaddrs[ns]) {
+ 			if (statp->_u._ext.nssocks[ns] != -1) {
+ 				close_not_cancel_no_status(statp->_u._ext.nssocks[ns]);
+@@ -605,6 +622,8 @@ __res_iclose(res_state statp, bool free_
+ 				statp->_u._ext.nsaddrs[ns] = NULL;
+ 			}
+ 		}
++	if (free_addr)
++		statp->_u._ext.nsinit = 0;
+ }
+ libc_hidden_def (__res_iclose)
+ 
+Index: b/resolv/res_send.c
+===================================================================
+--- a/resolv/res_send.c
++++ b/resolv/res_send.c
+@@ -176,7 +176,6 @@ evNowTime(struct timespec *res) {
+ 
+ /* Forward. */
+ 
+-static struct sockaddr *get_nsaddr (res_state, int);
+ static int		send_vc(res_state, const u_char *, int,
+ 				const u_char *, int,
+ 				u_char **, int *, int *, int, u_char **,
+@@ -214,21 +213,20 @@ res_ourserver_p(const res_state statp, c
+ 	    in_port_t port = in4p->sin_port;
+ 	    in_addr_t addr = in4p->sin_addr.s_addr;
+ 
+-	    for (ns = 0;  ns < statp->nscount;  ns++) {
++	    for (ns = 0;  ns < MAXNS;  ns++) {
+ 		const struct sockaddr_in *srv =
+-		    (struct sockaddr_in *) get_nsaddr (statp, ns);
++		    (struct sockaddr_in *)EXT(statp).nsaddrs[ns];
+ 
+-		if ((srv->sin_family == AF_INET) &&
++		if ((srv != NULL) && (srv->sin_family == AF_INET) &&
+ 		    (srv->sin_port == port) &&
+ 		    (srv->sin_addr.s_addr == INADDR_ANY ||
+ 		     srv->sin_addr.s_addr == addr))
+ 		    return (1);
+ 	    }
+ 	} else if (inp->sin6_family == AF_INET6) {
+-	    for (ns = 0;  ns < statp->nscount;  ns++) {
+-		const struct sockaddr_in6 *srv
+-		  = (struct sockaddr_in6 *) get_nsaddr (statp, ns);
+-		if ((srv->sin6_family == AF_INET6) &&
++	    for (ns = 0;  ns < MAXNS;  ns++) {
++		const struct sockaddr_in6 *srv = EXT(statp).nsaddrs[ns];
++		if ((srv != NULL) && (srv->sin6_family == AF_INET6) &&
+ 		    (srv->sin6_port == inp->sin6_port) &&
+ 		    !(memcmp(&srv->sin6_addr, &in6addr_any,
+ 			     sizeof (struct in6_addr)) &&
+@@ -378,48 +376,80 @@ __libc_res_nsend(res_state statp, const
+ 	 * If the ns_addr_list in the resolver context has changed, then
+ 	 * invalidate our cached copy and the associated timing data.
+ 	 */
+-	if (EXT(statp).nscount != 0) {
++	if (EXT(statp).nsinit) {
+ 		int needclose = 0;
+ 
+ 		if (EXT(statp).nscount != statp->nscount)
+ 			needclose++;
+ 		else
+-			for (ns = 0; ns < statp->nscount; ns++) {
+-				if (statp->nsaddr_list[ns].sin_family != 0
++			for (ns = 0; ns < MAXNS; ns++) {
++				unsigned int map = EXT(statp).nsmap[ns];
++				if (map < MAXNS
+ 				    && !sock_eq((struct sockaddr_in6 *)
+-						&statp->nsaddr_list[ns],
++						&statp->nsaddr_list[map],
+ 						EXT(statp).nsaddrs[ns]))
+ 				{
+ 					needclose++;
+ 					break;
+ 				}
+ 			}
+-		if (needclose) {
++		if (needclose)
+ 			__res_iclose(statp, false);
+-			EXT(statp).nscount = 0;
+-		}
+ 	}
+ 
+ 	/*
+ 	 * Maybe initialize our private copy of the ns_addr_list.
+ 	 */
+-	if (EXT(statp).nscount == 0) {
+-		for (ns = 0; ns < statp->nscount; ns++) {
+-			EXT(statp).nssocks[ns] = -1;
+-			if (statp->nsaddr_list[ns].sin_family == 0)
+-				continue;
+-			if (EXT(statp).nsaddrs[ns] == NULL)
+-				EXT(statp).nsaddrs[ns] =
++	if (EXT(statp).nsinit == 0) {
++		unsigned char map[MAXNS];
++
++		memset (map, MAXNS, sizeof (map));
++		for (n = 0; n < MAXNS; n++) {
++			ns = EXT(statp).nsmap[n];
++			if (ns < statp->nscount)
++				map[ns] = n;
++			else if (ns < MAXNS) {
++				free(EXT(statp).nsaddrs[n]);
++				EXT(statp).nsaddrs[n] = NULL;
++				EXT(statp).nsmap[n] = MAXNS;
++			}
++		}
++		n = statp->nscount;
++		if (statp->nscount > EXT(statp).nscount)
++			for (n = EXT(statp).nscount, ns = 0;
++			     n < statp->nscount; n++) {
++				while (ns < MAXNS
++				       && EXT(statp).nsmap[ns] != MAXNS)
++					ns++;
++				if (ns == MAXNS)
++					break;
++				/* NS never exceeds MAXNS, but gcc 4.9 somehow
++				   does not see this.  */
++				DIAG_PUSH_NEEDS_COMMENT;
++				DIAG_IGNORE_NEEDS_COMMENT (4.9,
++							   "-Warray-bounds");
++				EXT(statp).nsmap[ns] = n;
++				DIAG_POP_NEEDS_COMMENT;
++				map[n] = ns++;
++			}
++		EXT(statp).nscount = n;
++		for (ns = 0; ns < EXT(statp).nscount; ns++) {
++			n = map[ns];
++			if (EXT(statp).nsaddrs[n] == NULL)
++				EXT(statp).nsaddrs[n] =
+ 				    malloc(sizeof (struct sockaddr_in6));
+-			if (EXT(statp).nsaddrs[ns] != NULL)
+-				memset (mempcpy(EXT(statp).nsaddrs[ns],
++			if (EXT(statp).nsaddrs[n] != NULL) {
++				memset (mempcpy(EXT(statp).nsaddrs[n],
+ 						&statp->nsaddr_list[ns],
+ 						sizeof (struct sockaddr_in)),
+ 					'\0',
+ 					sizeof (struct sockaddr_in6)
+ 					- sizeof (struct sockaddr_in));
++				EXT(statp).nssocks[n] = -1;
++				n++;
++			}
+ 		}
+-		EXT(statp).nscount = statp->nscount;
++		EXT(statp).nsinit = 1;
+ 	}
+ 
+ 	/*
+@@ -428,37 +458,44 @@ __libc_res_nsend(res_state statp, const
+ 	 */
+ 	if (__builtin_expect ((statp->options & RES_ROTATE) != 0, 0) &&
+ 	    (statp->options & RES_BLAST) == 0) {
+-		struct sockaddr_in ina;
+-		struct sockaddr_in6 *inp;
+-		int lastns = statp->nscount - 1;
+-		int fd;
+-
+-		inp = EXT(statp).nsaddrs[0];
+-		ina = statp->nsaddr_list[0];
+-		fd = EXT(statp).nssocks[0];
+-		for (ns = 0; ns < lastns; ns++) {
+-		    EXT(statp).nsaddrs[ns] = EXT(statp).nsaddrs[ns + 1];
+-		    statp->nsaddr_list[ns] = statp->nsaddr_list[ns + 1];
+-		    EXT(statp).nssocks[ns] = EXT(statp).nssocks[ns + 1];
+-		}
+-		EXT(statp).nsaddrs[lastns] = inp;
+-		statp->nsaddr_list[lastns] = ina;
+-		EXT(statp).nssocks[lastns] = fd;
++		struct sockaddr_in6 *ina;
++		unsigned int map;
++
++		n = 0;
++		while (n < MAXNS && EXT(statp).nsmap[n] == MAXNS)
++			n++;
++		if (n < MAXNS) {
++			ina = EXT(statp).nsaddrs[n];
++			map = EXT(statp).nsmap[n];
++			for (;;) {
++				ns = n + 1;
++				while (ns < MAXNS
++				       && EXT(statp).nsmap[ns] == MAXNS)
++					ns++;
++				if (ns == MAXNS)
++					break;
++				EXT(statp).nsaddrs[n] = EXT(statp).nsaddrs[ns];
++				EXT(statp).nsmap[n] = EXT(statp).nsmap[ns];
++				n = ns;
++			}
++			EXT(statp).nsaddrs[n] = ina;
++			EXT(statp).nsmap[n] = map;
++		}
+ 	}
+ 
+ 	/*
+ 	 * Send request, RETRY times, or until successful.
+ 	 */
+ 	for (try = 0; try < statp->retry; try++) {
+-	    for (ns = 0; ns < statp->nscount; ns++)
++	    for (ns = 0; ns < MAXNS; ns++)
+ 	    {
+ #ifdef DEBUG
+ 		char tmpbuf[40];
+ #endif
+-#if defined USE_HOOKS || defined DEBUG
+-		struct sockaddr *nsap = get_nsaddr (statp, ns);
+-#endif
++		struct sockaddr_in6 *nsap = EXT(statp).nsaddrs[ns];
+ 
++		if (nsap == NULL)
++			goto next_ns;
+ 	    same_ns:
+ #ifdef USE_HOOKS
+ 		if (__glibc_unlikely (statp->qhook != NULL))       {
+@@ -615,21 +652,6 @@ libresolv_hidden_def (res_nsend)
+ 
+ /* Private */
+ 
+-static struct sockaddr *
+-get_nsaddr (res_state statp, int n)
+-{
+-
+-  if (statp->nsaddr_list[n].sin_family == 0 && EXT(statp).nsaddrs[n] != NULL)
+-    /* EXT(statp).nsaddrs[n] holds an address that is larger than
+-       struct sockaddr, and user code did not update
+-       statp->nsaddr_list[n].  */
+-    return (struct sockaddr *) EXT(statp).nsaddrs[n];
+-  else
+-    /* User code updated statp->nsaddr_list[n], or statp->nsaddr_list[n]
+-       has the same content as EXT(statp).nsaddrs[n].  */
+-    return (struct sockaddr *) (void *) &statp->nsaddr_list[n];
+-}
+-
+ static int
+ send_vc(res_state statp,
+ 	const u_char *buf, int buflen, const u_char *buf2, int buflen2,
+@@ -644,7 +666,7 @@ send_vc(res_state statp,
+ 	// XXX REMOVE
+ 	// int anssiz = *anssizp;
+ 	HEADER *anhp = (HEADER *) ans;
+-	struct sockaddr *nsap = get_nsaddr (statp, ns);
++	struct sockaddr_in6 *nsap = EXT(statp).nsaddrs[ns];
+ 	int truncating, connreset, n;
+ 	/* On some architectures compiler might emit a warning indicating
+ 	   'resplen' may be used uninitialized.  However if buf2 == NULL
+@@ -677,8 +699,8 @@ send_vc(res_state statp,
+ 
+ 		if (getpeername(statp->_vcsock,
+ 				(struct sockaddr *)&peer, &size) < 0 ||
+-		    !sock_eq(&peer, (struct sockaddr_in6 *) nsap)) {
+-			__res_iclose(statp, false);
++		    !sock_eq(&peer, nsap)) {
++		  __res_iclose(statp, false);
+ 			statp->_flags &= ~RES_F_VC;
+ 		}
+ 	}
+@@ -687,19 +709,20 @@ send_vc(res_state statp,
+ 		if (statp->_vcsock >= 0)
+ 		  __res_iclose(statp, false);
+ 
+-		statp->_vcsock = socket(nsap->sa_family, SOCK_STREAM, 0);
++		statp->_vcsock = socket(nsap->sin6_family, SOCK_STREAM, 0);
+ 		if (statp->_vcsock < 0) {
+ 			*terrno = errno;
+ 			Perror(statp, stderr, "socket(vc)", errno);
+ 			return (-1);
+ 		}
+ 		__set_errno (0);
+-		if (connect(statp->_vcsock, nsap,
+-			    nsap->sa_family == AF_INET
++		if (connect(statp->_vcsock, (struct sockaddr *)nsap,
++			    nsap->sin6_family == AF_INET
+ 			    ? sizeof (struct sockaddr_in)
+ 			    : sizeof (struct sockaddr_in6)) < 0) {
+ 			*terrno = errno;
+-			Aerror(statp, stderr, "connect/vc", errno, nsap);
++			Aerror(statp, stderr, "connect/vc", errno,
++			       (struct sockaddr *) nsap);
+ 			__res_iclose(statp, false);
+ 			return (0);
+ 		}
+@@ -906,7 +929,8 @@ static int
+ reopen (res_state statp, int *terrno, int ns)
+ {
+ 	if (EXT(statp).nssocks[ns] == -1) {
+-		struct sockaddr *nsap = get_nsaddr (statp, ns);
++		struct sockaddr *nsap
++		  = (struct sockaddr *) EXT(statp).nsaddrs[ns];
+ 		socklen_t slen;
+ 
+ 		/* only try IPv6 if IPv6 NS and if not failed before */
