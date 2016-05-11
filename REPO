@@ -38,9 +38,9 @@ f:c485ce5ae59a22db47fb559d48a2f080:openssl/.footprint
 f:9b1e701678ce5eeb2ab0a6eea619ff96:mdadm/.md5sum
 f:7c8b4b65810e44aee92e8381ce1e0b25:mdadm/Pkgfile
 f:91c9704ed95d54df89f142186f7a5de6:mdadm/.footprint
-f:81f7f88b23fea875d3f1cf0a13aa80d6:util-linux/.md5sum
-f:01b4d97e92faf38af911a862048cc149:util-linux/Pkgfile
-f:9128219a907ef030f2d1fd4e8bb8d790:util-linux/.footprint
+f:2ae2cc214ccd4027164c0bb613839b90:util-linux/.md5sum
+f:f368f5d553b78467d74bbcd8da38931b:util-linux/Pkgfile
+f:3da849364d786822c62a1396e6ae9026:util-linux/.footprint
 f:7daff92b7967a29ee9fc0d81ac112c6e:firefox/.md5sum
 f:fbf803771f43e8b4f7d384171aa7a7f3:firefox/README
 f:afe61c7760e835bd12d5dfd40af4ec84:firefox/firefox-install-dir.patch

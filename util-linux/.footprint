@@ -78,6 +78,7 @@ lrwxrwxrwx	root/root	usr/bin/linux64 -> setarch
 -rwxr-xr-x	root/root	usr/bin/lsipc
 -rwxr-xr-x	root/root	usr/bin/lslocks
 -rwxr-xr-x	root/root	usr/bin/lslogins
+-rwxr-xr-x	root/root	usr/bin/lsns
 -rwxr-xr-x	root/root	usr/bin/mcookie
 -rwxr-xr-x	root/root	usr/bin/mesg
 -rwxr-xr-x	root/root	usr/bin/namei
@@ -240,6 +241,7 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/losetup.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/lsblk.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/lslocks.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/lsns.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/mkfs.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/mkfs.cramfs.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/mkswap.8.gz
