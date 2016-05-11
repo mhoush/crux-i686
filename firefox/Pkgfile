@@ -4,7 +4,7 @@
 # Depends on: nss, unzip, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d
  
 name=firefox
-version=45.0.1
+version=46.0.1
 release=1
 source=(http://ftp.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
 	firefox-install-dir.patch firefox.desktop)
