@@ -67,10 +67,10 @@ f:d4e28a1f2e4e636c5453f81dd9f53df0:filesystem/.footprint
 f:300dded22469866a27299ed7454b113b:binutils/.md5sum
 f:3437ce0f2ed900039909b380506988f5:binutils/Pkgfile
 f:a8d50cf2eb887b131c338173fc76ee7e:binutils/.footprint
-f:f0528a4278bb29933932b7e6fae7de8d:gcc/.md5sum
+f:efcc4682170172795e0553c96c0cfba8:gcc/.md5sum
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
-f:533fcde7e91c13163d5c1f4e6a2c8e48:gcc/Pkgfile
-f:6f681a6b98469c784a4c5279de7c11fd:gcc/.footprint
+f:d498fabfa342a0ab5c909721780631e6:gcc/Pkgfile
+f:92d24506692d60d94ce43568f4e4e605:gcc/.footprint
 f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
 f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum
