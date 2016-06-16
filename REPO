@@ -41,12 +41,13 @@ f:91c9704ed95d54df89f142186f7a5de6:mdadm/.footprint
 f:2ae2cc214ccd4027164c0bb613839b90:util-linux/.md5sum
 f:f368f5d553b78467d74bbcd8da38931b:util-linux/Pkgfile
 f:3da849364d786822c62a1396e6ae9026:util-linux/.footprint
-f:747664c36bb1eb29675a4a37f332f4a0:firefox/.md5sum
+f:4106c74d11d630978907d530d4eee9fd:firefox/.md5sum
+f:ca55d2b1dae46d88717df597a24983be:firefox/gcc6-fix-compilation.patch
 f:fbf803771f43e8b4f7d384171aa7a7f3:firefox/README
 f:afe61c7760e835bd12d5dfd40af4ec84:firefox/firefox-install-dir.patch
-f:c1219592b9757003dac0fa9b3967c3e4:firefox/Pkgfile
+f:d2603fffd00d69f988aa83a72ae14691:firefox/Pkgfile
 f:cf6971669f70b440cb6ff8df8b2722ae:firefox/firefox.desktop
-f:19e4789db656746f548005d0035ac574:firefox/.footprint
+f:6dd84627c8b05dfa3b87d9bd35a80ba4:firefox/.footprint
 f:1bbd7d05c247c0fc2dfe9e89694a839a:libgmp/.md5sum
 f:16f0aa3de2c8fb220f8a870249aae253:libgmp/Pkgfile
 f:bbf6d30f092c6d302f028679f1f9bfc3:libgmp/gmp.h
