@@ -77,9 +77,9 @@ f:ccedbcc20cd1936a5056453da5d2c6d5:prt-get/.md5sum
 f:8548879b8f233085abe848f507fd5860:prt-get/README
 f:e05f2199cac4a70e9f7e27781c7dec9c:prt-get/Pkgfile
 f:7459342d9dc9f032d9aeb5d7d19bbe32:prt-get/.footprint
-f:d2b7cd69eed54422a1b39fafbe3974ac:python/.md5sum
-f:0b3e839d63b989eae7086de12c819859:python/Pkgfile
-f:cd014cee3cc091bfbf4a2731807ccfe5:python/.footprint
+f:b9030f6446dc6043d929c0c8ccbd257c:python/.md5sum
+f:f0788672d0cfc72517c680c0444bdf9b:python/Pkgfile
+f:0c663de7844658756a4d545fc42427d0:python/.footprint
 f:fcae401c92a4cebedbafd2d50db61edc:pkgutils/.md5sum
 f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
 f:0134547aa9e6f0c9c63b9b255c64d740:pkgutils/Pkgfile
