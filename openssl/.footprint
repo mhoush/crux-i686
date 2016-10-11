@@ -1603,6 +1603,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/bn_wexpand.3ssl.gz -> bn_internal.3ssl.g
 -rw-r--r--	root/root	usr/share/man/man3/buffer.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/crypto.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/d2i_ASN1_OBJECT.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/d2i_AutoPrivateKey.3ssl.gz -> d2i_PrivateKey.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/d2i_CMS_ContentInfo.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/d2i_DHparams.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/d2i_DSAPrivateKey.3ssl.gz -> d2i_DSAPublicKey.3ssl.gz
@@ -1620,6 +1621,8 @@ lrwxrwxrwx	root/root	usr/share/man/man3/d2i_Netscape_RSA.3ssl.gz -> d2i_RSAPubli
 -rw-r--r--	root/root	usr/share/man/man3/d2i_PKCS8PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/d2i_PKCS8PrivateKey_bio.3ssl.gz -> d2i_PKCS8PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/d2i_PKCS8PrivateKey_fp.3ssl.gz -> d2i_PKCS8PrivateKey.3ssl.gz
+-rw-r--r--	root/root	usr/share/man/man3/d2i_PrivateKey.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/d2i_Private_key.3ssl.gz -> d2i_PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/d2i_RSAPrivateKey.3ssl.gz -> d2i_RSAPublicKey.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/d2i_RSAPublicKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/d2i_RSA_PUBKEY.3ssl.gz -> d2i_RSAPublicKey.3ssl.gz
@@ -1669,6 +1672,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/i2d_PKCS8PrivateKey_bio.3ssl.gz -> d2i_P
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_PKCS8PrivateKey_fp.3ssl.gz -> d2i_PKCS8PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_PKCS8PrivateKey_nid_bio.3ssl.gz -> d2i_PKCS8PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_PKCS8PrivateKey_nid_fp.3ssl.gz -> d2i_PKCS8PrivateKey.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/i2d_PrivateKey.3ssl.gz -> d2i_PrivateKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_RSAPrivateKey.3ssl.gz -> d2i_RSAPublicKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_RSAPublicKey.3ssl.gz -> d2i_RSAPublicKey.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/i2d_RSA_PUBKEY.3ssl.gz -> d2i_RSAPublicKey.3ssl.gz
