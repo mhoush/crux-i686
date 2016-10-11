@@ -38,8 +38,8 @@ f:03101f99ef8e76621b4982d9d0cbedab:openssl/.footprint
 f:9b1e701678ce5eeb2ab0a6eea619ff96:mdadm/.md5sum
 f:7c8b4b65810e44aee92e8381ce1e0b25:mdadm/Pkgfile
 f:91c9704ed95d54df89f142186f7a5de6:mdadm/.footprint
-f:894a9d708c7f336ea6b3b63f5a341b09:util-linux/.md5sum
-f:3ba706286b8f2295285bd4d72364c26c:util-linux/Pkgfile
+f:aa1d713b4d957ff4067d235bc27a7ed6:util-linux/.md5sum
+f:242950fcb5382a28b38f8ab1bc30caf7:util-linux/Pkgfile
 f:3da849364d786822c62a1396e6ae9026:util-linux/.footprint
 f:daed94ce2212d8d4b9a20440d8e8a07d:firefox/.md5sum
 f:ca55d2b1dae46d88717df597a24983be:firefox/gcc6-fix-compilation.patch
