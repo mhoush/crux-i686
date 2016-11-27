@@ -4,9 +4,9 @@
 # Depends on:  eudev ncurses zlib
 
 name=util-linux
-version=2.28.2
+version=2.29
 release=1
-source=(https://www.kernel.org/pub/linux/utils/$name/v2.28/$name-$version.tar.xz)
+source=(https://www.kernel.org/pub/linux/utils/$name/v2.29/$name-$version.tar.xz)
 
 build() {
     cd $name-$version

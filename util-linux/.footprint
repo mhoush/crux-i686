@@ -83,7 +83,6 @@ lrwxrwxrwx	root/root	usr/bin/linux64 -> setarch
 -rwxr-xr-x	root/root	usr/bin/mesg
 -rwxr-xr-x	root/root	usr/bin/namei
 -rwxr-xr-x	root/root	usr/bin/nsenter
--rwxr-xr-x	root/root	usr/bin/pg
 -rwxr-xr-x	root/root	usr/bin/prlimit
 -rwxr-xr-x	root/root	usr/bin/rename
 -rwxr-xr-x	root/root	usr/bin/renice
@@ -179,7 +178,6 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/mountpoint.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/namei.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/nsenter.1.gz
--rw-r--r--	root/root	usr/share/man/man1/pg.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/prlimit.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/rename.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/renice.1.gz
