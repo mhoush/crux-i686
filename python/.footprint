@@ -1035,8 +1035,8 @@ drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-9.0.1-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-28.8.0-py2.py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyo
@@ -1439,7 +1439,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/json/
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/
--rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.12-py2.7.egg-info
+-rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.13-py2.7.egg-info
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bisect.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bsddb.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_codecs_cn.so
@@ -1615,9 +1615,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/lib-tk/test/test_ttk/
 -rw-r--r--	root/root	usr/lib/python2.7/lib-tk/turtle.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.12.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.13.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.12.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.13.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyo
@@ -1652,9 +1652,6 @@ drwxr-xr-x	root/root	usr/lib/python2.7/lib2to3/fixes/
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_buffer.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_buffer.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_buffer.pyo
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_callable.py
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_callable.pyc
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_callable.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_dict.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_dict.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/fixes/fix_dict.pyo
@@ -2190,6 +2187,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/
 -rw-r--r--	root/root	usr/lib/python2.7/test/_mock_backport.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/_mock_backport.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/_mock_backport.pyo
+-rw-r--r--	root/root	usr/lib/python2.7/test/allsans.pem
 drwxr-xr-x	root/root	usr/lib/python2.7/test/audiodata/
 -rw-r--r--	root/root	usr/lib/python2.7/test/audiodata/pluck-pcm16.aiff
 -rw-r--r--	root/root	usr/lib/python2.7/test/audiodata/pluck-pcm16.au
@@ -2232,7 +2230,6 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/capath/
 -rw-r--r--	root/root	usr/lib/python2.7/test/capath/99d0fa06.0
 -rw-r--r--	root/root	usr/lib/python2.7/test/capath/ce7b8643.0
 -rw-r--r--	root/root	usr/lib/python2.7/test/cfgparser.1
--rw-r--r--	root/root	usr/lib/python2.7/test/check_soundcard.vbs
 drwxr-xr-x	root/root	usr/lib/python2.7/test/cjkencodings/
 -rw-r--r--	root/root	usr/lib/python2.7/test/cjkencodings/big5-utf8.txt
 -rw-r--r--	root/root	usr/lib/python2.7/test/cjkencodings/big5.txt
@@ -2542,6 +2539,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/imghdrdata/
 -rw-r--r--	root/root	usr/lib/python2.7/test/ssl_servers.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/ssl_servers.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/ssl_servers.pyo
+-rw-r--r--	root/root	usr/lib/python2.7/test/ssltests.py
+-rw-r--r--	root/root	usr/lib/python2.7/test/ssltests.pyc
+-rw-r--r--	root/root	usr/lib/python2.7/test/ssltests.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/test/string_tests.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/string_tests.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/string_tests.pyo

@@ -4,7 +4,7 @@
 # Depends on:  db gdbm openssl bzip2 zlib sqlite3
 
 name=python
-version=2.7.12
+version=2.7.13
 release=1
 source=(http://www.python.org/ftp/$name/$version/Python-$version.tar.xz)
 
