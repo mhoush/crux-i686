@@ -87,8 +87,8 @@ f:0d3a6fed127ba555ba0c1a587130c6bc:pkgutils/.footprint
 f:4fad3937818ba08ac7c1a0daf75f7ed3:llvm/.md5sum
 f:0f3ee661a4a848edc6dc0f59491d9df9:llvm/Pkgfile
 f:ee4c9341b1ea789708f93f0f67d9e585:llvm/.footprint
-f:67e55ed3cad248c73b2fd68c0ca503a8:nss/.md5sum
+f:464d6a029cd0645cd4d52aed08f4604d:nss/.md5sum
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
 f:a796e6ab6c87573ffb649ce8769bc07a:nss/nss.pc.in
-f:6b8251394d31ab882ca2b2e022ae05b0:nss/Pkgfile
+f:fe0f37fbb9984cfecfc979c8e24f8f04:nss/Pkgfile
 f:3f3195278437c8d8f2ff1c0299c9c52c:nss/.footprint
