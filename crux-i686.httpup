@@ -3,6 +3,6 @@
 #
 
 ROOT_DIR=/usr/ports/crux-i686
-URL=https://raw.githubusercontent.com/mhoush/crux-i686/3.2/
+URL=https://raw.githubusercontent.com/mhoush/crux-i686/3.3/
 
 # End of file

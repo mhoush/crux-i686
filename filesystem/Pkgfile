@@ -3,8 +3,8 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=filesystem
-version=3.2
-release=4
+version=3.3
+release=1
 source=(issue motd shells group passwd shadow securetty fstab mime.types)
 
 build() {

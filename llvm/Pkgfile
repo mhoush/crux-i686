@@ -5,8 +5,8 @@
 # Depends on:  python cmake
 
 name=llvm
-version=3.9.0
-release=2
+version=4.0.0
+release=1
 source=(http://llvm.org/releases/$version/$name-$version.src.tar.xz)
 
 build() {
@@ -21,6 +21,7 @@ build() {
   cmake -DLLVM_ENABLE_CXX1Y=1 \
     -DLLVM_INCLUDE_EXAMPLES=0 \
     -DLLVM_INCLUDE_TESTS=0 \
+    -DLLVM_ENABLE_OCAMLDOC=0 \
     -DLLVM_TARGETS_TO_BUILD='X86;AMDGPU;BPF' \
     -DLLVM_BUILD_LLVM_DYLIB=1 \
     -DCMAKE_BUILD_TYPE=Release \

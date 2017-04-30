@@ -3,26 +3,17 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=glibc
-version=2.22
+version=2.24
 release=3
 source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
-	http://crux.nu/files/distfiles/kernel-headers-4.1.tar.xz \
-	CVE-2015-8779.patch CVE-2015-8778.patch CVE-2015-8777.patch \
-	CVE-2015-8776.patch CVE-2015-7547.patch glibc-rh1252570.patch \
+	http://crux.nu/files/distfiles/kernel-headers-4.9.5.tar.xz \
 	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
 
 build() {
 	# install kernel headers
 	install -d $PKG/usr/
-	cp -r $SRC/kernel-headers-4.1/include $PKG/usr
+	cp -r $SRC/kernel-headers-4.9.5/include $PKG/usr
 	chown root:root $PKG/usr
-
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2015-8779.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2015-8778.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2015-8777.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2015-8776.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/glibc-rh1252570.patch
-	patch -p1 -d $SRC/$name-$version -i $SRC/CVE-2015-7547.patch
 
 	mkdir $SRC/build
 	cd $SRC/build

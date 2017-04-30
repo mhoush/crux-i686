@@ -1,0 +1,35 @@
+# Description: Mesa 3D Graphics Library
+# URL: http://www.mesa3d.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: elfutils expat libdrm libvdpau llvm xorg-dri3proto xorg-glproto xorg-libxdamage xorg-libxshmfence xorg-libxvmc xorg-presentproto xorg-libxxf86vm
+
+name=mesa3d
+version=17.0.4
+release=1
+source=(ftp://ftp.freedesktop.org/pub/mesa/mesa-$version.tar.xz)
+
+build() {
+	cd mesa-$version
+
+	CONFIG_SHELL=/bin/bash \
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--enable-gallium-llvm \
+		--enable-gbm \
+		--enable-gles1 \
+		--enable-gles2 \
+		--enable-glx-tls \
+		--enable-osmesa \
+		--enable-texture-float \
+		--enable-xa \
+		--enable-vdpau \
+		--enable-llvm-shared-libs \
+		--disable-dependency-tracking \
+		--with-egl-platforms=x11,drm \
+		--with-gallium-drivers=r300,r600,svga,swrast,radeonsi,nouveau  \
+		--with-vulkan-drivers=intel,radeon
+
+	make
+	make DESTDIR=$PKG install
+}

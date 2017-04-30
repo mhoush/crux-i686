@@ -4,9 +4,9 @@
 # Depends on:  nspr sqlite3
 
 name=nss
-version=3.27.2
+version=3.30.2
 release=1
-source=(http://ftp.mozilla.org/pub/security/nss/releases/NSS_3_27_2_RTM/src/$name-$version.tar.gz \
+source=(http://ftp.mozilla.org/pub/security/nss/releases/NSS_${version//./_}_RTM/src/$name-$version.tar.gz \
         nss-config.in nss.pc.in)
 
 build() {
@@ -20,6 +20,7 @@ build() {
 	export NSPR_LIB_DIR=/usr/lib
 	export NSS_USE_SYSTEM_SQLITE=1
 	export NSS_ENABLE_ECC=1
+	export NSS_ENABLE_TLS_1_3=1
 	export BUILD_OPT=1
 	export XCFLAGS="-Wno-error ${CFLAGS}"
 	export NSS_DISABLE_GTESTS=1
