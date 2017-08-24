@@ -4,7 +4,7 @@
 # Depends on: elfutils expat libdrm libvdpau llvm xorg-dri3proto xorg-glproto xorg-libxdamage xorg-libxshmfence xorg-libxvmc xorg-presentproto xorg-libxxf86vm
 
 name=mesa3d
-version=17.0.4
+version=17.1.7
 release=1
 source=(ftp://ftp.freedesktop.org/pub/mesa/mesa-$version.tar.xz)
 
@@ -15,7 +15,7 @@ build() {
 	./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
-		--enable-gallium-llvm \
+		--enable-llvm \
 		--enable-gbm \
 		--enable-gles1 \
 		--enable-gles2 \
@@ -26,7 +26,7 @@ build() {
 		--enable-vdpau \
 		--enable-llvm-shared-libs \
 		--disable-dependency-tracking \
-		--with-egl-platforms=x11,drm \
+		--with-platforms=x11,drm \
 		--with-gallium-drivers=r300,r600,svga,swrast,radeonsi,nouveau  \
 		--with-vulkan-drivers=intel,radeon
 

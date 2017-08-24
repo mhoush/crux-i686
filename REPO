@@ -57,8 +57,8 @@ f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
 f:0eb700709557873e4bf91f83642c87d0:openssl/Pkgfile
 f:8b438d74eef0e003da6f42cf6ea712c3:openssl/.md5sum
 f:03101f99ef8e76621b4982d9d0cbedab:openssl/.footprint
-f:7aa9a4325850b5ceae0b01d01fddc06c:mesa3d/Pkgfile
-f:c9a947a3e6365071b7c54246d0b84f23:mesa3d/.md5sum
+f:037df0b6f703a0008381d4293873bad8:mesa3d/Pkgfile
+f:9814ac8e358a93d5153816ebc4425d69:mesa3d/.md5sum
 f:70342d0e4502c0ebe52b66ae64afe66c:mesa3d/.footprint
 f:abfcd933f143f08c30c8816300e2b698:firefox/Pkgfile
 f:128aecb71972da257415349d12e9c8dd:firefox/.md5sum
