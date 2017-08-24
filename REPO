@@ -25,11 +25,13 @@ f:bbf6d30f092c6d302f028679f1f9bfc3:libgmp/gmp.h
 f:146e4632e31a4601a076fb25eb6bc0b8:llvm/Pkgfile
 f:8a66ebc34c52354a49fe85948955a659:llvm/.md5sum
 f:90c7a526af224d049cba1d7988931df7:llvm/.footprint
+f:bf2ff51cef976ccd0a4832835eec8195:nss/nss-softokn.pc.in
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
-f:1ab09734c202e5ca7c262faf9c24b0cd:nss/Pkgfile
-f:151d2550345ad3af0d0019d42ee4e3c6:nss/.md5sum
+f:84b7c84bfc49dbc4a05ec1c0877d6668:nss/Pkgfile
+f:62f8e30230d97df3eb16e39e08480c4c:nss/.md5sum
 f:a796e6ab6c87573ffb649ce8769bc07a:nss/nss.pc.in
-f:7a47801d5d8ba42488d991d10addc5ba:nss/.footprint
+f:9ad2a26c137208ff292061143c7cc227:nss/nss-util.pc.in
+f:f7a92c56ccd7c9b4fe79ad27913a2cdf:nss/.footprint
 f:75931315bf9bc9be15a5e25e4ddd5f0d:glibc/nsswitch.conf
 f:1d06c7a6084db7710bec7215143c5799:glibc/CVE-2014-0475.patch
 f:983c43bce485ac759e4cf681e5c1aa36:glibc/make.patch

@@ -77,12 +77,16 @@ drwxr-xr-x	root/root	usr/include/nss/
 -rw-r--r--	root/root	usr/include/nss/pkcs11p.h
 -rw-r--r--	root/root	usr/include/nss/pkcs11t.h
 -rw-r--r--	root/root	usr/include/nss/pkcs11u.h
+-rw-r--r--	root/root	usr/include/nss/pkcs11uri.h
 -rw-r--r--	root/root	usr/include/nss/pkcs12.h
 -rw-r--r--	root/root	usr/include/nss/pkcs12t.h
 -rw-r--r--	root/root	usr/include/nss/pkcs1sig.h
 -rw-r--r--	root/root	usr/include/nss/pkcs7t.h
 -rw-r--r--	root/root	usr/include/nss/portreg.h
 -rw-r--r--	root/root	usr/include/nss/preenc.h
+drwxr-xr-x	root/root	usr/include/nss/private/
+-rw-r--r--	root/root	usr/include/nss/private/alghmac.h
+-rw-r--r--	root/root	usr/include/nss/private/blapi.h
 -rw-r--r--	root/root	usr/include/nss/secasn1.h
 -rw-r--r--	root/root	usr/include/nss/secasn1t.h
 -rw-r--r--	root/root	usr/include/nss/seccomon.h
@@ -113,6 +117,7 @@ drwxr-xr-x	root/root	usr/include/nss/
 -rw-r--r--	root/root	usr/include/nss/utilrename.h
 drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libcrmf.a
+-rw-r--r--	root/root	usr/lib/libfreebl.a
 -rw-r--r--	root/root	usr/lib/libfreebl3.chk
 -rwxr-xr-x	root/root	usr/lib/libfreebl3.so
 -rw-r--r--	root/root	usr/lib/libfreeblpriv3.chk
@@ -128,4 +133,6 @@ drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libsoftokn3.so
 -rwxr-xr-x	root/root	usr/lib/libssl3.so
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/nss-softokn.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/nss-util.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/nss.pc
