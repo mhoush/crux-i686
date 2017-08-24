@@ -4,16 +4,19 @@
 
 name=glibc
 version=2.24
-release=3
-source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
+release=7
+source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz \
 	http://crux.nu/files/distfiles/kernel-headers-4.9.5.tar.xz \
-	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
+	hosts resolv.conf nsswitch.conf host.conf ld.so.conf \
+	$name-$version-updates.patch)
 
 build() {
 	# install kernel headers
 	install -d $PKG/usr/
 	cp -r $SRC/kernel-headers-4.9.5/include $PKG/usr
 	chown root:root $PKG/usr
+
+	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/glibc-2.24-updates.patch
 
 	mkdir $SRC/build
 	cd $SRC/build
