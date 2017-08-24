@@ -62,7 +62,7 @@ f:ca55d2b1dae46d88717df597a24983be:firefox/gcc6-fix-compilation.patch
 f:a87fef21fe4d7969f59d96f0ec3d1e6c:firefox/README
 f:62b7695bbd3b2f1e08d6c14a31d35d5b:firefox/.footprint
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
-f:2eab581e5519220b018bd7a15852303c:prt-get/Pkgfile
+f:e9afcd7a962f42916f180143de1d3770:prt-get/Pkgfile
 f:d02e39e883c324669663a30694532ec1:prt-get/.md5sum
 f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:8548879b8f233085abe848f507fd5860:prt-get/README

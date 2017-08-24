@@ -1,5 +1,5 @@
 # Description: A utility to simplify ports searching/installing
-# URL:         http://jw.smts.ch/files/crux/prt-get_quickstart.html
+# URL:         https://crux.nu/gitweb/?p=tools/prt-get.git;a=summary
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=prt-get
