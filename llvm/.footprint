@@ -1165,7 +1165,7 @@ drwxr-xr-x	root/root	usr/lib/cmake/llvm/
 -rw-r--r--	root/root	usr/lib/cmake/llvm/LLVMProcessSources.cmake
 -rw-r--r--	root/root	usr/lib/cmake/llvm/TableGen.cmake
 -rw-r--r--	root/root	usr/lib/cmake/llvm/VersionFromVCS.cmake
-lrwxrwxrwx	root/root	usr/lib/libLLVM-4.0.0.so -> libLLVM-4.0.so
+lrwxrwxrwx	root/root	usr/lib/libLLVM-4.0.1.so -> libLLVM-4.0.so
 -rwxr-xr-x	root/root	usr/lib/libLLVM-4.0.so
 lrwxrwxrwx	root/root	usr/lib/libLLVM.so -> libLLVM-4.0.so
 -rw-r--r--	root/root	usr/lib/libLLVMAMDGPUAsmParser.a
@@ -1235,5 +1235,5 @@ lrwxrwxrwx	root/root	usr/lib/libLLVM.so -> libLLVM-4.0.so
 -rw-r--r--	root/root	usr/lib/libLLVMXRay.a
 -rw-r--r--	root/root	usr/lib/libLLVMipo.a
 lrwxrwxrwx	root/root	usr/lib/libLTO.so -> libLTO.so.4
-lrwxrwxrwx	root/root	usr/lib/libLTO.so.4 -> libLTO.so.4.0.0
--rwxr-xr-x	root/root	usr/lib/libLTO.so.4.0.0
+lrwxrwxrwx	root/root	usr/lib/libLTO.so.4 -> libLTO.so.4.0.1
+-rwxr-xr-x	root/root	usr/lib/libLTO.so.4.0.1
