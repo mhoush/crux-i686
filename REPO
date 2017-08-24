@@ -77,7 +77,7 @@ f:b3f015932ce2857e3d7f26f1b0ddd5ff:gcc/Pkgfile
 f:e42e01fc48b8430c7ad33f6714c23f5d:gcc/.md5sum
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
 f:8d677f91b638f7f3da6789154207cbfd:gcc/.footprint
-f:d14313accbc35d709d39233379e7c713:binutils/Pkgfile
+f:7487154f25a3f5a69a0533bd6a649c79:binutils/Pkgfile
 f:29f006e9bbfa18fa8d52aa4ecbf5ff65:binutils/.md5sum
 f:58581b5cc2dd65286cfbf96341f7f30b:binutils/.footprint
 f:6cef6f5ab23244460cdf13c98e68b010:filesystem/issue
