@@ -60,13 +60,13 @@ f:03101f99ef8e76621b4982d9d0cbedab:openssl/.footprint
 f:7aa9a4325850b5ceae0b01d01fddc06c:mesa3d/Pkgfile
 f:c9a947a3e6365071b7c54246d0b84f23:mesa3d/.md5sum
 f:70342d0e4502c0ebe52b66ae64afe66c:mesa3d/.footprint
-f:4d3806392fbd238dd94eaaf2275780d2:firefox/Pkgfile
-f:684d2d64baae9a0929039a0ee54a7a41:firefox/.md5sum
+f:abfcd933f143f08c30c8816300e2b698:firefox/Pkgfile
+f:128aecb71972da257415349d12e9c8dd:firefox/.md5sum
 f:afe61c7760e835bd12d5dfd40af4ec84:firefox/firefox-install-dir.patch
 f:cf6971669f70b440cb6ff8df8b2722ae:firefox/firefox.desktop
 f:ca55d2b1dae46d88717df597a24983be:firefox/gcc6-fix-compilation.patch
 f:a87fef21fe4d7969f59d96f0ec3d1e6c:firefox/README
-f:b0d9756f5c3317aecd4d8bd1e9d41519:firefox/.footprint
+f:62b7695bbd3b2f1e08d6c14a31d35d5b:firefox/.footprint
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
 f:2eab581e5519220b018bd7a15852303c:prt-get/Pkgfile
 f:d02e39e883c324669663a30694532ec1:prt-get/.md5sum
