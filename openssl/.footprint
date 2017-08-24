@@ -891,10 +891,14 @@ lrwxrwxrwx	root/root	usr/share/man/man3/EVP_SignUpdate.3ssl.gz -> EVP_SignInit.3
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_VerifyFinal.3ssl.gz -> EVP_VerifyInit.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/EVP_VerifyInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_VerifyUpdate.3ssl.gz -> EVP_VerifyInit.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_128_cbc_hmac_sha1.3ssl.gz -> EVP_EncryptInit.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_128_cbc_hmac_sha256.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_128_ccm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_128_gcm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_192_ccm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_192_gcm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_256_cbc_hmac_sha1.3ssl.gz -> EVP_EncryptInit.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_256_cbc_hmac_sha256.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_256_ccm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_aes_256_gcm.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_bf_cbc.3ssl.gz -> EVP_EncryptInit.3ssl.gz
@@ -944,6 +948,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc2_ecb.3ssl.gz -> EVP_EncryptInit.3
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc2_ofb.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc4.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc4_40.3ssl.gz -> EVP_EncryptInit.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc4_hmac_md5.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc5_32_12_16_cbc.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc5_32_12_16_cfb.3ssl.gz -> EVP_EncryptInit.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/EVP_rc5_32_12_16_ecb.3ssl.gz -> EVP_EncryptInit.3ssl.gz
