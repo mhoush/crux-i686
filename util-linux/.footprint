@@ -101,6 +101,7 @@ lrwxrwxrwx	root/root	usr/bin/uname26 -> setarch
 -rwxr-xr-x	root/root	usr/bin/unshare
 -rwxr-xr-x	root/root	usr/bin/utmpdump
 -rwxr-xr-x	root/root	usr/bin/uuidgen
+-rwxr-xr-x	root/root	usr/bin/uuidparse
 -rwxr-sr-x	root/tty	usr/bin/wall
 -rwxr-xr-x	root/root	usr/bin/whereis
 -rwxr-sr-x	root/tty	usr/bin/write
@@ -145,6 +146,7 @@ drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/partx
 -rwxr-xr-x	root/root	usr/sbin/readprofile
 -rwxr-xr-x	root/root	usr/sbin/resizepart
+-rwxr-xr-x	root/root	usr/sbin/rfkill
 -rwxr-xr-x	root/root	usr/sbin/rtcwake
 -rwxr-xr-x	root/root	usr/sbin/uuidd
 drwxr-xr-x	root/root	usr/share/
@@ -195,6 +197,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/unshare.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/utmpdump.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/uuidgen.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/uuidparse.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/wall.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/whereis.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/write.1.gz
@@ -253,6 +256,7 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/raw.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/readprofile.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/resizepart.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/rfkill.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/rtcwake.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/setarch.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/sfdisk.8.gz
