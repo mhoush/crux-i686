@@ -22,9 +22,9 @@ f:8f71633b5012a7e00881da861e0514b0:libgmp/Pkgfile
 f:f15f17ba2eda31e73bafa3d389af83cc:libgmp/.md5sum
 f:4998f9774d7c05c708d6a3b65a6ddec1:libgmp/.footprint
 f:bbf6d30f092c6d302f028679f1f9bfc3:libgmp/gmp.h
-f:146e4632e31a4601a076fb25eb6bc0b8:llvm/Pkgfile
-f:8a66ebc34c52354a49fe85948955a659:llvm/.md5sum
-f:90c7a526af224d049cba1d7988931df7:llvm/.footprint
+f:025d60d7dfab6fc856035b5a385450ca:llvm/Pkgfile
+f:81caef6456971c3d697c210118231889:llvm/.md5sum
+f:bfb705df01036c2ae3a6568598706ba8:llvm/.footprint
 f:bf2ff51cef976ccd0a4832835eec8195:nss/nss-softokn.pc.in
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
 f:84b7c84bfc49dbc4a05ec1c0877d6668:nss/Pkgfile
