@@ -4,7 +4,7 @@
 # Depends on: nss, autoconf-2.13, unzip, zip, libidl, gtk, gtk3, python, alsa-lib, xorg-libxt, yasm, mesa3d
  
 name=firefox
-version=52.3.0esr
+version=52.5.2esr
 release=1
 source=(https://ftp.mozilla.org/pub/firefox/releases/$version/source/firefox-$version.source.tar.xz
 	firefox-install-dir.patch firefox.desktop)

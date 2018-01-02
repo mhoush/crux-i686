@@ -3988,6 +3988,7 @@ drwxr-xr-x	root/root	usr/include/firefox/nestegg/
 -rw-r--r--	root/root	usr/include/firefox/nsIQuotaCallbacks.h
 -rw-r--r--	root/root	usr/include/firefox/nsIQuotaManagerService.h
 -rw-r--r--	root/root	usr/include/firefox/nsIQuotaRequests.h
+-rw-r--r--	root/root	usr/include/firefox/nsIQuotaResults.h
 -rw-r--r--	root/root	usr/include/firefox/nsIRDFCompositeDataSource.h
 -rw-r--r--	root/root	usr/include/firefox/nsIRDFContainer.h
 -rw-r--r--	root/root	usr/include/firefox/nsIRDFContainerUtils.h
@@ -5734,6 +5735,7 @@ drwxr-xr-x	root/root	usr/share/idl/firefox/
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIQuotaCallbacks.idl
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIQuotaManagerService.idl
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIQuotaRequests.idl
+-rw-r--r--	root/root	usr/share/idl/firefox/nsIQuotaResults.idl
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIRDFCompositeDataSource.idl
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIRDFContainer.idl
 -rw-r--r--	root/root	usr/share/idl/firefox/nsIRDFContainerUtils.idl
