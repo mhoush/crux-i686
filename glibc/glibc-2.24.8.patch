@@ -1,8 +1,128 @@
 diff --git a/ChangeLog b/ChangeLog
-index c44c926094..24693b184a 100644
+index c44c926094..84189ec762 100644
 --- a/ChangeLog
 +++ b/ChangeLog
-@@ -1,3 +1,551 @@
+@@ -1,3 +1,685 @@
++2017-10-19  H.J. Lu  <hongjiu.lu@intel.com>
++
++	* sysdeps/x86_64/Makefile (tests): Add tst-sse, tst-avx and
++	tst-avx512.
++	(test-extras): Add tst-avx-aux and tst-avx512-aux.
++	(extra-test-objs): Add tst-avx-aux.o and tst-avx512-aux.o.
++	(modules-names): Add tst-ssemod, tst-avxmod and tst-avx512mod.
++	($(objpfx)tst-sse): New rule.
++	($(objpfx)tst-avx): Likewise.
++	($(objpfx)tst-avx512): Likewise.
++	(CFLAGS-tst-avx-aux.c): New.
++	(CFLAGS-tst-avxmod.c): Likewise.
++	(CFLAGS-tst-avx512-aux.c): Likewise.
++	(CFLAGS-tst-avx512mod.c): Likewise.
++	* sysdeps/x86_64/tst-avx-aux.c: New file.
++	* sysdeps/x86_64/tst-avx.c: Likewise.
++	* sysdeps/x86_64/tst-avx512-aux.c: Likewise.
++	* sysdeps/x86_64/tst-avx512.c: Likewise.
++	* sysdeps/x86_64/tst-avx512mod.c: Likewise.
++	* sysdeps/x86_64/tst-avxmod.c: Likewise.
++	* sysdeps/x86_64/tst-sse.c: Likewise.
++	* sysdeps/x86_64/tst-ssemod.c: Likewise.
++
++2017-10-19  H.J. Lu  <hongjiu.lu@intel.com>
++
++	* sysdeps/x86_64/dl-trampoline.h (_dl_runtime_resolve): Don't
++	adjust CFA when allocating register save area on re-aligned
++	stack.
++
++2016-12-21  Joseph Myers  <joseph@codesourcery.com>
++
++	[BZ #20978]
++	* nis/nss_nisplus/nisplus-alias.c (_nss_nisplus_getaliasbyname_r):
++	Compare name == NULL, not name != NULL.
++
++2016-11-08  Joseph Myers  <joseph@codesourcery.com>
++
++	[BZ #20790]
++	* sunrpc/rpc_parse.c (get_prog_declaration): Increase buffer size
++	to MAXLINESIZE.
++	* sunrpc/bug20790.x: New file.
++	* sunrpc/Makefile [$(run-built-tests) = yes] (rpcgen-tests): New
++	variable.
++	[$(run-built-tests) = yes] (tests-special): Add $(rpcgen-tests).
++	[$(run-built-tests) = yes] ($(rpcgen-tests)): New rule.
++
++2016-10-14  Steve Ellcey  <sellcey@caviumnetworks.com>
++
++	* sysdeps/ieee754/dbl-64/e_pow.c (checkint) Make conditions explicitly
++	boolean.
++
++2017-07-19  DJ Delorie  <dj@delorie.com>
++
++	[BZ #21654]
++	* grp/grp-merge.c (libc_hidden_def): Fix cast-after-dereference.
++
++2017-07-14  DJ Delorie  <dj@redhat.com>
++
++	[BZ #21654]
++	* grp/grp_merge.c (__copy_grp): Align char** to minimum pointer
++	alignment not char alignment.
++	(__merge_grp): Likewise.
++
++2017-08-06  H.J. Lu  <hongjiu.lu@intel.com>
++
++	[BZ #21871]
++	* sysdeps/x86/cpu-features.c (init_cpu_features): Set
++	bit_arch_Use_dl_runtime_resolve_opt only with AVX512F.
++
++2017-02-27  Florian Weimer  <fweimer@redhat.com>
++
++	[BZ #21115]
++	* sunrpc/clnt_udp.c (clntudp_call): Free ancillary data later.
++	* sunrpc/Makefile (tests): Add tst-udp-error.
++	(tst-udp-error): Link against libc.so explicitly.
++	* sunrpc/tst-udp-error: New file.
++
++2017-01-24  James Clarke  <jrtc27@jrtc27.com>
++
++	* sysdeps/unix/sysv/linux/sh/sh3/ucontext_i.sym: Use new REG_R*
++	constants instead of the old R* ones.
++	* sysdeps/unix/sysv/linux/sh/sh4/ucontext_i.sym: Likewise.
++	* sysdeps/unix/sysv/linux/sh/sys/ucontext.h (NGPREG): Rename...
++	(NGREG): ... to this, to fit in with other architectures.
++	(gpregset_t): Use new NGREG macro.
++	[__USE_GNU]: Remove condition; all architectures other than tile
++	are unconditional.
++	(R*): Rename to REG_R*.
++
++2017-07-26  H.J. Lu  <hongjiu.lu@intel.com>
++
++	[BZ #21666]
++	* misc/regexp.c (loc1): Add __attribute__ ((nocommon));
++	(loc2): Likewise.
++	(locs): Likewise.
++
++2017-07-12  Szabolcs Nagy  <szabolcs.nagy@arm.com>
++
++	* sysdeps/aarch64/dl-machine.h (RTLD_START_1): Change _dl_argv to the
++	hidden __GI__dl_argv symbol.
++
++2016-09-05  Aurelien Jarno  <aurelien@aurel32.net>
++
++	* conform/Makefile (conformtest-header-tests): Pass -I. to $(PERL).
++	(linknamespace-symlists-tests): Likewise.
++	(linknamespace-header-tests): Likewise.
++
++2017-07-06  Florian Weimer  <fweimer@redhat.com>
++	    H.J. Lu  <hongjiu.lu@intel.com>
++
++	[BZ #21609]
++	* sysdeps/x86_64/Makefile (sysdep-dl-routines): Add tls_get_addr.
++	(gen-as-const-headers): Add rtld-offsets.sym.
++	* sysdeps/x86_64/dl-tls.c: New file.
++	* sysdeps/x86_64/rtld-offsets.sym: Likwise.
++	* sysdeps/x86_64/tls_get_addr.S: Likewise.
++	* sysdeps/x86_64/dl-tls.h: Add multiple inclusion guards.
++	* sysdeps/x86_64/tlsdesc.sym (TI_MODULE_OFFSET): New.
++	(TI_OFFSET_OFFSET): Likwise.
++
 +2017-06-14  Florian Weimer  <fweimer@redhat.com>
 +
 +	* sysdeps/i386/i686/multiarch/strcspn-c.c: Add IS_IN (libc) guard.
@@ -261,6 +381,20 @@ index c44c926094..24693b184a 100644
 +	[BZ #20750]
 +	* sysdeps/x86_64/sysdep.h (JUMPTARGET): Check SHARED instead
 +	of PIC.
++
++2016-12-31  Florian Weimer  <fweimer@redhat.com>
++
++	[BZ #18784]
++	CVE-2015-5180
++	* include/arpa/nameser_compat.h (T_QUERY_A_AND_AAAA): Rename from
++	T_UNSPEC.  Adjust value.
++	* resolv/nss_dns/dns-host.c (_nss_dns_gethostbyname4_r): Use it.
++	* resolv/res_query.c (__libc_res_nquery): Likewise.
++	* resolv/res_mkquery.c (res_nmkquery): Check for out-of-range
++	QTYPEs.
++	* resolv/tst-resolv-qtypes.c: New file.
++	* resolv/Makefile (xtests): Add tst-resolv-qtypes.
++	(tst-resolv-qtypes): Link against libresolv and libpthread.
 +
 +2017-02-02  Siddhesh Poyarekar  <siddhesh@sourceware.org>
 +
@@ -609,10 +743,10 @@ index 03fd89c13e..ee379f5852 100644
  
  ifndef avoid-generated
 diff --git a/NEWS b/NEWS
-index b0447e7169..4a042dbe2b 100644
+index b0447e7169..4831542023 100644
 --- a/NEWS
 +++ b/NEWS
-@@ -5,6 +5,17 @@ See the end for copying conditions.
+@@ -5,6 +5,33 @@ See the end for copying conditions.
  Please send GNU C library bug reports via <http://sourceware.org/bugzilla/>
  using `glibc' in the "product" field.
  
@@ -626,6 +760,22 @@ index b0447e7169..4a042dbe2b 100644
 +  (denial of service) in some Go applications compiled with gccgo.  Reported
 +  by Andreas Schwab.  (CVE-2016-6323)
 +
++* The DNS stub resolver functions would crash due to a NULL pointer
++  dereference when processing a query with a valid DNS question type which
++  was used internally in the implementation.  The stub resolver now uses a
++  question type which is outside the range of valid question type values.
++  (CVE-2015-5180)
++
++The following bugs are resolved with this release:
++
++  [20790] Fix rpcgen buffer overrun
++  [20978] Fix strlen on null pointer in nss_nisplus
++  [21209] Ignore and remove LD_HWCAP_MASK for AT_SECURE programs
++  [21289] Fix symbol redirect for fts_set
++  [21386] Assertion in fork for distinct parent PID is incorrect
++  [21609] x86-64: Align the stack in __tls_get_addr
++  [21624] Unsafe alloca allows local attackers to alias stack and heap (CVE-2017-1000366)
++  [21654] nss: Fix invalid cast in group merging
 +
  Version 2.24
  
@@ -811,10 +961,26 @@ index 33bcd62180..8277d9f727 100644
  *) AC_MSG_ERROR([unexpected symbols in test: $libc_undefs]) ;;
  esac],
 diff --git a/conform/Makefile b/conform/Makefile
-index 32a0937b06..762aac98fc 100644
+index 32a0937b06..7883624c81 100644
 --- a/conform/Makefile
 +++ b/conform/Makefile
-@@ -229,6 +229,7 @@ $(linknamespace-symlist-stdlibs-tests): $(objpfx)symlist-stdlibs-%: \
+@@ -196,13 +196,13 @@ $(conformtest-header-tests): $(objpfx)%/conform.out: \
+ 			     conformtest.pl $(conformtest-headers-data)
+ 	(set -e; std_hdr=$*; std=$${std_hdr%%/*}; hdr=$${std_hdr#*/}; \
+ 	 mkdir -p $(@D)/scratch; \
+-	 $(PERL) conformtest.pl --tmpdir=$(@D)/scratch --cc='$(CC)' \
++	 $(PERL) -I. conformtest.pl --tmpdir=$(@D)/scratch --cc='$(CC)' \
+ 		 --flags='$(conformtest-cc-flags)' --standard=$$std \
+ 		 --headers=$$hdr > $@); \
+ 	$(evaluate-test)
+ 
+ $(linknamespace-symlists-tests): $(objpfx)symlist-%: list-header-symbols.pl
+-	$(PERL) -w $< --tmpdir=$(objpfx) --cc='$(CC)' \
++	$(PERL) -I. -w $< --tmpdir=$(objpfx) --cc='$(CC)' \
+ 		--flags='$(conformtest-cc-flags)' --standard=$* \
+ 		--headers="$(strip $(conformtest-headers-$*))" \
+ 		> $@ 2> $@.err; \
+@@ -229,10 +229,11 @@ $(linknamespace-symlist-stdlibs-tests): $(objpfx)symlist-stdlibs-%: \
  
  $(linknamespace-header-tests): $(objpfx)%/linknamespace.out: \
  			       linknamespace.pl \
@@ -822,6 +988,11 @@ index 32a0937b06..762aac98fc 100644
  			       $(linknamespace-symlist-stdlibs-tests)
  	(set -e; std_hdr=$*; std=$${std_hdr%%/*}; hdr=$${std_hdr#*/}; \
  	 mkdir -p $(@D)/scratch; \
+-	 $(PERL) -w $< --tmpdir=$(@D)/scratch --cc='$(CC)' \
++	 $(PERL) -I. -w $< --tmpdir=$(@D)/scratch --cc='$(CC)' \
+ 		 --flags='$(conformtest-cc-flags)' --standard=$$std \
+ 		 --stdsyms=$(objpfx)symlist-$$std --header=$$hdr \
+ 		 --libsyms=$(objpfx)symlist-stdlibs-$$std \
 diff --git a/elf/Makefile b/elf/Makefile
 index 593403c640..847a012f84 100644
 --- a/elf/Makefile
@@ -1421,6 +1592,49 @@ index b10748d185..2552049135 100644
  extra-objs += $(foreach o,$(filter-out .os .oS,$(object-suffixes-$(lib))),\
  			$(patsubst %,%$o,$(filter-out \
  					   $($(lib)-shared-only-routines),\
+diff --git a/grp/grp-merge.c b/grp/grp-merge.c
+index 0a1eb38d2c..5f79755798 100644
+--- a/grp/grp-merge.c
++++ b/grp/grp-merge.c
+@@ -85,6 +85,14 @@ __copy_grp (const struct group srcgrp, const size_t buflen,
+     }
+   members[i] = NULL;
+ 
++  /* Align for pointers.  We can't simply align C because we need to
++     align destbuf[c].  */
++  if ((((uintptr_t)destbuf + c) & (__alignof__(char **) - 1)) != 0)
++    {
++      uintptr_t mis_align = ((uintptr_t)destbuf + c) & (__alignof__(char **) - 1);
++      c += __alignof__(char **) - mis_align;
++    }
++
+   /* Copy the pointers from the members array into the buffer and assign them
+      to the gr_mem member of destgrp.  */
+   destgrp->gr_mem = (char **) &destbuf[c];
+@@ -129,7 +137,7 @@ __merge_grp (struct group *savedgrp, char *savedbuf, char *savedend,
+ 
+   /* Get the count of group members from the last sizeof (size_t) bytes in the
+      mergegrp buffer.  */
+-  savedmemcount = (size_t) *(savedend - sizeof (size_t));
++  savedmemcount = *(size_t *) (savedend - sizeof (size_t));
+ 
+   /* Get the count of new members to add.  */
+   for (memcount = 0; mergegrp->gr_mem[memcount]; memcount++)
+@@ -168,6 +176,14 @@ __merge_grp (struct group *savedgrp, char *savedbuf, char *savedend,
+   /* Add the NULL-terminator.  */
+   members[savedmemcount + memcount] = NULL;
+ 
++  /* Align for pointers.  We can't simply align C because we need to
++     align savedbuf[c].  */
++  if ((((uintptr_t)savedbuf + c) & (__alignof__(char **) - 1)) != 0)
++    {
++      uintptr_t mis_align = ((uintptr_t)savedbuf + c) & (__alignof__(char **) - 1);
++      c += __alignof__(char **) - mis_align;
++    }
++
+   /* Copy the member array back into the buffer after the member list and free
+      the member array.  */
+   savedgrp->gr_mem = (char **) &savedbuf[c];
 diff --git a/iconv/gconv.h b/iconv/gconv.h
 index 8d8ce5813b..a87028047b 100644
 --- a/iconv/gconv.h
@@ -1434,6 +1648,22 @@ index 8d8ce5813b..a87028047b 100644
  } *__gconv_t;
  
  /* Transliteration using the locale's data.  */
+diff --git a/include/arpa/nameser_compat.h b/include/arpa/nameser_compat.h
+index 2e735ede4c..7c0deed9ae 100644
+--- a/include/arpa/nameser_compat.h
++++ b/include/arpa/nameser_compat.h
+@@ -1,8 +1,8 @@
+ #ifndef _ARPA_NAMESER_COMPAT_
+ #include <resolv/arpa/nameser_compat.h>
+ 
+-/* Picksome unused number to represent lookups of IPv4 and IPv6 (i.e.,
+-   T_A and T_AAAA).  */
+-#define T_UNSPEC 62321
++/* The number is outside the 16-bit RR type range and is used
++   internally by the implementation.  */
++#define T_QUERY_A_AND_AAAA 439963904
+ 
+ #endif
 diff --git a/io/fts.h b/io/fts.h
 index 127a0d2721..b6b45206c8 100644
 --- a/io/fts.h
@@ -1664,6 +1894,43 @@ index 229783f3b7..4e16593d8b 100644
      (void) mutex_unlock (&free_list_lock);
    }
  
+diff --git a/misc/regexp.c b/misc/regexp.c
+index 3b3668272f..b2a2c6e636 100644
+--- a/misc/regexp.c
++++ b/misc/regexp.c
+@@ -29,14 +29,15 @@
+ 
+ #if SHLIB_COMPAT (libc, GLIBC_2_0, GLIBC_2_23)
+ 
+-/* Define the variables used for the interface.  */
+-char *loc1;
+-char *loc2;
++/* Define the variables used for the interface.  Avoid .symver on common
++   symbol, which just creates a new common symbol, not an alias.  */
++char *loc1 __attribute__ ((nocommon));
++char *loc2 __attribute__ ((nocommon));
+ compat_symbol (libc, loc1, loc1, GLIBC_2_0);
+ compat_symbol (libc, loc2, loc2, GLIBC_2_0);
+ 
+ /* Although we do not support the use we define this variable as well.  */
+-char *locs;
++char *locs __attribute__ ((nocommon));
+ compat_symbol (libc, locs, locs, GLIBC_2_0);
+ 
+ 
+diff --git a/nis/nss_nisplus/nisplus-alias.c b/nis/nss_nisplus/nisplus-alias.c
+index 7f698b4e6d..cb5acce01d 100644
+--- a/nis/nss_nisplus/nisplus-alias.c
++++ b/nis/nss_nisplus/nisplus-alias.c
+@@ -291,7 +291,7 @@ _nss_nisplus_getaliasbyname_r (const char *name, struct aliasent *alias,
+ 	return status;
+     }
+ 
+-  if (name != NULL)
++  if (name == NULL)
+     {
+       *errnop = EINVAL;
+       return NSS_STATUS_UNAVAIL;
 diff --git a/nptl/Makefile b/nptl/Makefile
 index 0d8aadebed..fa925819ca 100644
 --- a/nptl/Makefile
@@ -2994,6 +3261,276 @@ index d933f9c92a..7cdb06a611 100644
  
        __execve (buffer, argv, envp);
  
+diff --git a/resolv/Makefile b/resolv/Makefile
+index 8be41d3ae1..a4c86b9762 100644
+--- a/resolv/Makefile
++++ b/resolv/Makefile
+@@ -40,6 +40,9 @@ ifeq ($(have-thread-library),yes)
+ extra-libs += libanl
+ routines += gai_sigqueue
+ tests += tst-res_hconf_reorder
++
++# This test sends millions of packets and is rather slow.
++xtests += tst-resolv-qtypes
+ endif
+ extra-libs-others = $(extra-libs)
+ libresolv-routines := gethnamaddr res_comp res_debug	\
+@@ -117,3 +120,5 @@ tst-leaks2-ENV = MALLOC_TRACE=$(objpfx)tst-leaks2.mtrace
+ $(objpfx)mtrace-tst-leaks2.out: $(objpfx)tst-leaks2.out
+ 	$(common-objpfx)malloc/mtrace $(objpfx)tst-leaks2.mtrace > $@; \
+ 	$(evaluate-test)
++
++$(objpfx)tst-resolv-qtypes: $(objpfx)libresolv.so $(shared-thread-library)
+diff --git a/resolv/nss_dns/dns-host.c b/resolv/nss_dns/dns-host.c
+index 5f9e35701b..d16fa4b8ed 100644
+--- a/resolv/nss_dns/dns-host.c
++++ b/resolv/nss_dns/dns-host.c
+@@ -323,7 +323,7 @@ _nss_dns_gethostbyname4_r (const char *name, struct gaih_addrtuple **pat,
+ 
+   int olderr = errno;
+   enum nss_status status;
+-  int n = __libc_res_nsearch (&_res, name, C_IN, T_UNSPEC,
++  int n = __libc_res_nsearch (&_res, name, C_IN, T_QUERY_A_AND_AAAA,
+ 			      host_buffer.buf->buf, 2048, &host_buffer.ptr,
+ 			      &ans2p, &nans2p, &resplen2, &ans2p_malloced);
+   if (n >= 0)
+diff --git a/resolv/res_mkquery.c b/resolv/res_mkquery.c
+index 12f9730199..d80b5318e5 100644
+--- a/resolv/res_mkquery.c
++++ b/resolv/res_mkquery.c
+@@ -103,6 +103,10 @@ res_nmkquery(res_state statp,
+ 	int n;
+ 	u_char *dnptrs[20], **dpp, **lastdnptr;
+ 
++	if (class < 0 || class > 65535
++	    || type < 0 || type > 65535)
++	  return -1;
++
+ #ifdef DEBUG
+ 	if (statp->options & RES_DEBUG)
+ 		printf(";; res_nmkquery(%s, %s, %s, %s)\n",
+diff --git a/resolv/res_query.c b/resolv/res_query.c
+index 944d1a90f5..07dc6f6583 100644
+--- a/resolv/res_query.c
++++ b/resolv/res_query.c
+@@ -122,7 +122,7 @@ __libc_res_nquery(res_state statp,
+ 	int n, use_malloc = 0;
+ 	u_int oflags = statp->_flags;
+ 
+-	size_t bufsize = (type == T_UNSPEC ? 2 : 1) * QUERYSIZE;
++	size_t bufsize = (type == T_QUERY_A_AND_AAAA ? 2 : 1) * QUERYSIZE;
+ 	u_char *buf = alloca (bufsize);
+ 	u_char *query1 = buf;
+ 	int nquery1 = -1;
+@@ -137,7 +137,7 @@ __libc_res_nquery(res_state statp,
+ 		printf(";; res_query(%s, %d, %d)\n", name, class, type);
+ #endif
+ 
+-	if (type == T_UNSPEC)
++	if (type == T_QUERY_A_AND_AAAA)
+ 	  {
+ 	    n = res_nmkquery(statp, QUERY, name, class, T_A, NULL, 0, NULL,
+ 			     query1, bufsize);
+@@ -190,7 +190,7 @@ __libc_res_nquery(res_state statp,
+ 	if (__builtin_expect (n <= 0, 0) && !use_malloc) {
+ 		/* Retry just in case res_nmkquery failed because of too
+ 		   short buffer.  Shouldn't happen.  */
+-		bufsize = (type == T_UNSPEC ? 2 : 1) * MAXPACKET;
++		bufsize = (type == T_QUERY_A_AND_AAAA ? 2 : 1) * MAXPACKET;
+ 		buf = malloc (bufsize);
+ 		if (buf != NULL) {
+ 			query1 = buf;
+diff --git a/resolv/tst-resolv-qtypes.c b/resolv/tst-resolv-qtypes.c
+new file mode 100644
+index 0000000000..b3e60c693b
+--- /dev/null
++++ b/resolv/tst-resolv-qtypes.c
+@@ -0,0 +1,185 @@
++/* Exercise low-level query functions with different QTYPEs.
++   Copyright (C) 2016 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <resolv.h>
++#include <string.h>
++#include <support/check.h>
++#include <support/check_nss.h>
++#include <support/resolv_test.h>
++#include <support/support.h>
++#include <support/test-driver.h>
++#include <support/xmemstream.h>
++
++/* If ture, the response function will send the actual response packet
++   over TCP instead of UDP.  */
++static volatile bool force_tcp;
++
++/* Send back a fake resource record matching the QTYPE.  */
++static void
++response (const struct resolv_response_context *ctx,
++          struct resolv_response_builder *b,
++          const char *qname, uint16_t qclass, uint16_t qtype)
++{
++  if (force_tcp && ctx->tcp)
++    {
++      resolv_response_init (b, (struct resolv_response_flags) { .tc = 1 });
++      resolv_response_add_question (b, qname, qclass, qtype);
++      return;
++    }
++
++  resolv_response_init (b, (struct resolv_response_flags) { });
++  resolv_response_add_question (b, qname, qclass, qtype);
++  resolv_response_section (b, ns_s_an);
++  resolv_response_open_record (b, qname, qclass, qtype, 0);
++  resolv_response_add_data (b, &qtype, sizeof (qtype));
++  resolv_response_close_record (b);
++}
++
++static const const char *domain = "www.example.com";
++
++static int
++wrap_res_query (int type, unsigned char *answer, int answer_length)
++{
++  return res_query (domain, C_IN, type, answer, answer_length);
++}
++
++static int
++wrap_res_search (int type, unsigned char *answer, int answer_length)
++{
++  return res_query (domain, C_IN, type, answer, answer_length);
++}
++
++static int
++wrap_res_querydomain (int type, unsigned char *answer, int answer_length)
++{
++  return res_querydomain ("www", "example.com", C_IN, type,
++                           answer, answer_length);
++}
++
++static int
++wrap_res_send (int type, unsigned char *answer, int answer_length)
++{
++  unsigned char buf[512];
++  int ret = res_mkquery (QUERY, domain, C_IN, type,
++                         (const unsigned char *) "", 0, NULL,
++                         buf, sizeof (buf));
++  if (type < 0 || type >= 65536)
++    {
++      /* res_mkquery fails for out-of-range record types.  */
++      TEST_VERIFY_EXIT (ret == -1);
++      return -1;
++    }
++  TEST_VERIFY_EXIT (ret > 12);  /* DNS header length.  */
++  return res_send (buf, ret, answer, answer_length);
++}
++
++static int
++wrap_res_nquery (int type, unsigned char *answer, int answer_length)
++{
++  return res_nquery (&_res, domain, C_IN, type, answer, answer_length);
++}
++
++static int
++wrap_res_nsearch (int type, unsigned char *answer, int answer_length)
++{
++  return res_nquery (&_res, domain, C_IN, type, answer, answer_length);
++}
++
++static int
++wrap_res_nquerydomain (int type, unsigned char *answer, int answer_length)
++{
++  return res_nquerydomain (&_res, "www", "example.com", C_IN, type,
++                           answer, answer_length);
++}
++
++static int
++wrap_res_nsend (int type, unsigned char *answer, int answer_length)
++{
++  unsigned char buf[512];
++  int ret = res_nmkquery (&_res, QUERY, domain, C_IN, type,
++                         (const unsigned char *) "", 0, NULL,
++                         buf, sizeof (buf));
++  if (type < 0 || type >= 65536)
++    {
++      /* res_mkquery fails for out-of-range record types.  */
++      TEST_VERIFY_EXIT (ret == -1);
++      return -1;
++    }
++  TEST_VERIFY_EXIT (ret > 12);  /* DNS header length.  */
++  return res_nsend (&_res, buf, ret, answer, answer_length);
++}
++
++static void
++test_function (const char *fname,
++               int (*func) (int type,
++                            unsigned char *answer, int answer_length))
++{
++  unsigned char buf[512];
++  for (int tcp = 0; tcp < 2; ++tcp)
++    {
++      force_tcp = tcp;
++      for (unsigned int type = 1; type <= 65535; ++type)
++        {
++          if (test_verbose)
++            printf ("info: sending QTYPE %d with %s (tcp=%d)\n",
++                    type, fname, tcp);
++          int ret = func (type, buf, sizeof (buf));
++          if (ret != 47)
++            FAIL_EXIT1 ("%s tcp=%d qtype=%d return value %d",
++                        fname,tcp, type, ret);
++          /* One question, one answer record.  */
++          TEST_VERIFY (memcmp (buf + 4, "\0\1\0\1\0\0\0\0", 8) == 0);
++          /* Question section.  */
++          static const char qname[] = "\3www\7example\3com";
++          size_t qname_length = sizeof (qname);
++          TEST_VERIFY (memcmp (buf + 12, qname, qname_length) == 0);
++          /* RDATA part of answer.  */
++          uint16_t type16 = type;
++          TEST_VERIFY (memcmp (buf + ret - 2, &type16, sizeof (type16)) == 0);
++        }
++    }
++
++  TEST_VERIFY (func (-1, buf, sizeof (buf) == -1));
++  TEST_VERIFY (func (65536, buf, sizeof (buf) == -1));
++}
++
++static int
++do_test (void)
++{
++  struct resolv_redirect_config config =
++    {
++      .response_callback = response,
++    };
++  struct resolv_test *obj = resolv_test_start (config);
++
++  test_function ("res_query", &wrap_res_query);
++  test_function ("res_search", &wrap_res_search);
++  test_function ("res_querydomain", &wrap_res_querydomain);
++  test_function ("res_send", &wrap_res_send);
++
++  test_function ("res_nquery", &wrap_res_nquery);
++  test_function ("res_nsearch", &wrap_res_nsearch);
++  test_function ("res_nquerydomain", &wrap_res_nquerydomain);
++  test_function ("res_nsend", &wrap_res_nsend);
++
++  resolv_test_end (obj);
++  return 0;
++}
++
++#define TIMEOUT 300
++#include <support/test-driver.c>
 diff --git a/scripts/backport-support.sh b/scripts/backport-support.sh
 new file mode 100644
 index 0000000000..2ece7ce575
@@ -3110,6 +3647,151 @@ index 0000000000..2ece7ce575
 +}
 +
 +command_$command
+diff --git a/sunrpc/Makefile b/sunrpc/Makefile
+index 789ef423e5..1e91905011 100644
+--- a/sunrpc/Makefile
++++ b/sunrpc/Makefile
+@@ -96,13 +96,18 @@ rpcgen-objs = rpc_main.o rpc_hout.o rpc_cout.o rpc_parse.o \
+ extra-objs = $(rpcgen-objs) $(addprefix cross-,$(rpcgen-objs))
+ others += rpcgen
+ 
+-tests = tst-xdrmem tst-xdrmem2 test-rpcent
++tests = tst-xdrmem tst-xdrmem2 test-rpcent tst-udp-error
+ xtests := tst-getmyaddr
+ 
+ ifeq ($(have-thread-library),yes)
+ xtests += thrsvc
+ endif
+ 
++ifeq ($(run-built-tests),yes)
++rpcgen-tests := $(objpfx)bug20790.out
++tests-special += $(rpcgen-tests)
++endif
++
+ headers += $(rpcsvc:%.x=rpcsvc/%.h)
+ extra-libs := librpcsvc
+ extra-libs-others := librpcsvc # Make it in `others' pass, not `lib' pass.
+@@ -153,6 +158,7 @@ BUILD_CPPFLAGS += $(sunrpc-CPPFLAGS)
+ $(objpfx)tst-getmyaddr: $(common-objpfx)linkobj/libc.so
+ $(objpfx)tst-xdrmem: $(common-objpfx)linkobj/libc.so
+ $(objpfx)tst-xdrmem2: $(common-objpfx)linkobj/libc.so
++$(objpfx)tst-udp-error: $(common-objpfx)linkobj/libc.so
+ 
+ $(objpfx)rpcgen: $(addprefix $(objpfx),$(rpcgen-objs))
+ 
+@@ -225,3 +231,9 @@ endif
+ endif
+ 
+ $(objpfx)thrsvc: $(common-objpfx)linkobj/libc.so $(shared-thread-library)
++
++ifeq ($(run-built-tests),yes)
++$(rpcgen-tests): $(objpfx)%.out: %.x $(objpfx)rpcgen
++	$(built-program-cmd) -c $< -o $@; \
++	$(evaluate-test)
++endif
+diff --git a/sunrpc/bug20790.x b/sunrpc/bug20790.x
+new file mode 100644
+index 0000000000..a00c9b3830
+--- /dev/null
++++ b/sunrpc/bug20790.x
+@@ -0,0 +1 @@
++program TPROG { version TVERS { int FUNC(int aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa) = 1; } = 1; } = 1;
+diff --git a/sunrpc/clnt_udp.c b/sunrpc/clnt_udp.c
+index 4d9acb1e6a..1de25cb771 100644
+--- a/sunrpc/clnt_udp.c
++++ b/sunrpc/clnt_udp.c
+@@ -421,9 +421,9 @@ send_again:
+ 		 cmsg = CMSG_NXTHDR (&msg, cmsg))
+ 	      if (cmsg->cmsg_level == SOL_IP && cmsg->cmsg_type == IP_RECVERR)
+ 		{
+-		  free (cbuf);
+ 		  e = (struct sock_extended_err *) CMSG_DATA(cmsg);
+ 		  cu->cu_error.re_errno = e->ee_errno;
++		  free (cbuf);
+ 		  return (cu->cu_error.re_status = RPC_CANTRECV);
+ 		}
+ 	  free (cbuf);
+diff --git a/sunrpc/rpc_parse.c b/sunrpc/rpc_parse.c
+index 1a1df6d8c2..505a6554cf 100644
+--- a/sunrpc/rpc_parse.c
++++ b/sunrpc/rpc_parse.c
+@@ -521,7 +521,7 @@ static void
+ get_prog_declaration (declaration * dec, defkind dkind, int num /* arg number */ )
+ {
+   token tok;
+-  char name[10];		/* argument name */
++  char name[MAXLINESIZE];		/* argument name */
+ 
+   if (dkind == DEF_PROGRAM)
+     {
+diff --git a/sunrpc/tst-udp-error.c b/sunrpc/tst-udp-error.c
+new file mode 100644
+index 0000000000..1efc02f5c6
+--- /dev/null
++++ b/sunrpc/tst-udp-error.c
+@@ -0,0 +1,62 @@
++/* Check for use-after-free in clntudp_call (bug 21115).
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <netinet/in.h>
++#include <rpc/clnt.h>
++#include <rpc/svc.h>
++#include <support/check.h>
++#include <support/namespace.h>
++#include <support/xsocket.h>
++#include <unistd.h>
++
++static int
++do_test (void)
++{
++  support_become_root ();
++  support_enter_network_namespace ();
++
++  /* Obtain a likely-unused port number.  */
++  struct sockaddr_in sin =
++    {
++      .sin_family = AF_INET,
++      .sin_addr.s_addr = htonl (INADDR_LOOPBACK),
++    };
++  {
++    int fd = xsocket (AF_INET, SOCK_DGRAM | SOCK_CLOEXEC, 0);
++    xbind (fd, (struct sockaddr *) &sin, sizeof (sin));
++    socklen_t sinlen = sizeof (sin);
++    xgetsockname (fd, (struct sockaddr *) &sin, &sinlen);
++    /* Close the socket, so that we will receive an error below.  */
++    close (fd);
++  }
++
++  int sock = RPC_ANYSOCK;
++  CLIENT *clnt = clntudp_create
++    (&sin, 1, 2, (struct timeval) { 1, 0 }, &sock);
++  TEST_VERIFY_EXIT (clnt != NULL);
++  TEST_VERIFY (clnt_call (clnt, 3,
++                          (xdrproc_t) xdr_void, NULL,
++                          (xdrproc_t) xdr_void, NULL,
++                          ((struct timeval) { 3, 0 }))
++               == RPC_CANTRECV);
++  clnt_destroy (clnt);
++
++  return 0;
++}
++
++#include <support/test-driver.c>
 diff --git a/support/Makefile b/support/Makefile
 new file mode 100644
 index 0000000000..20b0343ade
@@ -11073,6 +11755,21 @@ index 0000000000..134e8ee4c1
 +      p += ret;
 +    }
 +}
+diff --git a/sysdeps/aarch64/dl-machine.h b/sysdeps/aarch64/dl-machine.h
+index 282805e396..e86d8b5b63 100644
+--- a/sysdeps/aarch64/dl-machine.h
++++ b/sysdeps/aarch64/dl-machine.h
+@@ -172,8 +172,8 @@ _dl_start_user:							\n\
+ 	cmp	x0, #0						\n\
+ 	bne	1b						\n\
+ 	// Update _dl_argv					\n\
+-	adrp	x3, _dl_argv					\n\
+-	str	x2, [x3, #:lo12:_dl_argv]			\n\
++	adrp	x3, __GI__dl_argv				\n\
++	str	x2, [x3, #:lo12:__GI__dl_argv]			\n\
+ .L_done_stack_adjust:						\n\
+ 	// compute envp						\n\
+ 	add	x3, x2, x1, lsl #3				\n\
 diff --git a/sysdeps/aarch64/nptl/tcb-offsets.sym b/sysdeps/aarch64/nptl/tcb-offsets.sym
 index 0677aeabff..238647dd47 100644
 --- a/sysdeps/aarch64/nptl/tcb-offsets.sym
@@ -11401,6 +12098,30 @@ index e1707ab1c8..b01f712be2 100644
  TID			offsetof (struct pthread, tid) - TLS_PRE_TCB_SIZE
  MULTIPLE_THREADS_OFFSET offsetof (struct pthread, header.multiple_threads) - TLS_PRE_TCB_SIZE
  SYSINFO_OFFSET		offsetof (tcbhead_t, __private)
+diff --git a/sysdeps/ieee754/dbl-64/e_pow.c b/sysdeps/ieee754/dbl-64/e_pow.c
+index 663fa392c2..bd758b5979 100644
+--- a/sysdeps/ieee754/dbl-64/e_pow.c
++++ b/sysdeps/ieee754/dbl-64/e_pow.c
+@@ -466,15 +466,15 @@ checkint (double x)
+     return (n & 1) ? -1 : 1;	/* odd or even */
+   if (k > 20)
+     {
+-      if (n << (k - 20))
++      if (n << (k - 20) != 0)
+ 	return 0;		/* if not integer */
+-      return (n << (k - 21)) ? -1 : 1;
++      return (n << (k - 21) != 0) ? -1 : 1;
+     }
+   if (n)
+     return 0;			/*if  not integer */
+   if (k == 20)
+     return (m & 1) ? -1 : 1;
+-  if (m << (k + 12))
++  if (m << (k + 12) != 0)
+     return 0;
+-  return (m << (k + 11)) ? -1 : 1;
++  return (m << (k + 11) != 0) ? -1 : 1;
+ }
 diff --git a/sysdeps/m68k/m680x0/m68020/atomic-machine.h b/sysdeps/m68k/m680x0/m68020/atomic-machine.h
 index 24bc5c5ef7..65965cca9e 100644
 --- a/sysdeps/m68k/m680x0/m68020/atomic-machine.h
@@ -13626,6 +14347,180 @@ index 391ed5e17b..0000000000
 -   offset.  */
 -#define __ALIGNMENT_ARG
 -#include <sysdeps/unix/sysv/linux/pwrite.c>
+diff --git a/sysdeps/unix/sysv/linux/sh/sh3/ucontext_i.sym b/sysdeps/unix/sysv/linux/sh/sh3/ucontext_i.sym
+index 17397c5511..25f914a93b 100644
+--- a/sysdeps/unix/sysv/linux/sh/sh3/ucontext_i.sym
++++ b/sysdeps/unix/sysv/linux/sh/sh3/ucontext_i.sym
+@@ -13,22 +13,22 @@ SIG_SETMASK
+ oLINK		ucontext (uc_link)
+ oSS_SP		ucontext (uc_stack.ss_sp)
+ oSS_SIZE	ucontext (uc_stack.ss_size)
+-oR0		mcontext (gregs[R0])
+-oR1		mcontext (gregs[R1])
+-oR2		mcontext (gregs[R2])
+-oR3		mcontext (gregs[R3])
+-oR4		mcontext (gregs[R4])
+-oR5		mcontext (gregs[R5])
+-oR6		mcontext (gregs[R6])
+-oR7		mcontext (gregs[R7])
+-oR8		mcontext (gregs[R8])
+-oR9		mcontext (gregs[R9])
+-oR10		mcontext (gregs[R10])
+-oR11		mcontext (gregs[R11])
+-oR12		mcontext (gregs[R12])
+-oR13		mcontext (gregs[R13])
+-oR14		mcontext (gregs[R14])
+-oR15		mcontext (gregs[R15])
++oR0		mcontext (gregs[REG_R0])
++oR1		mcontext (gregs[REG_R1])
++oR2		mcontext (gregs[REG_R2])
++oR3		mcontext (gregs[REG_R3])
++oR4		mcontext (gregs[REG_R4])
++oR5		mcontext (gregs[REG_R5])
++oR6		mcontext (gregs[REG_R6])
++oR7		mcontext (gregs[REG_R7])
++oR8		mcontext (gregs[REG_R8])
++oR9		mcontext (gregs[REG_R9])
++oR10		mcontext (gregs[REG_R10])
++oR11		mcontext (gregs[REG_R11])
++oR12		mcontext (gregs[REG_R12])
++oR13		mcontext (gregs[REG_R13])
++oR14		mcontext (gregs[REG_R14])
++oR15		mcontext (gregs[REG_R15])
+ oPC		mcontext (pc)
+ oPR		mcontext (pr)
+ oSR		mcontext (sr)
+diff --git a/sysdeps/unix/sysv/linux/sh/sh4/ucontext_i.sym b/sysdeps/unix/sysv/linux/sh/sh4/ucontext_i.sym
+index 65633fbcf4..130f60cd96 100644
+--- a/sysdeps/unix/sysv/linux/sh/sh4/ucontext_i.sym
++++ b/sysdeps/unix/sysv/linux/sh/sh4/ucontext_i.sym
+@@ -13,22 +13,22 @@ SIG_SETMASK
+ oLINK		ucontext (uc_link)
+ oSS_SP		ucontext (uc_stack.ss_sp)
+ oSS_SIZE	ucontext (uc_stack.ss_size)
+-oR0		mcontext (gregs[R0])
+-oR1		mcontext (gregs[R1])
+-oR2		mcontext (gregs[R2])
+-oR3		mcontext (gregs[R3])
+-oR4		mcontext (gregs[R4])
+-oR5		mcontext (gregs[R5])
+-oR6		mcontext (gregs[R6])
+-oR7		mcontext (gregs[R7])
+-oR8		mcontext (gregs[R8])
+-oR9		mcontext (gregs[R9])
+-oR10		mcontext (gregs[R10])
+-oR11		mcontext (gregs[R11])
+-oR12		mcontext (gregs[R12])
+-oR13		mcontext (gregs[R13])
+-oR14		mcontext (gregs[R14])
+-oR15		mcontext (gregs[R15])
++oR0		mcontext (gregs[REG_R0])
++oR1		mcontext (gregs[REG_R1])
++oR2		mcontext (gregs[REG_R2])
++oR3		mcontext (gregs[REG_R3])
++oR4		mcontext (gregs[REG_R4])
++oR5		mcontext (gregs[REG_R5])
++oR6		mcontext (gregs[REG_R6])
++oR7		mcontext (gregs[REG_R7])
++oR8		mcontext (gregs[REG_R8])
++oR9		mcontext (gregs[REG_R9])
++oR10		mcontext (gregs[REG_R10])
++oR11		mcontext (gregs[REG_R11])
++oR12		mcontext (gregs[REG_R12])
++oR13		mcontext (gregs[REG_R13])
++oR14		mcontext (gregs[REG_R14])
++oR15		mcontext (gregs[REG_R15])
+ oPC		mcontext (pc)
+ oPR		mcontext (pr)
+ oSR		mcontext (sr)
+diff --git a/sysdeps/unix/sysv/linux/sh/sys/ucontext.h b/sysdeps/unix/sysv/linux/sh/sys/ucontext.h
+index ab9a7e66bf..037fbb73e8 100644
+--- a/sysdeps/unix/sysv/linux/sh/sys/ucontext.h
++++ b/sysdeps/unix/sysv/linux/sh/sys/ucontext.h
+@@ -31,49 +31,47 @@
+ typedef int greg_t;
+ 
+ /* Number of general registers.  */
+-#define NGPREG	16
++#define NGREG	16
+ 
+ /* Container for all general registers.  */
+-typedef greg_t gregset_t[NGPREG];
++typedef greg_t gregset_t[NGREG];
+ 
+-#ifdef __USE_GNU
+ /* Number of each register is the `gregset_t' array.  */
+ enum
+ {
+-  R0 = 0,
+-#define R0	R0
+-  R1 = 1,
+-#define R1	R1
+-  R2 = 2,
+-#define R2	R2
+-  R3 = 3,
+-#define R3	R3
+-  R4 = 4,
+-#define R4	R4
+-  R5 = 5,
+-#define R5	R5
+-  R6 = 6,
+-#define R6	R6
+-  R7 = 7,
+-#define R7	R7
+-  R8 = 8,
+-#define R8	R8
+-  R9 = 9,
+-#define R9	R9
+-  R10 = 10,
+-#define R10	R10
+-  R11 = 11,
+-#define R11	R11
+-  R12 = 12,
+-#define R12	R12
+-  R13 = 13,
+-#define R13	R13
+-  R14 = 14,
+-#define R14	R14
+-  R15 = 15,
+-#define R15	R15
++  REG_R0 = 0,
++#define REG_R0	REG_R0
++  REG_R1 = 1,
++#define REG_R1	REG_R1
++  REG_R2 = 2,
++#define REG_R2	REG_R2
++  REG_R3 = 3,
++#define REG_R3	REG_R3
++  REG_R4 = 4,
++#define REG_R4	REG_R4
++  REG_R5 = 5,
++#define REG_R5	REG_R5
++  REG_R6 = 6,
++#define REG_R6	REG_R6
++  REG_R7 = 7,
++#define REG_R7	REG_R7
++  REG_R8 = 8,
++#define REG_R8	REG_R8
++  REG_R9 = 9,
++#define REG_R9	REG_R9
++  REG_R10 = 10,
++#define REG_R10	REG_R10
++  REG_R11 = 11,
++#define REG_R11	REG_R11
++  REG_R12 = 12,
++#define REG_R12	REG_R12
++  REG_R13 = 13,
++#define REG_R13	REG_R13
++  REG_R14 = 14,
++#define REG_R14	REG_R14
++  REG_R15 = 15,
++#define REG_R15	REG_R15
+ };
+-#endif
+ 
+ #if (defined(__SH4__) || defined(__SH4A__))
+ typedef int freg_t;
 diff --git a/sysdeps/unix/sysv/linux/sh/vfork.S b/sysdeps/unix/sysv/linux/sh/vfork.S
 index 6895bc5491..df559cb439 100644
 --- a/sysdeps/unix/sysv/linux/sh/vfork.S
@@ -13933,10 +14828,11 @@ diff --git a/sysdeps/unix/sysv/linux/tile/vfork.S b/sysdeps/unix/sysv/linux/tile
 index d8c5ce3e24..2272777187 100644
 --- a/sysdeps/unix/sysv/linux/tile/vfork.S
 +++ b/sysdeps/unix/sysv/linux/tile/vfork.S
-@@ -30,18 +30,6 @@
+@@ -29,18 +29,6 @@
+ 
  	.text
  ENTRY (__vfork)
- 	{
+-	{
 -	 addli r11, tp, PID_OFFSET	/* Point at PID. */
 -	 movei r13, 1
 -	}
@@ -13948,10 +14844,9 @@ index d8c5ce3e24..2272777187 100644
 -	CMOVEQZ r12, r12, r13		/* Replace zero pids.  */
 -	ST4 r11, r12			/* Store the temporary PID.  */
 -
--	{
+ 	{
  	 moveli r0, CLONE_VFORK | CLONE_VM | SIGCHLD
  	 move r1, zero
- 	}
 @@ -52,22 +40,6 @@ ENTRY (__vfork)
  	moveli TREG_SYSCALL_NR_NAME, __NR_clone
  	swint1
@@ -14214,7 +15109,7 @@ index 8332ade9fb..cdd2dea32a 100644
  	jae SYSCALL_ERROR_LABEL		/* Branch forward if it failed.  */
  
 diff --git a/sysdeps/x86/cpu-features.c b/sysdeps/x86/cpu-features.c
-index 9ce4b495a5..d1ee922290 100644
+index 9ce4b495a5..508ad2ae7b 100644
 --- a/sysdeps/x86/cpu-features.c
 +++ b/sysdeps/x86/cpu-features.c
 @@ -133,8 +133,6 @@ init_cpu_features (struct cpu_features *cpu_features)
@@ -14226,7 +15121,7 @@ index 9ce4b495a5..d1ee922290 100644
  
  	    case 0x5c:
  	    case 0x5f:
-@@ -205,6 +203,30 @@ init_cpu_features (struct cpu_features *cpu_features)
+@@ -205,6 +203,33 @@ init_cpu_features (struct cpu_features *cpu_features)
        if (CPU_FEATURES_ARCH_P (cpu_features, AVX2_Usable))
  	cpu_features->feature[index_arch_AVX_Fast_Unaligned_Load]
  	  |= bit_arch_AVX_Fast_Unaligned_Load;
@@ -14242,10 +15137,13 @@ index 9ce4b495a5..d1ee922290 100644
 +	  |= bit_arch_Prefer_No_AVX512;
 +
 +      /* To avoid SSE transition penalty, use _dl_runtime_resolve_slow.
-+         If XGETBV suports ECX == 1, use _dl_runtime_resolve_opt.  */
++         If XGETBV suports ECX == 1, use _dl_runtime_resolve_opt.
++	 Use _dl_runtime_resolve_opt only with AVX512F since it is
++	 slower than _dl_runtime_resolve_slow with AVX.  */
 +      cpu_features->feature[index_arch_Use_dl_runtime_resolve_slow]
 +	|= bit_arch_Use_dl_runtime_resolve_slow;
-+      if (cpu_features->max_cpuid >= 0xd)
++      if (CPU_FEATURES_ARCH_P (cpu_features, AVX512F_Usable)
++	  && cpu_features->max_cpuid >= 0xd)
 +	{
 +	  unsigned int eax;
 +
@@ -14327,6 +15225,76 @@ index 97ffe765f4..2609ac0999 100644
  
  #endif	/* !__ASSEMBLER__ */
  
+diff --git a/sysdeps/x86_64/Makefile b/sysdeps/x86_64/Makefile
+index 6d99284cd0..cc990a9685 100644
+--- a/sysdeps/x86_64/Makefile
++++ b/sysdeps/x86_64/Makefile
+@@ -27,7 +27,7 @@ ifeq ($(subdir),elf)
+ CFLAGS-.os += $(if $(filter $(@F),$(patsubst %,%.os,$(all-rtld-routines))),\
+ 		   -mno-mmx)
+ 
+-sysdep-dl-routines += tlsdesc dl-tlsdesc
++sysdep-dl-routines += tlsdesc dl-tlsdesc tls_get_addr
+ 
+ tests += ifuncmain8
+ modules-names += ifuncmod8
+@@ -49,9 +49,12 @@ extra-test-objs += tst-quadmod1pie.o tst-quadmod2pie.o
+ $(objpfx)tst-quad1pie: $(objpfx)tst-quadmod1pie.o
+ $(objpfx)tst-quad2pie: $(objpfx)tst-quadmod2pie.o
+ 
+-tests += tst-audit3 tst-audit4 tst-audit5 tst-audit6 tst-audit7 tst-audit10
+-test-extras += tst-audit4-aux tst-audit10-aux
+-extra-test-objs += tst-audit4-aux.o tst-audit10-aux.o
++tests += tst-audit3 tst-audit4 tst-audit5 tst-audit6 tst-audit7 \
++	 tst-audit10 tst-sse tst-avx tst-avx512
++test-extras += tst-audit4-aux tst-audit10-aux \
++	       tst-avx-aux tst-avx512-aux
++extra-test-objs += tst-audit4-aux.o tst-audit10-aux.o \
++		   tst-avx-aux.o tst-avx512-aux.o
+ 
+ tests += tst-split-dynreloc
+ LDFLAGS-tst-split-dynreloc = -Wl,-T,$(..)sysdeps/x86_64/tst-split-dynreloc.lds
+@@ -62,7 +65,8 @@ modules-names += tst-auditmod3a tst-auditmod3b \
+ 		tst-auditmod5a tst-auditmod5b \
+ 		tst-auditmod6a tst-auditmod6b tst-auditmod6c \
+ 		tst-auditmod7a tst-auditmod7b \
+-		tst-auditmod10a tst-auditmod10b
++		tst-auditmod10a tst-auditmod10b \
++		tst-ssemod tst-avxmod tst-avx512mod
+ 
+ $(objpfx)tst-audit3: $(objpfx)tst-auditmod3a.so
+ $(objpfx)tst-audit3.out: $(objpfx)tst-auditmod3b.so
+@@ -89,6 +93,10 @@ $(objpfx)tst-audit10: $(objpfx)tst-audit10-aux.o $(objpfx)tst-auditmod10a.so
+ $(objpfx)tst-audit10.out: $(objpfx)tst-auditmod10b.so
+ tst-audit10-ENV = LD_AUDIT=$(objpfx)tst-auditmod10b.so
+ 
++$(objpfx)tst-sse: $(objpfx)tst-ssemod.so
++$(objpfx)tst-avx: $(objpfx)tst-avx-aux.o $(objpfx)tst-avxmod.so
++$(objpfx)tst-avx512: $(objpfx)tst-avx512-aux.o $(objpfx)tst-avx512mod.so
++
+ AVX-CFLAGS=-mavx -mno-vzeroupper
+ CFLAGS-tst-audit4-aux.c += $(AVX-CFLAGS)
+ CFLAGS-tst-auditmod4a.c += $(AVX-CFLAGS)
+@@ -96,14 +104,18 @@ CFLAGS-tst-auditmod4b.c += $(AVX-CFLAGS)
+ CFLAGS-tst-auditmod6b.c += $(AVX-CFLAGS)
+ CFLAGS-tst-auditmod6c.c += $(AVX-CFLAGS)
+ CFLAGS-tst-auditmod7b.c += $(AVX-CFLAGS)
++CFLAGS-tst-avx-aux.c += $(AVX-CFLAGS)
++CFLAGS-tst-avxmod.c += $(AVX-CFLAGS)
+ ifeq (yes,$(config-cflags-avx512))
+ AVX512-CFLAGS = -mavx512f
+ CFLAGS-tst-audit10-aux.c += $(AVX512-CFLAGS)
+ CFLAGS-tst-auditmod10a.c += $(AVX512-CFLAGS)
+ CFLAGS-tst-auditmod10b.c += $(AVX512-CFLAGS)
++CFLAGS-tst-avx512-aux.c += $(AVX512-CFLAGS)
++CFLAGS-tst-avx512mod.c += $(AVX512-CFLAGS)
+ endif
+ endif
+ 
+ ifeq ($(subdir),csu)
+-gen-as-const-headers += tlsdesc.sym
++gen-as-const-headers += tlsdesc.sym rtld-offsets.sym
+ endif
 diff --git a/sysdeps/x86_64/dl-machine.h b/sysdeps/x86_64/dl-machine.h
 index ed0c1a8efd..c0f0fa16a2 100644
 --- a/sysdeps/x86_64/dl-machine.h
@@ -14371,6 +15339,85 @@ index ed0c1a8efd..c0f0fa16a2 100644
  	  else
  	    *(ElfW(Addr) *) (got + 2) = (ElfW(Addr)) &_dl_runtime_resolve_sse;
  	}
+diff --git a/sysdeps/x86_64/dl-tls.c b/sysdeps/x86_64/dl-tls.c
+new file mode 100644
+index 0000000000..3584805c8e
+--- /dev/null
++++ b/sysdeps/x86_64/dl-tls.c
+@@ -0,0 +1,53 @@
++/* Thread-local storage handling in the ELF dynamic linker.  x86-64 version.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#ifdef SHARED
++/* Work around GCC PR58066, due to which __tls_get_addr may be called
++   with an unaligned stack.  The compat implementation is in
++   tls_get_addr-compat.S.  */
++
++# include <dl-tls.h>
++
++/* Define __tls_get_addr within elf/dl-tls.c under a different
++   name.  */
++extern __typeof__ (__tls_get_addr) ___tls_get_addr;
++
++# define __tls_get_addr ___tls_get_addr
++# include <elf/dl-tls.c>
++# undef __tls_get_addr
++
++hidden_ver (___tls_get_addr, __tls_get_addr)
++
++/* Only handle slow paths for __tls_get_addr.  */
++attribute_hidden
++void *
++__tls_get_addr_slow (GET_ADDR_ARGS)
++{
++  dtv_t *dtv = THREAD_DTV ();
++
++  if (__glibc_unlikely (dtv[0].counter != GL(dl_tls_generation)))
++    return update_get_addr (GET_ADDR_PARAM);
++
++  return tls_get_addr_tail (GET_ADDR_PARAM, dtv, NULL);
++}
++#else
++
++/* No compatibility symbol needed.  */
++# include <elf/dl-tls.c>
++
++#endif
+diff --git a/sysdeps/x86_64/dl-tls.h b/sysdeps/x86_64/dl-tls.h
+index cf6c107f54..fa5bf6cd93 100644
+--- a/sysdeps/x86_64/dl-tls.h
++++ b/sysdeps/x86_64/dl-tls.h
+@@ -16,6 +16,9 @@
+    License along with the GNU C Library; if not, see
+    <http://www.gnu.org/licenses/>.  */
+ 
++#ifndef _X86_64_DL_TLS_H
++#define _X86_64_DL_TLS_H
++
+ #include <stdint.h>
+ 
+ /* Type used for the representation of TLS information in the GOT.  */
+@@ -27,3 +30,5 @@ typedef struct dl_tls_index
+ 
+ 
+ extern void *__tls_get_addr (tls_index *ti);
++
++#endif /* _X86_64_DL_TLS_H */
 diff --git a/sysdeps/x86_64/dl-trampoline.S b/sysdeps/x86_64/dl-trampoline.S
 index 12f1a5cf84..50b23633e3 100644
 --- a/sysdeps/x86_64/dl-trampoline.S
@@ -14416,7 +15463,7 @@ index 12f1a5cf84..50b23633e3 100644
 +#define _dl_runtime_resolve_opt	_dl_runtime_resolve_avx512_opt
 +#include "dl-trampoline.h"
 diff --git a/sysdeps/x86_64/dl-trampoline.h b/sysdeps/x86_64/dl-trampoline.h
-index b90836ab13..32ad3af202 100644
+index b90836ab13..d21c5a987a 100644
 --- a/sysdeps/x86_64/dl-trampoline.h
 +++ b/sysdeps/x86_64/dl-trampoline.h
 @@ -50,6 +50,106 @@
@@ -14526,7 +15573,17 @@ index b90836ab13..32ad3af202 100644
  	.globl _dl_runtime_resolve
  	.hidden _dl_runtime_resolve
  	.type _dl_runtime_resolve, @function
-@@ -162,7 +262,10 @@ _dl_runtime_resolve:
+@@ -69,7 +169,9 @@ _dl_runtime_resolve:
+ 	and $-VEC_SIZE, %RSP_LP
+ #endif
+ 	sub $REGISTER_SAVE_AREA, %RSP_LP
++#if !DL_RUNTIME_RESOLVE_REALIGN_STACK
+ 	cfi_adjust_cfa_offset(REGISTER_SAVE_AREA)
++#endif
+ 	# Preserve registers otherwise clobbered.
+ 	movq %rax, REGISTER_SAVE_RAX(%rsp)
+ 	movq %rcx, REGISTER_SAVE_RCX(%rsp)
+@@ -162,7 +264,10 @@ _dl_runtime_resolve:
  	.size _dl_runtime_resolve, .-_dl_runtime_resolve
  
  
@@ -14680,6 +15737,18 @@ index aeb752673a..8a25c482cb 100644
  CANCELHANDLING		offsetof (struct pthread, cancelhandling)
  CLEANUP_JMP_BUF		offsetof (struct pthread, cleanup_jmp_buf)
  CLEANUP			offsetof (struct pthread, cleanup)
+diff --git a/sysdeps/x86_64/rtld-offsets.sym b/sysdeps/x86_64/rtld-offsets.sym
+new file mode 100644
+index 0000000000..fd41b51521
+--- /dev/null
++++ b/sysdeps/x86_64/rtld-offsets.sym
+@@ -0,0 +1,6 @@
++#define SHARED
++#include <ldsodefs.h>
++
++--
++
++GL_TLS_GENERATION_OFFSET        offsetof (struct rtld_global, _dl_tls_generation)
 diff --git a/sysdeps/x86_64/sysdep.h b/sysdeps/x86_64/sysdep.h
 index 75ac747be8..4b67fa80c1 100644
 --- a/sysdeps/x86_64/sysdep.h
@@ -14700,3 +15769,518 @@ index 75ac747be8..4b67fa80c1 100644
  # define JUMPTARGET(name)	name
  #endif
  
+diff --git a/sysdeps/x86_64/tls_get_addr.S b/sysdeps/x86_64/tls_get_addr.S
+new file mode 100644
+index 0000000000..9d38fb3be5
+--- /dev/null
++++ b/sysdeps/x86_64/tls_get_addr.S
+@@ -0,0 +1,61 @@
++/* Stack-aligning implementation of __tls_get_addr.  x86-64 version.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#ifdef SHARED
++
++# include <sysdep.h>
++# include "tlsdesc.h"
++# include "rtld-offsets.h"
++
++/* See __tls_get_addr and __tls_get_addr_slow in dl-tls.c.  This function
++   call __tls_get_addr_slow on both slow paths.  It realigns the stack
++   before the call to work around GCC PR58066.  */
++
++ENTRY (__tls_get_addr)
++	mov 	%fs:DTV_OFFSET, %RDX_LP
++	mov	GL_TLS_GENERATION_OFFSET+_rtld_local(%rip), %RAX_LP
++	/* GL(dl_tls_generation) == dtv[0].counter */
++	cmp	%RAX_LP, (%rdx)
++	jne	1f
++	mov	TI_MODULE_OFFSET(%rdi), %RAX_LP
++	/* dtv[ti->ti_module] */
++# ifdef __LP64__
++	salq	$4, %rax
++	movq	(%rdx,%rax), %rax
++# else
++	movl	(%rdx,%rax, 8), %eax
++# endif
++	cmp	$-1, %RAX_LP
++	je	1f
++	add	TI_OFFSET_OFFSET(%rdi), %RAX_LP
++	ret
++1:
++	/* On the slow path, align the stack.  */
++	pushq	%rbp
++	cfi_def_cfa_offset (16)
++	cfi_offset (%rbp, -16)
++	mov	%RSP_LP, %RBP_LP
++	cfi_def_cfa_register (%rbp)
++	and	$-16, %RSP_LP
++	call	__tls_get_addr_slow
++	mov	%RBP_LP, %RSP_LP
++	popq	%rbp
++	cfi_def_cfa (%rsp, 8)
++	ret
++END (__tls_get_addr)
++#endif /* SHARED */
+diff --git a/sysdeps/x86_64/tlsdesc.sym b/sysdeps/x86_64/tlsdesc.sym
+index 33854975d0..fc897ab4b5 100644
+--- a/sysdeps/x86_64/tlsdesc.sym
++++ b/sysdeps/x86_64/tlsdesc.sym
+@@ -15,3 +15,6 @@ TLSDESC_ARG			offsetof(struct tlsdesc, arg)
+ TLSDESC_GEN_COUNT		offsetof(struct tlsdesc_dynamic_arg, gen_count)
+ TLSDESC_MODID			offsetof(struct tlsdesc_dynamic_arg, tlsinfo.ti_module)
+ TLSDESC_MODOFF			offsetof(struct tlsdesc_dynamic_arg, tlsinfo.ti_offset)
++
++TI_MODULE_OFFSET 		offsetof(tls_index, ti_module)
++TI_OFFSET_OFFSET 		offsetof(tls_index, ti_offset)
+diff --git a/sysdeps/x86_64/tst-avx-aux.c b/sysdeps/x86_64/tst-avx-aux.c
+new file mode 100644
+index 0000000000..e3807de7bb
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avx-aux.c
+@@ -0,0 +1,47 @@
++/* Test case for preserved AVX registers in dynamic linker, -mavx part.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <immintrin.h>
++#include <stdlib.h>
++#include <string.h>
++
++int
++tst_avx_aux (void)
++{
++#ifdef __AVX__
++  extern __m256i avx_test (__m256i, __m256i, __m256i, __m256i,
++			   __m256i, __m256i, __m256i, __m256i);
++
++  __m256i ymm0 = _mm256_set1_epi32 (0);
++  __m256i ymm1 = _mm256_set1_epi32 (1);
++  __m256i ymm2 = _mm256_set1_epi32 (2);
++  __m256i ymm3 = _mm256_set1_epi32 (3);
++  __m256i ymm4 = _mm256_set1_epi32 (4);
++  __m256i ymm5 = _mm256_set1_epi32 (5);
++  __m256i ymm6 = _mm256_set1_epi32 (6);
++  __m256i ymm7 = _mm256_set1_epi32 (7);
++  __m256i ret = avx_test (ymm0, ymm1, ymm2, ymm3,
++			  ymm4, ymm5, ymm6, ymm7);
++  ymm0 =  _mm256_set1_epi32 (0x12349876);
++  if (memcmp (&ymm0, &ret, sizeof (ret)))
++    abort ();
++  return 0;
++#else  /* __AVX__ */
++  return 77;
++#endif  /* __AVX__ */
++}
+diff --git a/sysdeps/x86_64/tst-avx.c b/sysdeps/x86_64/tst-avx.c
+new file mode 100644
+index 0000000000..ec2e3a79ff
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avx.c
+@@ -0,0 +1,49 @@
++/* Test case for preserved AVX registers in dynamic linker.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <cpuid.h>
++
++int tst_avx_aux (void);
++
++static int
++avx_enabled (void)
++{
++  unsigned int eax, ebx, ecx, edx;
++
++  if (__get_cpuid (1, &eax, &ebx, &ecx, &edx) == 0
++      || (ecx & (bit_AVX | bit_OSXSAVE)) != (bit_AVX | bit_OSXSAVE))
++    return 0;
++
++  /* Check the OS has AVX and SSE saving enabled.  */
++  asm ("xgetbv" : "=a" (eax), "=d" (edx) : "c" (0));
++
++  return (eax & 6) == 6;
++}
++
++static int
++do_test (void)
++{
++  /* Run AVX test only if AVX is supported.  */
++  if (avx_enabled ())
++    return tst_avx_aux ();
++  else
++    return 77;
++}
++
++#define TEST_FUNCTION do_test ()
++#include "../../test-skeleton.c"
+diff --git a/sysdeps/x86_64/tst-avx512-aux.c b/sysdeps/x86_64/tst-avx512-aux.c
+new file mode 100644
+index 0000000000..6cebc523f2
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avx512-aux.c
+@@ -0,0 +1,48 @@
++/* Test case for preserved AVX512 registers in dynamic linker,
++   -mavx512 part.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <immintrin.h>
++#include <stdlib.h>
++#include <string.h>
++
++int
++tst_avx512_aux (void)
++{
++#ifdef __AVX512F__
++  extern __m512i avx512_test (__m512i, __m512i, __m512i, __m512i,
++			      __m512i, __m512i, __m512i, __m512i);
++
++  __m512i zmm0 = _mm512_set1_epi32 (0);
++  __m512i zmm1 = _mm512_set1_epi32 (1);
++  __m512i zmm2 = _mm512_set1_epi32 (2);
++  __m512i zmm3 = _mm512_set1_epi32 (3);
++  __m512i zmm4 = _mm512_set1_epi32 (4);
++  __m512i zmm5 = _mm512_set1_epi32 (5);
++  __m512i zmm6 = _mm512_set1_epi32 (6);
++  __m512i zmm7 = _mm512_set1_epi32 (7);
++  __m512i ret = avx512_test (zmm0, zmm1, zmm2, zmm3,
++			     zmm4, zmm5, zmm6, zmm7);
++  zmm0 =  _mm512_set1_epi32 (0x12349876);
++  if (memcmp (&zmm0, &ret, sizeof (ret)))
++    abort ();
++  return 0;
++#else  /* __AVX512F__ */
++  return 77;
++#endif  /* __AVX512F__ */
++}
+diff --git a/sysdeps/x86_64/tst-avx512.c b/sysdeps/x86_64/tst-avx512.c
+new file mode 100644
+index 0000000000..a8e42ef553
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avx512.c
+@@ -0,0 +1,57 @@
++/* Test case for preserved AVX512 registers in dynamic linker.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <cpuid.h>
++
++int tst_avx512_aux (void);
++
++static int
++avx512_enabled (void)
++{
++#ifdef bit_AVX512F
++  unsigned int eax, ebx, ecx, edx;
++
++  if (__get_cpuid (1, &eax, &ebx, &ecx, &edx) == 0
++      || (ecx & (bit_AVX | bit_OSXSAVE)) != (bit_AVX | bit_OSXSAVE))
++    return 0;
++
++  __cpuid_count (7, 0, eax, ebx, ecx, edx);
++  if (!(ebx & bit_AVX512F))
++    return 0;
++
++  asm ("xgetbv" : "=a" (eax), "=d" (edx) : "c" (0));
++
++  /* Verify that ZMM, YMM and XMM states are enabled.  */
++  return (eax & 0xe6) == 0xe6;
++#else
++  return 0;
++#endif
++}
++
++static int
++do_test (void)
++{
++  /* Run AVX512 test only if AVX512 is supported.  */
++  if (avx512_enabled ())
++    return tst_avx512_aux ();
++  else
++    return 77;
++}
++
++#define TEST_FUNCTION do_test ()
++#include "../../test-skeleton.c"
+diff --git a/sysdeps/x86_64/tst-avx512mod.c b/sysdeps/x86_64/tst-avx512mod.c
+new file mode 100644
+index 0000000000..4cfb3a2c3d
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avx512mod.c
+@@ -0,0 +1,48 @@
++/* Test case for x86-64 preserved AVX512 registers in dynamic linker.  */
++
++#ifdef __AVX512F__
++#include <stdlib.h>
++#include <string.h>
++#include <immintrin.h>
++
++__m512i
++avx512_test (__m512i x0, __m512i x1, __m512i x2, __m512i x3,
++	     __m512i x4, __m512i x5, __m512i x6, __m512i x7)
++{
++  __m512i zmm;
++
++  zmm = _mm512_set1_epi32 (0);
++  if (memcmp (&zmm, &x0, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (1);
++  if (memcmp (&zmm, &x1, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (2);
++  if (memcmp (&zmm, &x2, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (3);
++  if (memcmp (&zmm, &x3, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (4);
++  if (memcmp (&zmm, &x4, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (5);
++  if (memcmp (&zmm, &x5, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (6);
++  if (memcmp (&zmm, &x6, sizeof (zmm)))
++    abort ();
++
++  zmm = _mm512_set1_epi32 (7);
++  if (memcmp (&zmm, &x7, sizeof (zmm)))
++    abort ();
++
++  return _mm512_set1_epi32 (0x12349876);
++}
++#endif
+diff --git a/sysdeps/x86_64/tst-avxmod.c b/sysdeps/x86_64/tst-avxmod.c
+new file mode 100644
+index 0000000000..6e5b154997
+--- /dev/null
++++ b/sysdeps/x86_64/tst-avxmod.c
+@@ -0,0 +1,48 @@
++/* Test case for x86-64 preserved AVX registers in dynamic linker.  */
++
++#ifdef __AVX__
++#include <stdlib.h>
++#include <string.h>
++#include <immintrin.h>
++
++__m256i
++avx_test (__m256i x0, __m256i x1, __m256i x2, __m256i x3,
++	  __m256i x4, __m256i x5, __m256i x6, __m256i x7)
++{
++  __m256i ymm;
++
++  ymm = _mm256_set1_epi32 (0);
++  if (memcmp (&ymm, &x0, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (1);
++  if (memcmp (&ymm, &x1, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (2);
++  if (memcmp (&ymm, &x2, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (3);
++  if (memcmp (&ymm, &x3, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (4);
++  if (memcmp (&ymm, &x4, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (5);
++  if (memcmp (&ymm, &x5, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (6);
++  if (memcmp (&ymm, &x6, sizeof (ymm)))
++    abort ();
++
++  ymm = _mm256_set1_epi32 (7);
++  if (memcmp (&ymm, &x7, sizeof (ymm)))
++    abort ();
++
++  return _mm256_set1_epi32 (0x12349876);
++}
++#endif
+diff --git a/sysdeps/x86_64/tst-sse.c b/sysdeps/x86_64/tst-sse.c
+new file mode 100644
+index 0000000000..dd1537cf27
+--- /dev/null
++++ b/sysdeps/x86_64/tst-sse.c
+@@ -0,0 +1,46 @@
++/* Test case for preserved SSE registers in dynamic linker.
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <immintrin.h>
++#include <stdlib.h>
++#include <string.h>
++
++extern __m128i sse_test (__m128i, __m128i, __m128i, __m128i,
++			 __m128i, __m128i, __m128i, __m128i);
++
++static int
++do_test (void)
++{
++  __m128i xmm0 = _mm_set1_epi32 (0);
++  __m128i xmm1 = _mm_set1_epi32 (1);
++  __m128i xmm2 = _mm_set1_epi32 (2);
++  __m128i xmm3 = _mm_set1_epi32 (3);
++  __m128i xmm4 = _mm_set1_epi32 (4);
++  __m128i xmm5 = _mm_set1_epi32 (5);
++  __m128i xmm6 = _mm_set1_epi32 (6);
++  __m128i xmm7 = _mm_set1_epi32 (7);
++  __m128i ret = sse_test (xmm0, xmm1, xmm2, xmm3,
++			  xmm4, xmm5, xmm6, xmm7);
++  xmm0 =  _mm_set1_epi32 (0x12349876);
++  if (memcmp (&xmm0, &ret, sizeof (ret)))
++    abort ();
++  return 0;
++}
++
++#define TEST_FUNCTION do_test ()
++#include "../../test-skeleton.c"
+diff --git a/sysdeps/x86_64/tst-ssemod.c b/sysdeps/x86_64/tst-ssemod.c
+new file mode 100644
+index 0000000000..907a64c69e
+--- /dev/null
++++ b/sysdeps/x86_64/tst-ssemod.c
+@@ -0,0 +1,46 @@
++/* Test case for x86-64 preserved SSE registers in dynamic linker.  */
++
++#include <stdlib.h>
++#include <string.h>
++#include <immintrin.h>
++
++__m128i
++sse_test (__m128i x0, __m128i x1, __m128i x2, __m128i x3,
++	  __m128i x4, __m128i x5, __m128i x6, __m128i x7)
++{
++  __m128i xmm;
++
++  xmm = _mm_set1_epi32 (0);
++  if (memcmp (&xmm, &x0, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (1);
++  if (memcmp (&xmm, &x1, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (2);
++  if (memcmp (&xmm, &x2, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (3);
++  if (memcmp (&xmm, &x3, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (4);
++  if (memcmp (&xmm, &x4, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (5);
++  if (memcmp (&xmm, &x5, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (6);
++  if (memcmp (&xmm, &x6, sizeof (xmm)))
++    abort ();
++
++  xmm = _mm_set1_epi32 (7);
++  if (memcmp (&xmm, &x7, sizeof (xmm)))
++    abort ();
++
++  return _mm_set1_epi32 (0x12349876);
++}

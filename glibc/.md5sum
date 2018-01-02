@@ -1,4 +1,5 @@
-052018e4621ea8e3d7d8f1b711fcdaa3  glibc-2.24-updates.patch
+bcfb2cb7f1cb0b4ecce27fcd5d5d2b21  0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch
+cb9c54c9d22b3ab597a69d05420b5e80  glibc-2.24.8.patch
 97dc5517f92016f3d70d83e3162ad318  glibc-2.24.tar.xz
 96156bec8e05de67384dc93e72bdc313  host.conf
 fbbc215a9b15ba4846f326cc88108057  hosts

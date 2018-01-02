@@ -4,11 +4,11 @@
 
 name=glibc
 version=2.24
-release=7
+release=9
 source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz \
 	http://crux.nu/files/distfiles/kernel-headers-4.9.5.tar.xz \
 	hosts resolv.conf nsswitch.conf host.conf ld.so.conf \
-	$name-$version-updates.patch)
+	glibc-2.24.8.patch 0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch)
 
 build() {
 	# install kernel headers
@@ -16,7 +16,8 @@ build() {
 	cp -r $SRC/kernel-headers-4.9.5/include $PKG/usr
 	chown root:root $PKG/usr
 
-	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/glibc-2.24-updates.patch
+	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/glibc-2.24.8.patch
+	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch
 
 	mkdir $SRC/build
 	cd $SRC/build
