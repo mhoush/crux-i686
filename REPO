@@ -44,9 +44,9 @@ f:f7fefce570a3c776e26e778c5e401490:glibc/ld.so.conf
 f:f2bbb7be966ed71e6e5210520bfa4d6c:glibc/.footprint
 f:bcfb2cb7f1cb0b4ecce27fcd5d5d2b21:glibc/0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch
 f:acf9daad1ee85de5efd3543965596a63:glibc/resolv.conf
-f:e9b7e9296a8f41d2444d5b113c84c1b9:pkgutils/Pkgfile
-f:1bace4cd93d67bc16ef2fcabf3de764b:pkgutils/.md5sum
-f:63fbf2b844229628a80caa9d72437697:pkgutils/pkgutils-x86.patch
+f:1cabddb9a16fc75c14609ba47267a260:pkgutils/Pkgfile
+f:7fd40376534f0f2ef7e861a7ee2b9583:pkgutils/.md5sum
+f:d5c8afd4ebddcedf8bee394e955b7279:pkgutils/pkgutils-x86.patch
 f:0d3a6fed127ba555ba0c1a587130c6bc:pkgutils/.footprint
 f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
 f:62d2ce910d86849ad45c92c342263dcc:openssl/Pkgfile
