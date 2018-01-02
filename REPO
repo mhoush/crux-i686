@@ -27,11 +27,11 @@ f:81caef6456971c3d697c210118231889:llvm/.md5sum
 f:bfb705df01036c2ae3a6568598706ba8:llvm/.footprint
 f:bf2ff51cef976ccd0a4832835eec8195:nss/nss-softokn.pc.in
 f:17226659298a9d9bb3f323186d220f6f:nss/nss-config.in
-f:84b7c84bfc49dbc4a05ec1c0877d6668:nss/Pkgfile
-f:62f8e30230d97df3eb16e39e08480c4c:nss/.md5sum
+f:289b4dc909b9d769841f8c7f99bda016:nss/Pkgfile
+f:c0864ec87abb68a15a31eb715bb5f45d:nss/.md5sum
 f:a796e6ab6c87573ffb649ce8769bc07a:nss/nss.pc.in
 f:9ad2a26c137208ff292061143c7cc227:nss/nss-util.pc.in
-f:f7a92c56ccd7c9b4fe79ad27913a2cdf:nss/.footprint
+f:1a55fe8d7b524a198eefe5e76ca5c243:nss/.footprint
 f:75931315bf9bc9be15a5e25e4ddd5f0d:glibc/nsswitch.conf
 f:0d2d7f988d1756d693b262d46fee7d17:glibc/.nostrip
 f:e2746b070ed2eed316b2c4e2b70a621e:glibc/Pkgfile

@@ -4,8 +4,8 @@
 # Depends on:  nspr sqlite3
 
 name=nss
-version=3.31
-release=2
+version=3.34.1
+release=1
 source=(http://ftp.mozilla.org/pub/security/nss/releases/NSS_${version//./_}_RTM/src/$name-$version.tar.gz \
         nss-config.in nss.pc.in nss-util.pc.in nss-softokn.pc.in)
 
