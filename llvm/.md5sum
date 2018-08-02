@@ -1,1 +1,6 @@
-5ce9c5ad55243347ea0fdb4c16754be0  llvm-5.0.0.src.tar.xz
+64ece10ea4c79c7f9965cae071e59811  D44391-export-LLVM_DYLIB_COMPONENTS-in-LLVMConfig.cmake.patch
+89fc1c86c19a2c76b239936f3356569d  D44420-cmake-fix-a-typo-in-llvm_config-macro.patch
+a7abc4c97480385a1cbf2a9a07242883  PR35947-export-LLVMInitializeInstCombine-as-extern-C.patch
+c2d902376d0011c3039fc56cb76cf62e  PR36417-DebugInfo-discard-invalid-DBG_VALUE-instructions.patch
+c57e49163d27c0496fce1351f0a49648  PR36417-fixup-for-rL326769-RegState-Debug-is-being-truncated.patch
+788a11a35fa62eb008019b37187d09d2  llvm-6.0.0.src.tar.xz

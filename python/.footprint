@@ -1035,8 +1035,8 @@ drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-9.0.1-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-28.8.0-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-9.0.3-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-39.0.1-py2.py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyo
@@ -1439,7 +1439,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/json/
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/
--rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.14-py2.7.egg-info
+-rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.15-py2.7.egg-info
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bisect.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bsddb.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_codecs_cn.so
@@ -1615,9 +1615,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/lib-tk/test/test_ttk/
 -rw-r--r--	root/root	usr/lib/python2.7/lib-tk/turtle.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.14.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.15.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.14.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.15.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyo
@@ -2541,7 +2541,6 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/imghdrdata/
 -rw-r--r--	root/root	usr/lib/python2.7/test/seq_tests.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/seq_tests.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/test/sgml_input.html
--rw-r--r--	root/root	usr/lib/python2.7/test/sha256.pem
 -rw-r--r--	root/root	usr/lib/python2.7/test/sortperf.py
 -rw-r--r--	root/root	usr/lib/python2.7/test/sortperf.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/test/sortperf.pyo
@@ -3829,6 +3828,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/test/tracedmodules/
 -rw-r--r--	root/root	usr/lib/python2.7/test/win_console_handler.pyo
 -rw-r--r--	root/root	usr/lib/python2.7/test/wrongcert.pem
 drwxr-xr-x	root/root	usr/lib/python2.7/test/xmltestdata/
+-rw-r--r--	root/root	usr/lib/python2.7/test/xmltestdata/expat224_utf8_bug.xml
 -rw-r--r--	root/root	usr/lib/python2.7/test/xmltestdata/simple-ns.xml
 -rw-r--r--	root/root	usr/lib/python2.7/test/xmltestdata/simple.xml
 -rw-r--r--	root/root	usr/lib/python2.7/test/xmltestdata/test.xml

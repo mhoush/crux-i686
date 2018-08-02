@@ -3,42 +3,49 @@
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=glibc
-version=2.24
-release=9
-source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz \
-	http://crux.nu/files/distfiles/kernel-headers-4.9.5.tar.xz \
-	hosts resolv.conf nsswitch.conf host.conf ld.so.conf \
-	glibc-2.24.8.patch 0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch)
+version=2.27
+release=2
+source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
+	http://www.kernel.org/pub/linux/kernel/v4.x/linux-4.14.14.tar.xz \
+	glibc-2.27-2.patch \
+	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
 
 build() {
 	# install kernel headers
-	install -d $PKG/usr/
-	cp -r $SRC/kernel-headers-4.9.5/include $PKG/usr
+	cd linux-4.14.14
+	make mrproper
+	make headers_check
+	make INSTALL_HDR_PATH=$PKG/usr headers_install
 	chown root:root $PKG/usr
 
-	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/glibc-2.24.8.patch
-	patch -p1 -d $SRC/$name-${version:0:4} -i $SRC/0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch
+	patch -p1 -d $SRC/glibc-${version:0:4} -i $SRC/glibc-$version-$release.patch
 
 	mkdir $SRC/build
 	cd $SRC/build
-	../$name-$version/configure --prefix=/usr \
+	../$name-${version}/configure --prefix=/usr \
 		--libexecdir=/usr/lib \
 		--with-headers=$PKG/usr/include \
 		--enable-kernel=3.12 \
 		--enable-add-ons \
 		--enable-static-nss \
+		--enable-stack-protector=strong \
+		--enable-obsolete-rpc \
+		--enable-obsolete-nsl \
 		--disable-profile \
 		--disable-werror \
-		--without-gd \
-		--enable-obsolete-rpc
+		--without-gd
 	make 
 	#make check
 	make install_root=$PKG install
 
-	install -m 0644 $SRC/$name-$version/nscd/nscd.conf $PKG/etc 
+	install -m 0644 $SRC/$name-${version:0:4}/nscd/nscd.conf $PKG/etc 
 	install -d $PKG/var/{db,run}/nscd
 
 	install -m 0644 $SRC/{hosts,resolv.conf,nsswitch.conf,host.conf,ld.so.conf} $PKG/etc
+
+	# install needed headers
+	install -d $PKG/usr/include/rpcsvc
+	install -m 0644 $SRC/$name-${version:0:4}/nis/rpcsvc/yp* $PKG/usr/include/rpcsvc
 
 	ln -sf ../usr/share/zoneinfo/UTC $PKG/etc/localtime
 	install -d $PKG/etc/ld.so.conf.d $PKG/usr/lib/locale
@@ -47,4 +54,6 @@ build() {
 	rm -rf $PKG/usr/share/{info,locale} \
 		$PKG/usr/bin/tzselect \
 		$PKG/usr/sbin/z{dump,ic}
+	find $PKG -name "*install.cmd" -delete
+	find $PKG -name ".\install" -delete
 }

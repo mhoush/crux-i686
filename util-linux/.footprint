@@ -25,6 +25,7 @@ drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/agetty
 -rwxr-xr-x	root/root	sbin/blkdiscard
 -rwxr-xr-x	root/root	sbin/blkid
+-rwxr-xr-x	root/root	sbin/blkzone
 -rwxr-xr-x	root/root	sbin/blockdev
 -rwxr-xr-x	root/root	sbin/cfdisk
 -rwxr-xr-x	root/root	sbin/chcpu
@@ -223,6 +224,7 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/agetty.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/blkdiscard.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/blkid.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/blkzone.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/blockdev.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/cfdisk.8.gz
 -rw-r--r--	root/root	usr/share/man/man8/chcpu.8.gz

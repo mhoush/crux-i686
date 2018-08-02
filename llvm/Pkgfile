@@ -4,15 +4,33 @@
 # Depends on:  cmake libffi python
 
 name=llvm
-version=5.0.0
-release=1
-source=(https://llvm.org/releases/$version/$name-$version.src.tar.xz)
+version=6.0.0
+release=2
+source=(https://llvm.org/releases/$version/$name-$version.src.tar.xz \
+  PR35947-export-LLVMInitializeInstCombine-as-extern-C.patch \
+  PR36417-DebugInfo-discard-invalid-DBG_VALUE-instructions.patch \
+  PR36417-fixup-for-rL326769-RegState-Debug-is-being-truncated.patch \
+  D44391-export-LLVM_DYLIB_COMPONENTS-in-LLVMConfig.cmake.patch \
+  D44420-cmake-fix-a-typo-in-llvm_config-macro.patch)
 
 build() {
   export CC=gcc
   export CXX=g++
 
   cd $name-$version.src
+
+  # https://bugs.llvm.org/show_bug.cgi?id=35947
+  patch -p1 -i $SRC/PR35947-export-LLVMInitializeInstCombine-as-extern-C.patch
+
+  # https://bugs.llvm.org/show_bug.cgi?id=36417
+  patch -p1 -i $SRC/PR36417-DebugInfo-discard-invalid-DBG_VALUE-instructions.patch
+  patch -p1 -i $SRC/PR36417-fixup-for-rL326769-RegState-Debug-is-being-truncated.patch
+
+  # https://reviews.llvm.org/D44391
+  patch -p1 -i $SRC/D44391-export-LLVM_DYLIB_COMPONENTS-in-LLVMConfig.cmake.patch
+
+  # https://reviews.llvm.org/D44420
+  patch -p0 -i $SRC/D44420-cmake-fix-a-typo-in-llvm_config-macro.patch
 
   mkdir build
   cd build

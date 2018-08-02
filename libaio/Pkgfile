@@ -1,0 +1,21 @@
+# Description: Native asynchronous I/O (AIO) support library
+# URL:         http://lse.sourceforge.net/io/aio.html
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+
+name=libaio
+version=0.3.111
+release=2
+source=(http://http.debian.net/debian/pool/main/liba/$name/${name}_${version}.orig.tar.gz)
+
+build() {
+	export CFLAGS="${CFLAGS} -fno-stack-protector"
+
+    cd $name-$version
+
+    make
+    make prefix=$PKG/usr install
+
+    install -d $PKG/lib
+    mv $PKG/usr/lib/libaio.so.* $PKG/lib
+    ln -sf ../../lib/$(readlink $PKG/usr/lib/libaio.so) $PKG/usr/lib/libaio.so
+} 
