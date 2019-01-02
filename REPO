@@ -47,11 +47,11 @@ f:fa2157ce4aa8d54b1731c000e1814e8c:pkgutils/pkgutils-x86.patch
 f:c57e49163d27c0496fce1351f0a49648:llvm/PR36417-fixup-for-rL326769-RegState-Debug-is-being-truncated.patch
 f:64ece10ea4c79c7f9965cae071e59811:llvm/D44391-export-LLVM_DYLIB_COMPONENTS-in-LLVMConfig.cmake.patch
 f:89fc1c86c19a2c76b239936f3356569d:llvm/D44420-cmake-fix-a-typo-in-llvm_config-macro.patch
-f:ce7c0098dc62d0350c5305c5f7032a4d:llvm/.md5sum
+f:37fa776c256ee4bed543209f1ec97d12:llvm/.md5sum
 f:c2d902376d0011c3039fc56cb76cf62e:llvm/PR36417-DebugInfo-discard-invalid-DBG_VALUE-instructions.patch
-f:a9d58c27b327c132998b2ab9bc239359:llvm/.footprint
+f:82862814eed5e3adfa9db8c7eb4eabb9:llvm/.footprint
 f:a7abc4c97480385a1cbf2a9a07242883:llvm/PR35947-export-LLVMInitializeInstCombine-as-extern-C.patch
-f:1a3a9968771ffa3c171933cb8366a595:llvm/Pkgfile
+f:f08bc8a33d0b06085cce532268ecadcb:llvm/Pkgfile
 f:4e4f4f616a356f44904668f416d1b640:util-linux/.md5sum
 f:46c3829d97eff9cb5173c7c7f69ff8af:util-linux/.footprint
 f:c798c4fefc9388478e719659e27ee477:util-linux/Pkgfile
