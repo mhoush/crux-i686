@@ -1,5 +1,3 @@
-drwxr-xr-x	root/root	etc/
--rw-r--r--	root/root	etc/drirc
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/EGL/
@@ -56,22 +54,15 @@ drwxr-xr-x	root/root	usr/lib/dri/
 -rwxr-xr-x	root/root	usr/lib/dri/radeonsi_dri.so
 -rwxr-xr-x	root/root	usr/lib/dri/swrast_dri.so
 -rwxr-xr-x	root/root	usr/lib/dri/vmwgfx_dri.so
--rwxr-xr-x	root/root	usr/lib/libEGL.la
-lrwxrwxrwx	root/root	usr/lib/libEGL.so -> libEGL.so.1.0.0
-lrwxrwxrwx	root/root	usr/lib/libEGL.so.1 -> libEGL.so.1.0.0
--rwxr-xr-x	root/root	usr/lib/libEGL.so.1.0.0
--rwxr-xr-x	root/root	usr/lib/libGL.la
-lrwxrwxrwx	root/root	usr/lib/libGL.so -> libGL.so.1.2.0
-lrwxrwxrwx	root/root	usr/lib/libGL.so.1 -> libGL.so.1.2.0
--rwxr-xr-x	root/root	usr/lib/libGL.so.1.2.0
--rwxr-xr-x	root/root	usr/lib/libGLESv1_CM.la
-lrwxrwxrwx	root/root	usr/lib/libGLESv1_CM.so -> libGLESv1_CM.so.1.1.0
-lrwxrwxrwx	root/root	usr/lib/libGLESv1_CM.so.1 -> libGLESv1_CM.so.1.1.0
--rwxr-xr-x	root/root	usr/lib/libGLESv1_CM.so.1.1.0
--rwxr-xr-x	root/root	usr/lib/libGLESv2.la
-lrwxrwxrwx	root/root	usr/lib/libGLESv2.so -> libGLESv2.so.2.0.0
-lrwxrwxrwx	root/root	usr/lib/libGLESv2.so.2 -> libGLESv2.so.2.0.0
--rwxr-xr-x	root/root	usr/lib/libGLESv2.so.2.0.0
+-rwxr-xr-x	root/root	usr/lib/libEGL_mesa.la
+lrwxrwxrwx	root/root	usr/lib/libEGL_mesa.so -> libEGL_mesa.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libEGL_mesa.so.0 -> libEGL_mesa.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libEGL_mesa.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libGLX_indirect.so.0 -> libGLX_mesa.so.0
+-rwxr-xr-x	root/root	usr/lib/libGLX_mesa.la
+lrwxrwxrwx	root/root	usr/lib/libGLX_mesa.so -> libGLX_mesa.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libGLX_mesa.so.0 -> libGLX_mesa.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libGLX_mesa.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libOSMesa.la
 lrwxrwxrwx	root/root	usr/lib/libOSMesa.so -> libOSMesa.so.8.0.0
 lrwxrwxrwx	root/root	usr/lib/libOSMesa.so.8 -> libOSMesa.so.8.0.0
@@ -97,9 +88,9 @@ lrwxrwxrwx	root/root	usr/lib/libglapi.so.0 -> libglapi.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libvulkan_radeon.la
 -rwxr-xr-x	root/root	usr/lib/libvulkan_radeon.so
 -rwxr-xr-x	root/root	usr/lib/libxatracker.la
-lrwxrwxrwx	root/root	usr/lib/libxatracker.so -> libxatracker.so.2.3.0
-lrwxrwxrwx	root/root	usr/lib/libxatracker.so.2 -> libxatracker.so.2.3.0
--rwxr-xr-x	root/root	usr/lib/libxatracker.so.2.3.0
+lrwxrwxrwx	root/root	usr/lib/libxatracker.so -> libxatracker.so.2.4.0
+lrwxrwxrwx	root/root	usr/lib/libxatracker.so.2 -> libxatracker.so.2.4.0
+-rwxr-xr-x	root/root	usr/lib/libxatracker.so.2.4.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/dri.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/egl.pc
@@ -127,6 +118,11 @@ lrwxrwxrwx	root/root	usr/lib/vdpau/libvdpau_radeonsi.so.1 -> libvdpau_radeonsi.s
 lrwxrwxrwx	root/root	usr/lib/vdpau/libvdpau_radeonsi.so.1.0 -> libvdpau_radeonsi.so.1.0.0
 -rwxr-xr-x	root/root	usr/lib/vdpau/libvdpau_radeonsi.so.1.0.0
 drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/drirc.d/
+-rw-r--r--	root/root	usr/share/drirc.d/00-mesa-defaults.conf
+drwxr-xr-x	root/root	usr/share/glvnd/
+drwxr-xr-x	root/root	usr/share/glvnd/egl_vendor.d/
+-rw-r--r--	root/root	usr/share/glvnd/egl_vendor.d/50_mesa.json
 drwxr-xr-x	root/root	usr/share/vulkan/
 drwxr-xr-x	root/root	usr/share/vulkan/icd.d/
 -rw-r--r--	root/root	usr/share/vulkan/icd.d/intel_icd.i686.json
