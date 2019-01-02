@@ -4,7 +4,7 @@
 
 name=filesystem
 version=3.4
-release=2
+release=4
 source=(issue motd shells group passwd shadow securetty fstab mime.types)
 
 build() {
@@ -13,7 +13,7 @@ build() {
     install -d $PKG/sbin
     install -d $PKG/boot
     install -d $PKG/dev
-    install -d $PKG/dev/{pts,shm}
+    install -d $PKG/dev/pts
     install -d $PKG/proc
     install -d $PKG/sys
     install -d $PKG/etc
@@ -48,6 +48,7 @@ build() {
     install -d -m 1777 $PKG/var/lock
     install -d -m 1777 $PKG/var/spool/mail
     install -d -m 1777 $PKG/var/tmp
+    install -d -m 1777 $PKG/dev/shm
 
     # /dev
     mknod $PKG/dev/console c 5 1

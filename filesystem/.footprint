@@ -3,7 +3,7 @@ drwxr-xr-x	root/root	boot/
 drwxr-xr-x	root/root	dev/
 crw-------	root/root	dev/console (5, 1)
 drwxr-xr-x	root/root	dev/pts/
-drwxr-xr-x	root/root	dev/shm/
+drwxrwxrwt	root/root	dev/shm/
 drwxr-xr-x	root/root	etc/
 -rw-r--r--	root/root	etc/fstab
 -rw-r--r--	root/root	etc/group
