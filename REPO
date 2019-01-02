@@ -36,9 +36,9 @@ f:f15f17ba2eda31e73bafa3d389af83cc:libgmp/.md5sum
 f:4998f9774d7c05c708d6a3b65a6ddec1:libgmp/.footprint
 f:bbf6d30f092c6d302f028679f1f9bfc3:libgmp/gmp.h
 f:8f71633b5012a7e00881da861e0514b0:libgmp/Pkgfile
-f:2bc1a3a9838e0dbd3cfa907254ca7439:gcc/.md5sum
-f:db555ee58ed16d7c9378dd952500d8e1:gcc/.footprint
-f:0099b202a52a0462576e4f943f6979bd:gcc/Pkgfile
+f:383fb8592108091544de0a42c939e046:gcc/.md5sum
+f:7a3d167a48380e2c50ddc8db55448e7e:gcc/.footprint
+f:03ec93c9165a023c033bf5ab91965baf:gcc/Pkgfile
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
 f:dbd8a0522b52baf64fb327fe640f584c:pkgutils/.md5sum
 f:0d3a6fed127ba555ba0c1a587130c6bc:pkgutils/.footprint
