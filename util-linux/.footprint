@@ -54,6 +54,7 @@ drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/cal
 -rwxr-xr-x	root/root	usr/bin/chmem
+-rwxr-xr-x	root/root	usr/bin/choom
 -rwxr-xr-x	root/root	usr/bin/chrt
 -rwxr-xr-x	root/root	usr/bin/col
 -rwxr-xr-x	root/root	usr/bin/colcrt
@@ -154,6 +155,7 @@ drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/cal.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/choom.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/chrt.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/col.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/colcrt.1.gz
@@ -217,6 +219,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/uuid_time.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/uuid_unparse.3.gz
 drwxr-xr-x	root/root	usr/share/man/man5/
+-rw-r--r--	root/root	usr/share/man/man5/adjtime_config.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/fstab.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/terminal-colors.d.5.gz
 drwxr-xr-x	root/root	usr/share/man/man8/

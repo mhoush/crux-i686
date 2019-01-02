@@ -52,9 +52,9 @@ f:c2d902376d0011c3039fc56cb76cf62e:llvm/PR36417-DebugInfo-discard-invalid-DBG_VA
 f:82862814eed5e3adfa9db8c7eb4eabb9:llvm/.footprint
 f:a7abc4c97480385a1cbf2a9a07242883:llvm/PR35947-export-LLVMInitializeInstCombine-as-extern-C.patch
 f:f08bc8a33d0b06085cce532268ecadcb:llvm/Pkgfile
-f:4e4f4f616a356f44904668f416d1b640:util-linux/.md5sum
-f:46c3829d97eff9cb5173c7c7f69ff8af:util-linux/.footprint
-f:c798c4fefc9388478e719659e27ee477:util-linux/Pkgfile
+f:9beee7991fd33e26aa65a4e6a4750afe:util-linux/.md5sum
+f:d9cca7159c3c2a2cd2707e524d9ecb48:util-linux/.footprint
+f:61956372e20f0b4220afeb6ccf0fe375:util-linux/Pkgfile
 f:f057efd1395a15daad707a91b0e2f3f7:firefox-bin/.md5sum
 f:851b277c068bdb6ffc59d4addf8bc311:firefox-bin/.footprint
 f:c74019473985a46c5f0588cc9182c622:firefox-bin/Pkgfile
