@@ -79,14 +79,12 @@ f:bb7a7163dc392454f855aac4d7d2e610:python3/.footprint
 f:8b4fb529e28b58df2b0e32d4ad582269:python3/Pkgfile
 f:acf9daad1ee85de5efd3543965596a63:glibc/resolv.conf
 f:f7fefce570a3c776e26e778c5e401490:glibc/ld.so.conf
-f:030df2c71ba0e9bf18bda1c8b3839e9f:glibc/.md5sum
-f:cb9c54c9d22b3ab597a69d05420b5e80:glibc/glibc-2.24.8.patch
+f:1f1e54d150d9d44a84fb5ae508c4d4e1:glibc/.md5sum
 f:96156bec8e05de67384dc93e72bdc313:glibc/host.conf
 f:62694f1d89005bb0e54bc9e3bbd0f4f7:glibc/post-install
 f:6b8a59ae89083026c9b6baf3531dc38b:glibc/.footprint
-f:079c92905db0c3d155809d847edcc32e:glibc/glibc-2.27-2.patch
 f:fbbc215a9b15ba4846f326cc88108057:glibc/hosts
-f:8316b23d0ff28d46f9d81757eeb44c5c:glibc/Pkgfile
-f:bcfb2cb7f1cb0b4ecce27fcd5d5d2b21:glibc/0001-CVE-2017-15670-glob-Fix-one-byte-overflow-BZ-22320.patch
+f:5704ce9a0e005de58c68ee8a8846c1cb:glibc/Pkgfile
+f:e7f0e529ac6939a311b45631f44092da:glibc/glibc-2.27-3.patch
 f:0d2d7f988d1756d693b262d46fee7d17:glibc/.nostrip
 f:75931315bf9bc9be15a5e25e4ddd5f0d:glibc/nsswitch.conf

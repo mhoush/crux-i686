@@ -4,10 +4,10 @@
 
 name=glibc
 version=2.27
-release=2
+release=3
 source=(http://ftp.gnu.org/gnu/glibc/glibc-$version.tar.xz \
 	http://www.kernel.org/pub/linux/kernel/v4.x/linux-4.14.14.tar.xz \
-	glibc-2.27-2.patch \
+	glibc-$version-$release.patch \
 	hosts resolv.conf nsswitch.conf host.conf ld.so.conf)
 
 build() {
