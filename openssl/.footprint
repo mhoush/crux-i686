@@ -1075,6 +1075,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/OBJ_txt2nid.3ssl.gz -> OBJ_nid2obj.3ssl.
 lrwxrwxrwx	root/root	usr/share/man/man3/OBJ_txt2obj.3ssl.gz -> OBJ_nid2obj.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/OPENSSL_Applink.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/OPENSSL_VERSION_NUMBER.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/OPENSSL_VERSION_TEXT.3ssl.gz -> OPENSSL_VERSION_NUMBER.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/OPENSSL_config.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/OPENSSL_ia32cap.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/OPENSSL_ia32cap_loc.3ssl.gz -> OPENSSL_ia32cap.3ssl.gz
@@ -1455,6 +1456,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_secure_renegotiation_support.3ss
 lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_servername.3ssl.gz -> SSL_CTX_set_tlsext_servername_callback.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_servername_type.3ssl.gz -> SSL_CTX_set_tlsext_servername_callback.3ssl.gz
 -rw-r--r--	root/root	usr/share/man/man3/SSL_get_session.3ssl.gz
+lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_shared_ciphers.3ssl.gz -> SSL_get_ciphers.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_shared_curve.3ssl.gz -> SSL_CTX_set1_curves.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_shutdown.3ssl.gz -> SSL_set_shutdown.3ssl.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/SSL_get_ssl_method.3ssl.gz -> SSL_CTX_set_ssl_version.3ssl.gz
