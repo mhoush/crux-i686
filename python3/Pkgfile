@@ -1,10 +1,10 @@
 # Description: Python interpreter, version 3.
 # URL: https://www.python.org/
 # Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: bzip2 expat gdbm libffi libtirpc mpdecimal sqlite3 xz zlib
+# Depends on: bzip2 expat gdbm libffi libtirpc mpdecimal sqlite3 xz
 
 name=python3
-version=3.6.5
+version=3.6.7
 release=1
 source=(https://www.python.org/ftp/python/$version/Python-$version.tar.xz)
 
@@ -17,15 +17,12 @@ build() {
     rm -r Modules/_ctypes/{darwin,libffi}*
     rm -r Modules/_decimal/libmpdec
 
-    # set OPT to the python default without -O3 or -g
-    # our CFLAGS are used as well
-    OPT="-Wall -Wstrict-prototypes -Wno-unused-result -Wsign-compare -fwrapv" \
     ./configure --prefix=/usr \
 		--enable-shared \
-                --enable-ipv6 \
+		--enable-ipv6 \
 		--enable-loadable-sqlite-extensions \
+		--with-computed-gotos \
 		--with-threads \
-		--with-lto \
 		--with-system-expat \
 		--with-system-ffi \
 		--with-system-libmpdec \
