@@ -4,7 +4,7 @@
 # Depends on: elfutils libdrm libglvnd libvdpau llvm python3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
 
 name=mesa3d
-version=19.1.6
+version=19.1.7
 release=1
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz)
 
