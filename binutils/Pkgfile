@@ -5,11 +5,11 @@
 
 name=binutils
 version=2.32
-release=1
+release=2
 source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
 
 build() {
-    sed -i '/^SUBDIRS/s/doc//' $name-$version/bfd/Makefile.in 
+    sed -i '/^SUBDIRS/s/doc//' $name-$version/bfd/Makefile.in
 
     mkdir build
     cd build
@@ -21,7 +21,8 @@ build() {
                                 --enable-gold=yes \
                                 --enable-plugins \
                                 --enable-install-libiberty \
-                                --disable-werror
+                                --disable-werror \
+                                --enable-64-bit-bfd
 
     make tooldir=/usr
     make tooldir=/usr DESTDIR=$PKG install

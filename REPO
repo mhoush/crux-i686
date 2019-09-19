@@ -26,8 +26,8 @@ f:371104aa5380f8297d8d3be16e93e91b:mesa3d/.md5sum
 f:ec900de3f5bee03e3654d105065fc02d:mesa3d/.footprint
 f:37e70313a7a0f92f59659e1877d8df1f:mesa3d/Pkgfile
 f:26de61868229f218e385319f045fff51:binutils/.md5sum
-f:e624577d2454a503a13db3e7445debd9:binutils/.footprint
-f:9f6ffaef697a30dac876773d28facacc:binutils/Pkgfile
+f:4cc75cecbc5a6b6244883b26f8e59e75:binutils/.footprint
+f:ab2f6659f63a16f8343ee831082a55c0:binutils/Pkgfile
 f:8548879b8f233085abe848f507fd5860:prt-get/README
 f:71d442baa5255afbdc65051ce67589bc:prt-get/.md5sum
 f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
