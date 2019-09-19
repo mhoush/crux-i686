@@ -1,8 +1,8 @@
-e7f0e529ac6939a311b45631f44092da  glibc-2.27-3.patch
-898cd5656519ffbc3a03fe811dd89e82  glibc-2.27.tar.xz
+d1009809cac6819ca29c6b49b7dda7f8  glibc-2.28-1.patch
+c81d2388896379997bc359d4f2084239  glibc-2.28.tar.xz
 96156bec8e05de67384dc93e72bdc313  host.conf
 fbbc215a9b15ba4846f326cc88108057  hosts
 f7fefce570a3c776e26e778c5e401490  ld.so.conf
-2b772ad12fddd77ade316d87bc62a499  linux-4.14.14.tar.xz
+f13115826108e71a0fa9322b0cbb71d6  linux-4.19.24.tar.xz
 75931315bf9bc9be15a5e25e4ddd5f0d  nsswitch.conf
 acf9daad1ee85de5efd3543965596a63  resolv.conf

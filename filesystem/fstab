@@ -18,6 +18,6 @@
 
 # the following entries are required for proper system operation
 devpts                 /dev/pts  devpts    noexec,nosuid,gid=tty,mode=0620  0      0
-#shm                   /dev/shm  tmpfs     defaults                         0      0
+shm                    /dev/shm  tmpfs     defaults                         0      0
 
 # End of file

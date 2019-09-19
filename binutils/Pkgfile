@@ -4,7 +4,7 @@
 # Depends on:  zlib flex
 
 name=binutils
-version=2.29.1
+version=2.32
 release=1
 source=(http://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
 
@@ -27,6 +27,6 @@ build() {
     make tooldir=/usr DESTDIR=$PKG install
 
     rm -r $PKG/usr/share/info
-    rm $PKG/usr/share/man/man1/{dlltool,nlmconv,windres,windmc}.1
+    rm $PKG/usr/share/man/man1/{dlltool,windres,windmc}.1
     sed -i "s|-L$SRC[^ ]* ||g" $PKG/usr/lib/lib{bfd,opcodes}.la
 }

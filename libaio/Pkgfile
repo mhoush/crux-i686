@@ -3,9 +3,9 @@
 # Maintainer:  Juergen Daubert, jue at crux dot nu
 
 name=libaio
-version=0.3.111
-release=2
-source=(http://http.debian.net/debian/pool/main/liba/$name/${name}_${version}.orig.tar.gz)
+version=0.3.112
+release=1
+source=(http://http.debian.net/debian/pool/main/liba/$name/${name}_${version}.orig.tar.xz)
 
 build() {
 	export CFLAGS="${CFLAGS} -fno-stack-protector"
