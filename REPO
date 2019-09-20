@@ -1,6 +1,7 @@
 d:libaio
 d:openssl
 d:mesa3d
+d:talloc
 d:binutils
 d:prt-get
 d:libgmp
@@ -25,6 +26,10 @@ f:56cf2c53251dfc44c2b0e55b4fbdc21c:openssl/Pkgfile
 f:371104aa5380f8297d8d3be16e93e91b:mesa3d/.md5sum
 f:ec900de3f5bee03e3654d105065fc02d:mesa3d/.footprint
 f:37e70313a7a0f92f59659e1877d8df1f:mesa3d/Pkgfile
+f:365edd7d92b98bb9790ed0eeb3c4d2b3:talloc/talloc-man-pages.tar.xz
+f:05c0ac330778ce7968c1e28e4679d822:talloc/.footprint
+f:20b062b1b6bb97111168a740f7bdfaa2:talloc/Pkgfile
+f:d9e48d347a2067d3b4c7248df1645b98:talloc/.signature
 f:26de61868229f218e385319f045fff51:binutils/.md5sum
 f:4cc75cecbc5a6b6244883b26f8e59e75:binutils/.footprint
 f:ab2f6659f63a16f8343ee831082a55c0:binutils/Pkgfile
