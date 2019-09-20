@@ -6,7 +6,7 @@
 name=firefox-bin
 version=69.0.1
 release=1
-source=(http://ftp.mozilla.org/pub/firefox/releases/$version/linux-x86/en-US/firefox-$version.tar.bz2 \
+source=(http://ftp.mozilla.org/pub/firefox/releases/$version/linux-i686/en-US/firefox-$version.tar.bz2 \
 	policies.json firefox.desktop)
 
 build() {
