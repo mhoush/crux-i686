@@ -46,6 +46,7 @@ drwxr-xr-x	root/root	usr/lib/firefox/gtk2/
 drwxr-xr-x	root/root	usr/lib/firefox/icons/
 -rw-r--r--	root/root	usr/lib/firefox/icons/updater.png
 drwxr-xr-x	root/root	usr/lib/firefox/lib/
+-rw-r--r--	root/root	usr/lib/firefox/libfreeblpriv3.chk
 -rwxr-xr-x	root/root	usr/lib/firefox/libfreeblpriv3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/liblgpllibs.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libmozavcodec.so
@@ -57,11 +58,13 @@ drwxr-xr-x	root/root	usr/lib/firefox/lib/
 -rwxr-xr-x	root/root	usr/lib/firefox/libnspr4.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libnss3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libnssckbi.so
+-rw-r--r--	root/root	usr/lib/firefox/libnssdbm3.chk
 -rwxr-xr-x	root/root	usr/lib/firefox/libnssdbm3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libnssutil3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libplc4.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libplds4.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libsmime3.so
+-rw-r--r--	root/root	usr/lib/firefox/libsoftokn3.chk
 -rwxr-xr-x	root/root	usr/lib/firefox/libsoftokn3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libssl3.so
 -rwxr-xr-x	root/root	usr/lib/firefox/libxul.so
