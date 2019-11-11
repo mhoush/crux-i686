@@ -1035,8 +1035,8 @@ drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/__main__.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/ensurepip/_uninstall.pyo
@@ -1439,7 +1439,7 @@ drwxr-xr-x	root/root	usr/lib/python2.7/json/
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/keyword.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/
--rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.16-py2.7.egg-info
+-rw-r--r--	root/root	usr/lib/python2.7/lib-dynload/Python-2.7.17-py2.7.egg-info
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bisect.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_bsddb.so
 -rwxr-xr-x	root/root	usr/lib/python2.7/lib-dynload/_codecs_cn.so
@@ -1563,9 +1563,9 @@ drwxr-xr-x	root/root	usr/lib/python2.7/lib-tk/
 -rw-r--r--	root/root	usr/lib/python2.7/lib-tk/turtle.pyo
 drwxr-xr-x	root/root	usr/lib/python2.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.16.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/Grammar2.7.17.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.16.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python2.7/lib2to3/PatternGrammar2.7.17.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyc
 -rw-r--r--	root/root	usr/lib/python2.7/lib2to3/__init__.pyo

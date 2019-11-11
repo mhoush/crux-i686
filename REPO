@@ -71,10 +71,10 @@ f:ea78bca5ecf5c7f9599838d43c61f283:firefox-bin/policies.json
 f:b3e37c91887f82c2f94237a5e4c966a2:gobject-introspection/.md5sum
 f:078b3efa5b2621906c03007813cdd114:gobject-introspection/.footprint
 f:03f94ef80a9e338ef3fa4ef2572979b8:gobject-introspection/Pkgfile
-f:c9b58e161bc17d86d88b0f88911fe494:python/.md5sum
-f:f183b706a3541f41c641e2992bdf3cd5:python/.footprint
+f:c3edf4837b2abd09cce2f68a6d9cd150:python/.md5sum
+f:68b1f795595206e0f2195b6c70a13c25:python/.footprint
 f:387d5f6d00d2be01ecb87216cac0f88c:python/pyconfig.h
-f:c0f3f39b230e9273e087b75541cf5327:python/Pkgfile
+f:74a349032ff32e6644dd89f38e07a1e3:python/Pkgfile
 f:181e93996b22d5507bf313afdbdcd636:python3-markupsafe/.md5sum
 f:4a31d4424a31643d516aab7a69e0f6fb:python3-markupsafe/.footprint
 f:df16807a00bd1aa2d8335caf26bb18c1:python3-markupsafe/Pkgfile
