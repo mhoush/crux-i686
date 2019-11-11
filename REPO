@@ -68,9 +68,9 @@ f:c9b39b8b04a50660ccfb1aee78f8abc6:firefox-bin/.footprint
 f:9f48f6f3bf127c8b0e133d54d580156d:firefox-bin/Pkgfile
 f:48c4e73fdcf740a9e455e42f61fc75d1:firefox-bin/firefox.desktop
 f:ea78bca5ecf5c7f9599838d43c61f283:firefox-bin/policies.json
-f:60b6e83f66752e0da3fbe68adaeb9ae7:gobject-introspection/.md5sum
-f:93eafd1ed02bff8e0c2dcfdb6ec035e2:gobject-introspection/.footprint
-f:1ec1f8bb089ad27dd0e5bbe095596004:gobject-introspection/Pkgfile
+f:b3e37c91887f82c2f94237a5e4c966a2:gobject-introspection/.md5sum
+f:078b3efa5b2621906c03007813cdd114:gobject-introspection/.footprint
+f:03f94ef80a9e338ef3fa4ef2572979b8:gobject-introspection/Pkgfile
 f:c9b58e161bc17d86d88b0f88911fe494:python/.md5sum
 f:f183b706a3541f41c641e2992bdf3cd5:python/.footprint
 f:387d5f6d00d2be01ecb87216cac0f88c:python/pyconfig.h
