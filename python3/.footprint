@@ -2187,8 +2187,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/ensurepip/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.pyc
 drwxr-xr-x	root/root	usr/lib/python3.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python3.7/enum.py
 -rw-r--r--	root/root	usr/lib/python3.7/filecmp.py
@@ -2327,6 +2327,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-2.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/format.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/grep.cpython-37.pyc
@@ -2360,9 +2363,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-1.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-2.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.pyc
@@ -2390,9 +2390,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-1.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-2.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/run.cpython-37.pyc
@@ -2411,6 +2408,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-2.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.pyc
@@ -2465,6 +2465,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/editor.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/extend.txt
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/filelist.py
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/format.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/grep.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/help.html
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/help.py
@@ -2549,6 +2550,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-2.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.pyc
@@ -2579,9 +2583,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-1.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-2.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.pyc
@@ -2609,9 +2610,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-1.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-2.pyc
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.pyc
@@ -2630,6 +2628,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-1.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-2.pyc
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-1.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.pyc
@@ -2686,6 +2687,7 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_editmenu.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_editor.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_filelist.py
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_format.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_grep.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_help.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_help_about.py
@@ -2696,7 +2698,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_mainmenu.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_multicall.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_outwin.py
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_paragraph.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_parenmatch.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_pathbrowser.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_percolator.py
@@ -2706,13 +2707,13 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_redirector.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_replace.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_rpc.py
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_rstrip.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_run.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_runscript.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_scrolledlist.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_search.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_searchbase.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_searchengine.py
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_sidebar.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_squeezer.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_stackviewer.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/idle_test/test_statusbar.py
@@ -2729,7 +2730,6 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/mainmenu.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/multicall.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/outwin.py
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/paragraph.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/parenmatch.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/pathbrowser.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/percolator.py
@@ -2739,13 +2739,13 @@ drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/idle_test/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/redirector.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/replace.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/rpc.py
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/rstrip.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/run.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/runscript.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/scrolledlist.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/search.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/searchbase.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/searchengine.py
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/sidebar.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/squeezer.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/stackviewer.py
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/statusbar.py
@@ -2888,9 +2888,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/lib-dynload/
 -rwxr-xr-x	root/root	usr/lib/python3.7/lib-dynload/zlib.cpython-37m-i386-linux-gnu.so
 drwxr-xr-x	root/root	usr/lib/python3.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar3.7.4.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar3.7.5.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar3.7.4.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar3.7.5.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/__main__.py
 drwxr-xr-x	root/root	usr/lib/python3.7/lib2to3/__pycache__/
