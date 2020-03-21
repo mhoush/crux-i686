@@ -39,10 +39,10 @@ f:4f6b710e4d2b18c70cfe5e4a593938b7:prt-get/prt-get.aliases
 f:7459342d9dc9f032d9aeb5d7d19bbe32:prt-get/.footprint
 f:8f10a43d1a5387f979fe6778f26d8f60:prt-get/Pkgfile
 f:22d00fe5aba73907e16e894930e16980:prt-get/prt-get.conf
-f:f15f17ba2eda31e73bafa3d389af83cc:libgmp/.md5sum
-f:4998f9774d7c05c708d6a3b65a6ddec1:libgmp/.footprint
+f:6f3caf9d87c40f7ae65ac15e6991e532:libgmp/.md5sum
+f:0efe9e81fe603e75ad1acdf02d3e5685:libgmp/.footprint
 f:bbf6d30f092c6d302f028679f1f9bfc3:libgmp/gmp.h
-f:8f71633b5012a7e00881da861e0514b0:libgmp/Pkgfile
+f:c0de9d9c63e2dd8df8497716875360c3:libgmp/Pkgfile
 f:8bc9c45d2404880bc8eb4d500dfa1e08:gcc/.md5sum
 f:83d6b91b41114227b5f13beb006cf85b:gcc/.footprint
 f:0e2866f09eb21b2008655790d5800e11:gcc/Pkgfile
