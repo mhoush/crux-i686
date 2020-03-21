@@ -329,7 +329,6 @@ drwxr-xr-x	root/root	usr/include/llvm/BinaryFormat/ELFRelocs/
 -rw-r--r--	root/root	usr/include/llvm/BinaryFormat/MsgPackWriter.h
 -rw-r--r--	root/root	usr/include/llvm/BinaryFormat/Wasm.h
 -rw-r--r--	root/root	usr/include/llvm/BinaryFormat/WasmRelocs.def
-drwxr-xr-x	root/root	usr/include/llvm/BinaryFormat/WasmRelocs/
 -rw-r--r--	root/root	usr/include/llvm/BinaryFormat/XCOFF.h
 drwxr-xr-x	root/root	usr/include/llvm/Bitcode/
 -rw-r--r--	root/root	usr/include/llvm/Bitcode/BitcodeAnalyzer.h
@@ -942,7 +941,6 @@ drwxr-xr-x	root/root	usr/include/llvm/Linker/
 drwxr-xr-x	root/root	usr/include/llvm/MC/
 -rw-r--r--	root/root	usr/include/llvm/MC/ConstantPools.h
 -rw-r--r--	root/root	usr/include/llvm/MC/LaneBitmask.h
-drwxr-xr-x	root/root	usr/include/llvm/MC/MCAnalysis/
 -rw-r--r--	root/root	usr/include/llvm/MC/MCAsmBackend.h
 -rw-r--r--	root/root	usr/include/llvm/MC/MCAsmInfo.h
 -rw-r--r--	root/root	usr/include/llvm/MC/MCAsmInfoCOFF.h
@@ -1571,7 +1569,7 @@ drwxr-xr-x	root/root	usr/lib/cmake/llvm/
 -rw-r--r--	root/root	usr/lib/cmake/llvm/TableGen.cmake
 -rw-r--r--	root/root	usr/lib/cmake/llvm/UseLibtool.cmake
 -rw-r--r--	root/root	usr/lib/cmake/llvm/VersionFromVCS.cmake
-lrwxrwxrwx	root/root	usr/lib/libLLVM-9.0.0.so -> libLLVM-9.so
+lrwxrwxrwx	root/root	usr/lib/libLLVM-9.0.1.so -> libLLVM-9.so
 -rwxr-xr-x	root/root	usr/lib/libLLVM-9.so
 lrwxrwxrwx	root/root	usr/lib/libLLVM.so -> libLLVM-9.so
 -rw-r--r--	root/root	usr/lib/libLLVMAMDGPUAsmParser.a
