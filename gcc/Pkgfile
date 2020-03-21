@@ -4,7 +4,7 @@
 # Depends on:  zlib libmpc
 
 name=gcc
-version=8.3.0
+version=8.4.0
 release=1
 source=(https://gcc.gnu.org/pub/gcc/releases/$name-$version/$name-$version.tar.xz \
 	$name-nocheck-fixincludes.patch)
