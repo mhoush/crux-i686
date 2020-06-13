@@ -4,7 +4,7 @@
 # Depends on:  eudev ncurses zlib
 
 name=util-linux
-version=2.35.1
+version=2.35.2
 release=1
 source=(https://www.kernel.org/pub/linux/utils/$name/v${version:0:4}/$name-$version.tar.xz)
 
