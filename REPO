@@ -66,10 +66,10 @@ f:ea78bca5ecf5c7f9599838d43c61f283:firefox-bin/policies.json
 f:35035237f1d200f5bfab7a72049c8094:gobject-introspection/.md5sum
 f:078b3efa5b2621906c03007813cdd114:gobject-introspection/.footprint
 f:db48753277eb5a33c4c1c8a805a3ab7b:gobject-introspection/Pkgfile
-f:c3edf4837b2abd09cce2f68a6d9cd150:python/.md5sum
-f:68b1f795595206e0f2195b6c70a13c25:python/.footprint
+f:e63f80ba8773cfc20f8cf56cef204f86:python/.md5sum
+f:005f979f9d33bc0ef11f48cfd51a6eaa:python/.footprint
 f:387d5f6d00d2be01ecb87216cac0f88c:python/pyconfig.h
-f:74a349032ff32e6644dd89f38e07a1e3:python/Pkgfile
+f:080a9ee674abe79d22ba63c114892109:python/Pkgfile
 f:181e93996b22d5507bf313afdbdcd636:python3-markupsafe/.md5sum
 f:4a31d4424a31643d516aab7a69e0f6fb:python3-markupsafe/.footprint
 f:df16807a00bd1aa2d8335caf26bb18c1:python3-markupsafe/Pkgfile
