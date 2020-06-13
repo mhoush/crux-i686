@@ -2,9 +2,10 @@
 # URL: http://www.mesa3d.org
 # Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
 # Depends on: elfutils libdrm libglvnd libvdpau llvm python3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
+# Optional: libva
 
 name=mesa3d
-version=20.0.2
+version=20.1.1
 release=1
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz)
 

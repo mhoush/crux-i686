@@ -23,9 +23,9 @@ f:55dc80f713bb96e2564b21b2aac9104e:openssl/.md5sum
 f:91f85842d2118003ee465c34259047e6:openssl/mksslcert.sh
 f:ec2ab40127cfa54f7f12329e85faa394:openssl/.footprint
 f:36a0fb5c769a01b4ff3a02208fd4746d:openssl/Pkgfile
-f:2563118c7f864c0ec24aa8b2ca8fe3d4:mesa3d/.md5sum
+f:bf83c41a8b85a6e008f53d991e41cc5e:mesa3d/.md5sum
 f:1683b06ad4bd0e51eb93b229749d9f65:mesa3d/.footprint
-f:7527f2b98f49fcd6d8786f6a4f198403:mesa3d/Pkgfile
+f:a5fc69d1e5f834b623667ccb54154f9e:mesa3d/Pkgfile
 f:7f0f5f749aa67207754a9fbba12109da:talloc/.md5sum
 f:365edd7d92b98bb9790ed0eeb3c4d2b3:talloc/talloc-man-pages.tar.xz
 f:a660a881f26fb5f2d8fa6a3df237f0cb:talloc/.footprint
