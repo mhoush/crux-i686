@@ -1,10 +1,10 @@
 # Description: Miscellaneous system utilities
-# URL:         https://www.kernel.org/pub/linux/utils/util-linux/
+# URL:         https://github.com/karelzak/util-linux
 # Maintainer:  CRUX System Team, core-ports at crux dot nu
-# Depends on:  eudev ncurses zlib
+# Depends on:  eudev file readline bzip2 xz
 
 name=util-linux
-version=2.35.2
+version=2.36
 release=1
 source=(https://www.kernel.org/pub/linux/utils/$name/v${version:0:4}/$name-$version.tar.xz)
 
