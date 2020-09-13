@@ -4,8 +4,8 @@
 # Depends on: bzip2 expat gdbm libffi libtirpc mpdecimal sqlite3 xz
 
 name=python3
-version=3.7.7
-release=2
+version=3.7.9
+release=1
 source=(https://www.python.org/ftp/python/$version/Python-$version.tar.xz)
 
 build() {
@@ -48,5 +48,6 @@ build() {
     rm $PKG/usr/lib/python${version%.*}/distutils/README
     rm $PKG/usr/lib/python${version%.*}/idlelib/{ChangeLog,NEWS.txt,NEWS2x.txt}
     rm $PKG/usr/lib/python${version%.*}/idlelib/{README,TODO,CREDITS,HISTORY}.txt
+    rm $PKG/usr/lib/python${version%.*}/idlelib/Icons/README.txt
     rm $PKG/usr/lib/python${version%.*}/site-packages/README.txt
 }

@@ -1793,8 +1793,8 @@ drwxr-xr-x	root/root	usr/lib/python3.7/ensurepip/__pycache__/
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-2.pyc
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.pyc
 drwxr-xr-x	root/root	usr/lib/python3.7/ensurepip/_bundled/
--rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
--rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/pip-20.1.1-py2.py3-none-any.whl
+-rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_bundled/setuptools-47.1.0-py3-none-any.whl
 -rw-r--r--	root/root	usr/lib/python3.7/ensurepip/_uninstall.py
 -rw-r--r--	root/root	usr/lib/python3.7/enum.py
 -rw-r--r--	root/root	usr/lib/python3.7/filecmp.py
@@ -1852,10 +1852,10 @@ drwxr-xr-x	root/root	usr/lib/python3.7/http/__pycache__/
 drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/
 drwxr-xr-x	root/root	usr/lib/python3.7/idlelib/Icons/
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/folder.gif
--rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle.icns
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle.ico
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_16.gif
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_16.png
+-rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_256.png
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_32.gif
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_32.png
 -rw-r--r--	root/root	usr/lib/python3.7/idlelib/Icons/idle_48.gif
@@ -2242,9 +2242,9 @@ drwxr-xr-x	root/root	usr/lib/python3.7/lib-dynload/
 -rwxr-xr-x	root/root	usr/lib/python3.7/lib-dynload/zlib.cpython-37m-i386-linux-gnu.so
 drwxr-xr-x	root/root	usr/lib/python3.7/lib2to3/
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar.txt
--rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar3.7.7.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python3.7/lib2to3/Grammar3.7.9.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar.txt
--rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar3.7.7.final.0.pickle
+-rw-r--r--	root/root	usr/lib/python3.7/lib2to3/PatternGrammar3.7.9.final.0.pickle
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/__init__.py
 -rw-r--r--	root/root	usr/lib/python3.7/lib2to3/__main__.py
 drwxr-xr-x	root/root	usr/lib/python3.7/lib2to3/__pycache__/
