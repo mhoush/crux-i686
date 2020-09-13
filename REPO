@@ -52,9 +52,9 @@ f:0d3a6fed127ba555ba0c1a587130c6bc:pkgutils/.footprint
 f:22f85d5cd6253b40538215de9080f183:pkgutils/Pkgfile
 f:fa2157ce4aa8d54b1731c000e1814e8c:pkgutils/pkgutils-x86.patch
 f:2c6bf25a88ae1b977652ecca17c46bea:llvm/README
-f:74e391b8de7d8ba4d2ca82429f11325b:llvm/.md5sum
-f:7ea2ade8309139e23411f438deea503c:llvm/.footprint
-f:d123fd9455f7ae0b3c0f25bbfe0f95fc:llvm/Pkgfile
+f:b1f1c9f57c9349af7cb61c7e3f7b8d29:llvm/.md5sum
+f:35ffbc986970fb79c8379b41c46a1a1b:llvm/.footprint
+f:1ea8e5aaa681baf1be4e9c660ece1324:llvm/Pkgfile
 f:f56c17b204979bf9d2e0656bde933a3c:util-linux/.md5sum
 f:cf3003e2bb0c2cf8b950b809f39d84d9:util-linux/.footprint
 f:bb7095acc51c52b7affe7bbb608f2593:util-linux/Pkgfile
