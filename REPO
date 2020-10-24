@@ -58,9 +58,9 @@ f:1ea8e5aaa681baf1be4e9c660ece1324:llvm/Pkgfile
 f:04694f102930915831c1e34047062efa:util-linux/.md5sum
 f:9d8b04c0b7348322533e2e5f444e99bf:util-linux/.footprint
 f:b18322a111418214ed3ad3a2cf35181b:util-linux/Pkgfile
-f:b52e62493adea9eca4da414d6b5052ee:firefox-bin/.md5sum
+f:fe7673e7bf32075ca6e6791b043cb80a:firefox-bin/.md5sum
 f:c0ceeef1d9ac464ada4967642f736e6a:firefox-bin/.footprint
-f:0871d1b6d605129f3c56bd223eb2b8ff:firefox-bin/Pkgfile
+f:d0fbbd2a8389919cebd341484bfa25db:firefox-bin/Pkgfile
 f:48c4e73fdcf740a9e455e42f61fc75d1:firefox-bin/firefox.desktop
 f:ea78bca5ecf5c7f9599838d43c61f283:firefox-bin/policies.json
 f:35035237f1d200f5bfab7a72049c8094:gobject-introspection/.md5sum
