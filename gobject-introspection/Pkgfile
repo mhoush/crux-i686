@@ -4,7 +4,7 @@
 # Depends on: glib
 
 name=gobject-introspection
-version=1.64.1
+version=1.66.1
 release=1
 source=(https://ftp.gnome.org/pub/GNOME/sources/$name/${version::4}/$name-$version.tar.xz)
 
