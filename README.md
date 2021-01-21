@@ -1,3 +1,6 @@
+NOTE: This repository is no longer active.
+
+=========
 crux-i686
 =========
 
